@@ -4,12 +4,13 @@
   "remoteUser": "vscode",
   "remoteEnv": {
     "VIRTUAL_ENV": "${containerWorkspaceFolder}/.venv",
-    "PATH": "${containerWorkspaceFolder}/.venv/bin:${containerWorkspaceFolder}/.tools/uv:${containerWorkspaceFolder}/.tools/python:${containerEnv:PATH}:/home/vscode/.local/bin"
+    "PATH": "${containerWorkspaceFolder}/.venv/bin:${containerWorkspaceFolder}/.tools/uv:${containerEnv:PATH}:/home/vscode/.local/bin"
   },
   "customizations": {
     "vscode": {
       "settings": {
-        "extensions.ignoreRecommendations": true
+        "extensions.ignoreRecommendations": true,
+        "python.useEnvironmentsExtension": false
       },
       "extensions": [
         "ms-python.python",
