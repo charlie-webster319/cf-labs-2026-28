@@ -1,5 +1,6 @@
 {
   "python.defaultInterpreterPath": "${workspaceFolder}/.venv",
+  "git.autofetch": true,
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 1000,
   "emeraldwalk.runonsave": {
