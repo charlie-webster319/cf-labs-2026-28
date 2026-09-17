@@ -23,8 +23,12 @@ The service token was generated and saved directly by Christian. Its selected ex
 
 ## Verification
 
-The [classroom publication run](https://github.com/ustandrews-ec3318-mn3101/classroom50/actions/runs/35213264721) completed successfully on 17 September 2026. The roster currently contains Christian as teacher and zero students. End-to-end student-account acceptance remains outstanding. See [implementation verification](verification.md) for the completed installation, notebook, financial, plot and Codespaces checks.
+The [classroom publication run](https://github.com/ustandrews-ec3318-mn3101/classroom50/actions/runs/35213264721) completed successfully on 17 September 2026. The roster contains Christian as teacher and one enrolled test student, `christian-engels-25`. The test student accepted the assignment and opened a Codespace. Their generated repository is private, grants them Write access and has an open feedback pull request. Student-account notebook execution and sync after the startup fix still need checking. See [implementation verification](verification.md) for the completed installation, notebook, financial, plot and Codespaces checks.
 
 ## Education seat follow-up
 
-A test email invitation later failed with `No seats are available to invite this user`. The organisation had one Team seat, already occupied. The free academic organisation upgrade was requested through Christian's verified teacher benefits; the licensing page then showed $0.00. A fresh invitation still needs to be retried to verify that GitHub has removed the invitation restriction. No invitation was sent by the agent during this follow-up.
+A test email invitation later failed with `No seats are available to invite this user`. The organisation had one Team seat, already occupied. The free academic organisation upgrade was requested through Christian's verified teacher benefits; the licensing page then showed $0.00. Christian retried the invitation successfully and the test student joined the organisation. No cohort invitations were sent by the agent.
+
+## Updating an existing Codespace after the startup fix
+
+New assignment copies inherit the corrected template. Existing repositories do not automatically receive template updates. The two configuration files were also updated in the test student repository. In that existing Codespace, run `git pull --ff-only`, then use **Codespaces: Rebuild Container** from the Command Palette. This keeps notebook work; if Git reports a conflict or divergence, inspect it rather than resetting or force-pushing.

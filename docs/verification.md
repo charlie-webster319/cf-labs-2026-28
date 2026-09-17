@@ -25,7 +25,7 @@ Following approval to set up the course, the starter was published as the privat
 
 ## Verified on GitHub Actions
 
-The [three-platform validation run](https://github.com/ustandrews-ec3318-mn3101/cf-labs-2026-27/actions/runs/35210426922) passed on Linux, macOS and Windows: clean setup, setup reruns, regression tests, full execution of both notebooks, independent financial validation and export of plots. The checkout path `lab workspace` exercises spaces.
+The [three-platform validation run](https://github.com/ustandrews-ec3318-mn3101/cf-labs-2026-27/actions/runs/35264233511) passed on Linux, macOS and Windows: clean setup, setup reruns, regression tests, full execution of both notebooks, independent financial validation and export of plots. The checkout path `lab workspace` exercises spaces.
 
 The instructor workflow is restricted to the exact template repository. It was skipped in the pilot copy as intended. The pilot's separately dispatched [Check my notebooks (optional)](https://github.com/ustandrews-ec3318-mn3101/cf-labs-2026-27-pilot/actions/runs/35210745703) passed. This student workflow runs only on request and does not grade financial answers.
 
@@ -39,12 +39,12 @@ The live sync-status check fetched GitHub and reported all saved lab notebooks s
 
 Python, Jupyter, Run On Save, Codex and Claude extensions were confirmed installed; this VS Code release includes **GitHub Copilot Chat 0.66.0** as a built-in extension. The CLIs reported Copilot 1.0.85, Codex 0.154.0 and Claude 2.1.274. No assistant login was needed or initiated. Copilot's first version check spent about 115 seconds unpacking its package.
 
-The initial Python extension discovery briefly offered to install Python even though the project environment existed. Cancelling that prompt and selecting the recommended `.venv` worked. The kernel picker labels the environment `cflabs (3.12.14)`, so the README includes the Python Environments fallback. Christian's existing editor preferences installed additional personal extensions; this is not a clean student-account test.
+A second fresh Codespace verified the startup correction: the project `.venv` and local uv are on PATH, and the supported `python.useEnvironmentsExtension: false` setting lets the main Python extension discover the lab environment without the newer environment manager's false ‘No Python found’ prompt. Required extensions are installed through the container configuration; the obsolete standalone Copilot recommendation was removed and recommendation prompts are disabled in Codespaces. The notebook automatically selected `.venv/bin/python` (`cflabs`, Python 3.12.14), ran all 22 cells without errors, and synced commit `789d890c2a73c05d2176f69ffe4ba8559dfc341b`. No Python-installation or extension-recommendation prompt appeared. Christian's editor preferences installed additional personal extensions, so this remains an instructor-account test. The same configuration correction was pushed to the student test repository; its existing Codespace needs to pull and rebuild.
 
 Remaining account-dependent checks:
 
 - Classroom 50 organisation setup and the service-token step were completed by Christian. The 2026–27 classroom and `python-labs` assignment were created and their publication workflow passed. No current cohort students have been supplied or invited.
-- Student-account acceptance, individual repository permissions, Codespaces allowance and feedback pull requests still need a rostered test student. Classroom 50 confirms that the assignment link cannot yet be accepted because the student roster is empty. Classroom teams have read-only access to the private starter template, verified through GitHub.
+- The test student `christian-engels-25` enrolled and accepted the assignment. Their generated repository was verified private, their repository role is Write, and feedback pull request #1 is open. Christian opened its Codespace in the student account. Execution and sync in that student account after rebuilding with the startup fix remain to be checked; individual students’ Codespaces allowance is account-dependent. Classroom teams have read-only access to the private starter template.
 - Assistant account access and subscriptions were not tested. They are optional. Native Windows Copilot CLI requires PowerShell 6 or later; the actual optional installers were tested in Codespaces, not on native Windows or macOS.
 
 Official installer and PyPortfolioOpt references are linked in [the optional reference](reference.md).
