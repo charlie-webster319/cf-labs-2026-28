@@ -1,0 +1,17 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv",
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "emeraldwalk.runonsave": {
+    "ignoreUnchangedFiles": false,
+    "autoClearConsole": false,
+    "commands": [
+      {
+        "match": "[/\\\\]lab[0-9]+-notebook\\.ipynb$",
+        "cmd": "\"${workspaceFolder}/.tools/uv/uv\" run --no-project --python \"${workspaceFolder}/.venv\" python \"${workspaceFolder}/.utilities/sync_notebooks.py\"",
+        "isAsync": true,
+        "autoShowOutputPanel": "error"
+      }
+    ]
+  }
+}

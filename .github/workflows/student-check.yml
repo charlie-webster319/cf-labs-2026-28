@@ -1,0 +1,27 @@
+name: Check my notebooks (optional)
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up the lab environment
+        run: bash .utilities/setup_lab.sh
+      - name: Add notebook execution tools from the lockfile
+        run: .tools/uv/uv sync --locked --group dev
+      - name: Run both notebooks from the beginning
+        run: .tools/uv/uv run --no-sync python tests/execute_notebooks.py
+      - name: Save executed notebooks and figures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-notebook-check
+          path: outputs/validation/
+          if-no-files-found: warn
+          retention-days: 7

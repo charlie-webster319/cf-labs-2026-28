@@ -1,0 +1,32 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Mac files
+.DS_Store
+
+# Local installers, credentials and assistant state
+.tools/
+.env
+.env.*
+!.env.example
+.codex/
+.claude/
+.copilot/
+.statamcp/
+*.pem
+*.key
+
+# Generated notebook/validation output
+.ipynb_checkpoints/
+outputs/
+.pytest_cache/
+.ruff_cache/
+*.log

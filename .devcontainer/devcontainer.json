@@ -1,0 +1,23 @@
+{
+  "name": "Python for EC3318/MN3101",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "remoteUser": "vscode",
+  "remoteEnv": {
+    "PATH": "${containerEnv:PATH}:/home/vscode/.local/bin"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "emeraldwalk.runonsave",
+        "OpenAI.chatgpt",
+        "Anthropic.claude-code"
+      ]
+    }
+  },
+  "postCreateCommand": "bash .utilities/post_create.sh",
+  "waitFor": "postCreateCommand"
+}

@@ -1,0 +1,56 @@
+name: Instructor template validation
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  labs:
+    # Template copies inherit workflows. Only the instructor's template should
+    # run the full matrix after a push; student notebook autosaves must not.
+    if: github.repository == 'ustandrews-ec3318-mn3101/cf-labs-2026-27'
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: lab workspace
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: lab workspace
+      - name: Clean setup and rerun (Linux/macOS)
+        if: runner.os != 'Windows'
+        run: |
+          bash .utilities/setup_lab.sh
+          bash .utilities/setup_lab.sh
+      - name: Clean setup and rerun (Windows)
+        if: runner.os == 'Windows'
+        shell: powershell
+        run: |
+          & .utilities/setup_lab.ps1
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          & .utilities/setup_lab.ps1
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Add validation tools from the lockfile
+        run: .tools/uv/uv sync --locked --group dev
+      - name: Setup and sync regression tests
+        run: .tools/uv/uv run --no-sync python -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Execute both notebooks and export plots
+        run: .tools/uv/uv run --no-sync python tests/execute_notebooks.py
+      - name: Independently check financial calculations
+        run: .tools/uv/uv run --no-sync python tests/validate_finance.py
+      - name: Save executed notebooks and figures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: notebook-validation-${{ matrix.os }}
+          path: lab workspace/outputs/validation/
+          if-no-files-found: warn
