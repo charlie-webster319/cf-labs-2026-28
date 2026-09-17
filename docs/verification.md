@@ -43,8 +43,8 @@ The initial Python extension discovery briefly offered to install Python even th
 
 Remaining account-dependent checks:
 
-- Classroom 50 organisation setup is pending explicit approval of its organisation-wide permission changes. No current cohort roster has been supplied or invited.
-- Student-account acceptance, repository permissions, Codespaces allowance and feedback pull requests need a rostered test student after classroom setup.
+- Classroom 50 organisation setup and the service-token step were completed by Christian. The 2026–27 classroom and `python-labs` assignment were created and their publication workflow passed. No current cohort students have been supplied or invited.
+- Student-account acceptance, individual repository permissions, Codespaces allowance and feedback pull requests still need a rostered test student. Classroom 50 confirms that the assignment link cannot yet be accepted because the student roster is empty. Classroom teams have read-only access to the private starter template, verified through GitHub.
 - Assistant account access and subscriptions were not tested. They are optional. Native Windows Copilot CLI requires PowerShell 6 or later; the actual optional installers were tested in Codespaces, not on native Windows or macOS.
 
 Official installer and PyPortfolioOpt references are linked in [the optional reference](reference.md).
