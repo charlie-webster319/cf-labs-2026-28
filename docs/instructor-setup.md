@@ -14,7 +14,7 @@
 
 ## Before students start
 
-1. Add this year's students to the classroom roster using their GitHub usernames, and send/complete the required organisation invitations. Do not import a previous cohort automatically.
+1. Add this year's students using university email addresses or GitHub usernames. A CSV with an `email` column is sufficient; names and section are optional. Email invitees must add and verify the invited address on their GitHub account before accepting. Classroom 50 links their account when they accept. Do not import a previous cohort automatically. See the [roster guide](https://github.com/foundation50/classroom50/wiki/Web-Teacher-Guide#invitations-by-email) and [GitHub invitation requirements](https://docs.github.com/en/organizations/managing-membership-in-your-organization/inviting-users-to-join-your-organization).
 2. Pilot acceptance with one rostered student. Check that their new repository is private, permits writing to their own work, opens in Codespaces, executes the first notebook cell, syncs a saved change and has a feedback pull request. Check their own Codespaces allowance; the instructor pilot does not establish student billing or eligibility.
 3. On the assignment's **Submissions → Share** dialog, copy the full accept link, including its query string, to the appropriate Moodle activity. The link alone does not enrol students. Moodle was not changed during this setup.
 4. Students accept once and use the same repository and Codespace for both labs. Refer them to its README.
@@ -24,3 +24,7 @@ The service token was generated and saved directly by Christian. Its selected ex
 ## Verification
 
 The [classroom publication run](https://github.com/ustandrews-ec3318-mn3101/classroom50/actions/runs/35213264721) completed successfully on 17 September 2026. The roster currently contains Christian as teacher and zero students. End-to-end student-account acceptance remains outstanding. See [implementation verification](verification.md) for the completed installation, notebook, financial, plot and Codespaces checks.
+
+## Education seat follow-up
+
+A test email invitation later failed with `No seats are available to invite this user`. The organisation had one Team seat, already occupied. The free academic organisation upgrade was requested through Christian's verified teacher benefits; the licensing page then showed $0.00. A fresh invitation still needs to be retried to verify that GitHub has removed the invitation restriction. No invitation was sent by the agent during this follow-up.
