@@ -1,6 +1,6 @@
 # Implementation and verification — 17 September 2026
 
-Changes are local for review. Nothing was committed, pushed or published by this implementation.
+Following approval to set up the course, the starter was published as the private template [cf-labs-2026-27](https://github.com/ustandrews-ec3318-mn3101/cf-labs-2026-27). The original `christian-engels/cflabs` remote was not changed. A separate private `cf-labs-2026-27-pilot` repository tests the student workflow without student data.
 
 ## Implemented
 
@@ -23,15 +23,28 @@ Changes are local for review. Nothing was committed, pushed or published by this
 - Excel dataset is byte-for-byte unchanged. SHA-256: `58ac2dd56c42ac59917fc3819a6be97083f7bcab2c46e01b94985bd23ee8746a`.
 - `git diff --check` passes. The separate direct-code financial validator emits two harmless warnings that an Agg figure cannot be shown; rich notebook rendering is checked by the notebook executor.
 
-## Checks still requiring a published test branch or live account
+## Verified on GitHub Actions
 
-The Actions workflow in `.github/workflows/labs.yml` is configured for clean setup, setup reruns, regression tests, full notebook execution and financial validation on Linux, macOS and Windows. It deliberately checks out into `lab workspace` to exercise spaces. It has **not run remotely** for these unpushed changes. Native Windows and Linux installation/execution remain unverified; macOS PowerShell tests do not establish native Windows compatibility.
+The [three-platform validation run](https://github.com/ustandrews-ec3318-mn3101/cf-labs-2026-27/actions/runs/35210426922) passed on Linux, macOS and Windows: clean setup, setup reruns, regression tests, full execution of both notebooks, independent financial validation and export of plots. The checkout path `lab workspace` exercises spaces.
 
-A fresh Codespace has **not** been created. Docker is installed locally but its daemon was unavailable, so no local container check was claimed. Before student release:
+The instructor workflow is restricted to the exact template repository. It was skipped in the pilot copy as intended. The pilot's separately dispatched [Check my notebooks (optional)](https://github.com/ustandrews-ec3318-mn3101/cf-labs-2026-27-pilot/actions/runs/35210745703) passed. This student workflow runs only on request and does not grade financial answers.
 
-1. Create a Codespace from the reviewed test branch. Confirm automatic setup finishes and the first code cell runs with `.venv` / **Corporate Finance Labs (.venv)**.
-2. Check installed extensions: Python, Jupyter, Run On Save, Copilot, Codex and Claude. In a new terminal, run `copilot --version`, `codex --version` and `claude --version`; these checks do not require signing in. Actual optional installers were not run on Christian's Mac.
-3. In a writable student test copy, edit/save a notebook and run **Check whether your work has synced**. Verify the changed notebook on GitHub. The helper passed isolated Git tests, but real VS Code save events, extension loading, authentication and GitHub write permissions have not been exercised.
-4. Check account-dependent Copilot availability separately. Neither assistant login nor a subscription is required for notebook execution. On native Windows, Copilot CLI requires PowerShell 6 or later.
+All 21 exported plots (seven per platform) were visually inspected. No missing plots, clipped axes, titles or legends were found. Frontier labels remain crowded at small display sizes; font placement varies slightly across platforms.
+
+## Live-account checks
+
+A fresh two-core Codespace was created from the private pilot. Automatic setup installed Python 3.12.14 and the project environment. Selecting **Python Environments → cflabs (3.12.14), .venv/bin/python** ran all 22 Lab 1 code cells without errors. The editor automatically committed and pushed the executed notebook; GitHub commit `d9abc3b7eac161588b617e955e7fe998900b1e87` was independently checked.
+
+The live sync-status check fetched GitHub and reported all saved lab notebooks synced, with exit status 0. The pilot Codespace was stopped after verification.
+
+Python, Jupyter, Run On Save, Codex and Claude extensions were confirmed installed; this VS Code release includes **GitHub Copilot Chat 0.66.0** as a built-in extension. The CLIs reported Copilot 1.0.85, Codex 0.154.0 and Claude 2.1.274. No assistant login was needed or initiated. Copilot's first version check spent about 115 seconds unpacking its package.
+
+The initial Python extension discovery briefly offered to install Python even though the project environment existed. Cancelling that prompt and selecting the recommended `.venv` worked. The kernel picker labels the environment `cflabs (3.12.14)`, so the README includes the Python Environments fallback. Christian's existing editor preferences installed additional personal extensions; this is not a clean student-account test.
+
+Remaining account-dependent checks:
+
+- Classroom 50 organisation setup is pending explicit approval of its organisation-wide permission changes. No current cohort roster has been supplied or invited.
+- Student-account acceptance, repository permissions, Codespaces allowance and feedback pull requests need a rostered test student after classroom setup.
+- Assistant account access and subscriptions were not tested. They are optional. Native Windows Copilot CLI requires PowerShell 6 or later; the actual optional installers were tested in Codespaces, not on native Windows or macOS.
 
 Official installer and PyPortfolioOpt references are linked in [the optional reference](reference.md).

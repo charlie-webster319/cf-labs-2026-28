@@ -12,7 +12,7 @@ These are **formative, ungraded labs**. Use the Classroom 50 assignment link sup
 2. Wait for the automatic setup to finish. It installs the lab environment for you.
 3. Open **`lab1-notebook.ipynb`** (or **`lab2-notebook.ipynb`** for Lab 2). Run the first code cell with its **▶** button, then work down the notebook in order.
 
-If asked to choose a kernel, select **Corporate Finance Labs (.venv)**. A kernel is the Python environment that runs your notebook.
+If asked to choose a kernel, select **Corporate Finance Labs (.venv)**, or **Python Environments → cflabs (3.12.14)** with the `.venv` path. A kernel is the Python environment that runs your notebook.
 
 ## If something goes wrong
 
