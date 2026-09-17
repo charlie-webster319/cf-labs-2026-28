@@ -3,14 +3,17 @@
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
   "remoteUser": "vscode",
   "remoteEnv": {
-    "PATH": "${containerEnv:PATH}:/home/vscode/.local/bin"
+    "VIRTUAL_ENV": "${containerWorkspaceFolder}/.venv",
+    "PATH": "${containerWorkspaceFolder}/.venv/bin:${containerWorkspaceFolder}/.tools/uv:${containerEnv:PATH}:/home/vscode/.local/bin"
   },
   "customizations": {
     "vscode": {
+      "settings": {
+        "extensions.ignoreRecommendations": true
+      },
       "extensions": [
         "ms-python.python",
         "ms-toolsai.jupyter",
-        "GitHub.copilot",
         "GitHub.copilot-chat",
         "emeraldwalk.runonsave",
         "OpenAI.chatgpt",
