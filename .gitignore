@@ -17,8 +17,10 @@ wheels/
 .env
 .env.*
 !.env.example
-.codex/
-.claude/
+.codex/*
+!.codex/config.toml
+.claude/*
+!.claude/settings.json
 .copilot/
 .statamcp/
 *.pem

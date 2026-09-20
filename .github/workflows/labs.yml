@@ -40,7 +40,7 @@ jobs:
           & .utilities/setup_lab.ps1
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Add validation tools from the lockfile
-        run: .tools/uv/uv sync --locked --group dev
+        run: .tools/uv/uv sync --locked --group dev --group notebook-mcp
       - name: Setup and sync regression tests
         run: .tools/uv/uv run --no-sync python -m unittest discover -s tests -p 'test_*.py' -v
       - name: Execute both notebooks and export plots

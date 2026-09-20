@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "jupyter": {
+      "type": "stdio",
+      "command": "uv",
+      "args": [
+        "run", "--locked", "--inexact", "--group", "notebook-mcp",
+        "python", ".utilities/notebook_mcp.py"
+      ]
+    }
+  }
+}

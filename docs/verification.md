@@ -1,5 +1,19 @@
 # Implementation and verification — 17 September 2026
 
+## Notebook MCP — 20 September 2026 (local, not published)
+
+Added project MCP configuration for Claude Code (`.mcp.json`) and Codex (`.codex/config.toml`), a Claude startup timeout, shared teaching instructions, and optional locked notebook-tool dependencies. The `.gitignore` exceptions allow only the shared settings; credentials and local assistant state remain ignored. All previously locked package versions are unchanged; 92 additional packages are confined to the optional group and its dependency graph. Container startup preloads that group without making an optional failure fail startup.
+
+The pinned `the-notebook-mcp` 0.9.0 CLI failed on long paths and uses obsolete FastMCP constructor/tool-registration APIs. A small compatibility launcher uses its file-tool providers with current FastMCP 2 registration and absolute project paths. `jupyter-kernel-client<1` preserves the import API those providers require. The launcher deliberately omits `notebook_execute_cell`: there is no separate Jupyter server and no attachment to VS Code's live kernel.
+
+A clean temporary uv project on macOS, with spaces and a long path, passed all 18 MCP/setup/sync tests. Real MCP clients launched both configurations, discovered tools, read a saved notebook and output, edited a disposable cell while preserving the explanation, and rejected an edit outside the project. No teaching notebook was modified by these checks. Lock validation, configuration parsing and whitespace checks passed. Linux/Windows CI now includes this optional group and test, but those runs and live Codex/Claude account connections have not been performed for this change. Changes remain local.
+
+## AI update change — 20 September 2026 (local, not published)
+
+The container now invokes optional AI setup on every start, including first creation. Codex and Claude Code use their official installers with explicit `latest` targets even when binaries already exist. Python setup remains in `postCreateCommand`; optional update failures are reported without failing container startup. Extension auto-checking and auto-updating are explicitly enabled with zero additional release delay.
+
+All eight setup regression checks passed locally, including repeated starts with existing binaries, paths containing spaces, and failed downloads preserving existing tools and the Python environment. Bash syntax, container JSON/hook validation and whitespace checks passed. Installer downloads were mocked for these regression tests; a fresh live Codespace and activation of extension updates have not been re-tested. Existing student repositories need these changes separately, followed by a rebuild. These changes have not been pushed to the published template.
+
 Following approval to set up the course, the starter was published as the private template [cf-labs-2026-27](https://github.com/ustandrews-ec3318-mn3101/cf-labs-2026-27). The original `christian-engels/cflabs` remote was not changed. A separate private `cf-labs-2026-27-pilot` repository tests the student workflow without student data.
 
 ## Implemented

@@ -97,7 +97,7 @@ exit 0
         combined = result.stdout + result.stderr
         self.assertNotEqual(result.returncode, 0)
         for tool in ("copilot", "codex", "claude"):
-            # Existing tools are checked but never launched; absent ones cannot download.
+            # Codex/Claude refresh even if installed; Copilot may already exist.
             self.assertTrue(f"OPTIONAL TOOL FAILED: {tool}" in combined or
                             f"{tool} is already installed." in combined, combined)
         log = self.log.read_text(encoding="utf-8")
@@ -106,6 +106,52 @@ exit 0
         self.assertIn("Optional tools finished", combined)
         self.assertEqual(marker.read_bytes(), b"unchanged")
         self.assertFalse((self.repo / ".tools").exists())
+
+    @unittest.skipIf(os.name == "nt", "Dev container uses Bash")
+    def test_container_starts_refresh_existing_ai_tools_using_latest(self):
+        self.executable(self.repo / ".tools/uv/uv", 'printf "uv %s\\n" "$*" >> "$LAB_TEST_LOG"\n')
+        # Fake old binaries must not suppress either update or be launched for login.
+        for name in ("copilot", "codex", "claude"):
+            self.executable(self.bin / name, 'echo "unexpected tool launch" >&2; exit 99\n')
+        self.executable(self.bin / "curl", '''
+while [ "$#" -gt 0 ]; do
+    case "$1" in
+        https://*) printf 'download %s\\n' "$1" >> "$LAB_TEST_LOG" ;;
+        -o) shift; target="$1" ;;
+    esac
+    shift
+done
+cat > "$target" <<'INSTALLER'
+printf 'installer %s\\n' "$*" >> "$LAB_TEST_LOG"
+INSTALLER
+''')
+        for _ in range(2):
+            result = self.bash("post_start.sh")
+            self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+            self.assertIn("Optional tools finished (0 failed steps)", result.stdout)
+        lines = self.log.read_text().splitlines()
+        self.assertEqual(lines.count("installer --release latest"), 2)
+        self.assertEqual(lines.count("installer latest"), 2)
+        self.assertEqual(lines.count("download https://chatgpt.com/codex/install.sh"), 2)
+        self.assertEqual(lines.count("download https://claude.ai/install.sh"), 2)
+        self.assertEqual(lines.count("uv sync --locked --inexact --group notebook-mcp"), 2)
+
+    @unittest.skipIf(os.name == "nt", "Dev container uses Bash")
+    def test_container_start_survives_failed_updates_and_preserves_old_tools(self):
+        marker = self.repo / ".venv" / "lab environment"
+        marker.parent.mkdir()
+        marker.write_bytes(b"unchanged")
+        for name in ("copilot", "codex", "claude"):
+            self.executable(self.bin / name, 'echo "old version"\n')
+        original = {name: (self.bin / name).read_bytes() for name in ("codex", "claude")}
+        self.executable(self.bin / "curl", "exit 23\n")
+        result = self.bash("post_start.sh")
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        for name, content in original.items():
+            self.assertIn(f"OPTIONAL TOOL FAILED: {name}", result.stderr)
+            self.assertEqual((self.bin / name).read_bytes(), content)
+        self.assertIn("The labs still work", result.stderr)
+        self.assertEqual(marker.read_bytes(), b"unchanged")
 
     @unittest.skipUnless(POWERSHELL, "PowerShell is unavailable; Windows CI runs this test")
     def test_powershell_setup_download_failure_identifies_step(self):

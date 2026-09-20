@@ -10,6 +10,9 @@
     "vscode": {
       "settings": {
         "extensions.ignoreRecommendations": true,
+        "extensions.autoUpdate": "on",
+        "extensions.autoCheckUpdates": true,
+        "extensions.autoUpdateDelay": 0,
         "python.useEnvironmentsExtension": false
       },
       "extensions": [
@@ -23,5 +26,6 @@
     }
   },
   "postCreateCommand": "bash .utilities/post_create.sh",
+  "postStartCommand": "bash .utilities/post_start.sh",
   "waitFor": "postCreateCommand"
 }

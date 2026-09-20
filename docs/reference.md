@@ -43,7 +43,19 @@ The check only tests whether the notebooks run: it does not mark your answers or
 
 AI installation is separate from Python setup. Codespaces attempts to install all three assistants' extensions and command-line tools. Local setup recommends Copilot alongside the essential notebook extensions; **Install optional AI tools** adds Codex and Claude extensions and all three command-line tools using their official installers. It can be rerun if an optional download fails.
 
+Each container start (including first creation) installs or updates the Codex and Claude Code CLIs from their official `latest` release channels. An unavailable download produces a warning and leaves the labs usable; the next start retries. The container enables automatic extension checks and updates with no extra release delay. An extension update can still require **Restart Extensions** before it takes effect. Existing Codespaces need the updated repository files and a container rebuild to pick up these settings; changing the starter template does not update student repositories automatically.
+
 Installation does not sign you in. Choose whether to use a tool and handle its sign-in separately. Account entitlements can differ; none is a prerequisite for completing either lab.
+
+## Optional notebook tools for Codex and Claude Code
+
+The repository includes `.codex/config.toml` for Codex and `.mcp.json` for Claude Code, both defining the same local `jupyter` MCP server ([The Notebook MCP](https://github.com/svallory/the-notebook-mcp)). It can read and edit saved cells and inspect saved outputs. Dependencies are pinned in the optional `notebook-mcp` group and the lockfile, using the same `.venv`; the nine core teaching packages are unchanged. No extra account, token or public server is needed.
+
+Open the assistant in the repository root. Accept its normal project-trust/MCP prompt, then use `/mcp` to check that `jupyter` is connected. In Codespaces, uv is already on PATH and optional dependencies are prepared at container startup. Locally, uv must be on PATH; the configuration installs its locked optional dependencies on first use. A slow first connection may need a retry. The configuration never approves tools on the student's behalf.
+
+**This works with saved notebook files, not the live VS Code kernel.** Save before asking for help and pause typing while the assistant edits. Reload the notebook from disk after an external edit if VS Code has not refreshed it; preserve any unsaved work before doing so. Run cells in the usual notebook interface. The server's separate-Jupyter execution tool is not configured for these labs. An MCP edit also does not itself guarantee a commit/push: use **Check whether your work has synced**.
+
+Keep the initial MCP list to this one server. [Context7](https://github.com/upstash/context7) is an optional later addition for library documentation, especially when matching examples to package versions; its anonymous service has rate limits. Filesystem and Git servers add little to these coding assistants' existing tools. GitHub, browser and live market-data servers are unnecessary for the supplied labs and add authentication or extra moving parts.
 
 ## Further reading
 
