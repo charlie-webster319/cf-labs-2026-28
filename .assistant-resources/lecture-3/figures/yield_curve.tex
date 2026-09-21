@@ -1,0 +1,10 @@
+% Bank of England nominal government liability curve, one trading day.
+\begin{tikzpicture}
+\begin{axis}[lectureplot,width=10.4cm,height=5.2cm,xmin=0,xmax=40,
+ymin=4,ymax=6,xtick={0,5,10,15,20,25,30,35,40},ytick={4,4.5,5,5.5,6},minor y tick num=1,
+yticklabel={\pgfmathprintnumber[fixed,precision=1]{\tick}\%},
+xlabel={Maturity (years)},ylabel={Yield to maturity}]
+\addplot[StAndrewsLightBlue,line width=1pt,mark=*,mark size=1pt,
+         mark options={fill=StAndrewsLightBlue,draw=none}]
+        table[x=maturity,y=yield]{generated/yield_curve.dat};
+\end{axis}\end{tikzpicture}

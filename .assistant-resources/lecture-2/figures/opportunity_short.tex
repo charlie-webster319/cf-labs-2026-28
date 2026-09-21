@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+\begin{axis}[frontierplot,xmax=40,ymax=18.6,ytick={13.5,14.5,15.5,16.5,17.5,18.6},
+yticklabels={13.5\%,14.5\%,15.5\%,16.5\%,17.5\%,{}},xtick={0,5,10,15,20,25,30,35,40}]
+\addplot[StAndrewsOrange,thick] table[x expr=100*\thisrow{sd},y expr=100*\thisrow{ret}]{generated/two_stock.dat};
+\addplot[StAndrewsOrange,thick,dotted] table[x expr=100*\thisrow{sd},y expr=100*\thisrow{ret}]{generated/two_short.dat};
+\addplot[only marks,mark=*,mark size=2pt,StAndrewsMidGreen] coordinates {(\LSDWmt,\LMeanWmt)};
+\addplot[only marks,mark=*,mark size=2pt,StAndrewsOrange] coordinates {(\LSDHon,\LMeanHon)};
+\addplot[only marks,mark=*,mark size=1.8pt,StAndrewsBlue] table[x expr=100*\thisrow{sd},y expr=100*\thisrow{ret}]{generated/two_short_marks.dat};
+\addplot[only marks,mark=*,mark size=2pt,StAndrewsRed] coordinates {(\LSDTwoOpt,\LMeanTwoOpt)};
+\node[anchor=north west,font=\small,text=StAndrewsMidGreen,xshift=3pt,yshift=-2pt] at (axis cs:\LSDWmt,\LMeanWmt) {Wal-Mart (100\%; 0\%)};
+\node[anchor=south west,font=\small,text=StAndrewsOrange,xshift=2pt,yshift=2pt] at (axis cs:\LSDHon,\LMeanHon) {Honeywell (0\%; 100\%)};
+\node[anchor=south east,font=\footnotesize,text=StAndrewsRed,xshift=-4pt,yshift=2pt] at (axis cs:\LSDTwoOpt,\LMeanTwoOpt) {Optimal (\LTwoOptwmt\%; \LTwoOpthon\%)};
+\node[anchor=south east,font=\footnotesize,text=StAndrewsBlue,yshift=2pt] at (axis cs:\LSDShortA,\LMeanShortA) {(\LShortWA\%; $\LShortHA$\%)};
+\node[anchor=south east,font=\footnotesize,text=StAndrewsBlue,yshift=2pt] at (axis cs:\LSDShortB,\LMeanShortB) {(\LShortWB\%; $\LShortHB$\%)};
+\node[anchor=west,font=\small,text=StAndrewsBurgundy,align=left] at (axis cs:.8,14.6)
+ {Short sales allowed:\\[3pt] weights beyond 100\%};
+\end{axis}\end{tikzpicture}

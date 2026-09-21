@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+\begin{axis}[frontierplot]
+\addplot[only marks,mark=*,mark size=2pt,StAndrewsMidGreen] coordinates {(\LSDWmt,\LMeanWmt)};
+\addplot[only marks,mark=*,mark size=2pt,StAndrewsOrange] coordinates {(\LSDHon,\LMeanHon)};
+\addplot[only marks,mark=*,mark size=2pt,StAndrewsRed] coordinates {(\LSDTwoMV,\LMeanTwoMV)};
+\node[anchor=south,font=\small,text=StAndrewsMidGreen,yshift=3pt] at (axis cs:\LSDWmt,\LMeanWmt) {Wal-Mart};
+\node[anchor=east,font=\small,text=StAndrewsOrange,xshift=-4pt] at (axis cs:\LSDHon,\LMeanHon) {Honeywell};
+\node[anchor=west,font=\small,text=StAndrewsRed,xshift=4pt] at (axis cs:\LSDTwoMV,\LMeanTwoMV) {A};
+\draw[-{Stealth[length=6pt]},StAndrewsBlue,thick] (axis cs:13,14.5) -- (axis cs:13,16.6);
+\draw[-{Stealth[length=6pt]},StAndrewsRed,thick] (axis cs:13,14.0) -- (axis cs:6,14.0);
+\node[anchor=east,font=\small,text=StAndrewsBlue,xshift=-4pt] at (axis cs:13,15.8) {North: more return};
+\node[anchor=south,font=\small,text=StAndrewsRed,yshift=2pt] at (axis cs:9.5,14.0) {West: less risk};
+\end{axis}\end{tikzpicture}

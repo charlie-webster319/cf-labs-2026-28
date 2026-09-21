@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+\begin{axis}[lectureplot,xmin=0,xmax=20,ymin=-300,ymax=600,
+xtick={0,5,10,15,20},ytick={-200,0,200,400,600},xlabel={Discount rate (\%)},ylabel={NPV (£000)}]
+\addplot[black!35,thin] coordinates {(0,0)(20,0)};
+\addplot[StAndrewsBlue] table[x=rate,y=office]{generated/ranking.dat};
+\addplot[StAndrewsBurgundy,dashed] table[x=rate,y=sell]{generated/ranking.dat};
+\addplot[only marks,mark=*,mark size=2pt,black] table[x=rate,y=npv]{generated/ranking_cross.dat};
+\node[font=\small,anchor=south west,text=StAndrewsBlue] at (axis cs:2,470) {1: let, then sell};
+\node[font=\small,anchor=south west,text=StAndrewsBurgundy] at (axis cs:12,110) {2: sell at date 1};
+\end{axis}\end{tikzpicture}

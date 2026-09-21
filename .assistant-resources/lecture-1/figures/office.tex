@@ -1,0 +1,9 @@
+\begin{tikzpicture}
+\begin{axis}[lectureplot,xmin=0,xmax=25,ymin=-400,ymax=600,
+xtick={0,5,10,15,20,25},ytick={-400,-200,0,200,400,600},xlabel={Discount rate (\%)},ylabel={NPV (£000)}]
+\addplot[black!35,thin] coordinates {(0,0)(25,0)};
+\addplot[StAndrewsBlue] table[x=rate,y=office]{generated/office.dat};
+\addplot[only marks,mark=*,mark size=2pt,StAndrewsBurgundy] table[x=rate,y=npv]{generated/office_point.dat};
+\node[font=\small,anchor=south west,text=StAndrewsBlue] at (axis cs:12,200) {Office development};
+\node[font=\footnotesize,anchor=south west] at (axis cs:9.8,65) {9\% required return};
+\end{axis}\end{tikzpicture}

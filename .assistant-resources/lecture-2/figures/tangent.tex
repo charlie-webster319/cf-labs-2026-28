@@ -1,0 +1,20 @@
+\begin{tikzpicture}
+\begin{axis}[lectureplot,width=10.9cm,height=5cm,xmin=0,xmax=35,ymin=3,ymax=24,
+xtick={0,5,10,15,20,25,30,35},ytick={4,9,14,19,24},
+xticklabel={\pgfmathprintnumber{\tick}\%},yticklabel={\pgfmathprintnumber{\tick}\%},
+xlabel={Standard deviation},ylabel={Portfolio return}]
+\addplot[StAndrewsOrange,dashed] table[x expr=100*\thisrow{sd},y expr=100*\thisrow{ret}]{generated/cal_b.dat};
+\addplot[StAndrewsRed,thick] table[x expr=100*\thisrow{sd},y expr=100*\thisrow{ret}]{generated/cml.dat};
+\addplot[StAndrewsMidGreen,thick] table[x expr=100*\thisrow{sd},y expr=100*\thisrow{ret}]{generated/five_efficient.dat};
+\addplot[StAndrewsBlue,thick] table[x expr=100*\thisrow{sd},y expr=100*\thisrow{ret}]{generated/five_lower.dat};
+\addplot[only marks,mark=*,mark size=2pt,StAndrewsOrange] coordinates {(0,\LRiskFreePercent)};
+\addplot[only marks,mark=*,mark size=2pt,StAndrewsRed] coordinates {(\LSDTan,\LMeanTan)};
+\addplot[only marks,mark=*,mark size=2pt,StAndrewsRed] coordinates {(\LSDCMLTop,\LMeanCMLTop)};
+\addplot[only marks,mark=*,mark size=2pt,StAndrewsBlue] coordinates {(\LSDPortB,\LMeanPortB)};
+\node[anchor=north west,font=\small,text=StAndrewsBlue,xshift=2pt] at (axis cs:\LSDPortB,\LMeanPortB) {B};
+\node[anchor=south east,font=\small,text=StAndrewsRed,xshift=-4pt,yshift=3pt] at (axis cs:\LSDTan,\LMeanTan) {A: tangent portfolio};
+\node[anchor=south west,font=\footnotesize,text=StAndrewsRed,xshift=-8pt,yshift=3pt] at (axis cs:\LSDCMLTop,\LMeanCMLTop) {150\% in the risky portfolio};
+\node[anchor=north west,font=\small,text=StAndrewsRed,xshift=3pt] at (axis cs:20.4,18.3) {CML};
+\draw[-{Stealth[length=5pt]},StAndrewsOrange] (axis cs:19.6,5.4) -- (axis cs:.6,4.15);
+\node[anchor=west,font=\footnotesize,text=StAndrewsOrange] at (axis cs:19.9,5.4) {100\% risk-free investment (\LRiskFreePercent\%)};
+\end{axis}\end{tikzpicture}

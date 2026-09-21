@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+\begin{axis}[lectureplot,width=9.6cm,height=4.9cm,xmin=0,xmax=31,ymin=0,ymax=.125,
+xtick={1,5,10,15,20,25,30},ytick={\LDivFloor,\LDivVar},yticklabels={$\overline{\text{cov}}$,$\overline{\text{var}}$},
+xlabel={Number of securities},ylabel={Variance of the portfolio's return}]
+\addplot[black!45,dashed,thin] coordinates {(0,\LDivFloor)(31,\LDivFloor)};
+\addplot[StAndrewsBurgundy,thick] table[x=n,y=variance]{generated/diversification.dat};
+\draw[-{Stealth[length=5pt]},black!70] (axis cs:5.5,.1) -- (axis cs:2.3,.076);
+\node[anchor=west,font=\footnotesize,align=left] at (axis cs:5.8,.1)
+ {Diversifiable, unique\\ or unsystematic risk};
+\draw[-{Stealth[length=5pt]},black!70] (axis cs:13,.035) -- (axis cs:13,.0175);
+\node[anchor=south,font=\footnotesize,align=center] at (axis cs:13,.0375)
+ {Portfolio, market or systematic risk};
+\end{axis}\end{tikzpicture}

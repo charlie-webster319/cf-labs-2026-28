@@ -1,0 +1,8 @@
+\begin{tikzpicture}[x=2.6cm,y=1cm,>=Stealth]
+\draw[->,black!60] (-.2,0)--(4.35,0);
+\foreach \x/\t in {0/0,1/1,2/2,3/3,4/{\cdots}}{
+\draw (\x,.07)--(\x,-.07);\node[below=5pt] at (\x,0) {$\t$};}
+\foreach \x in {2,3}{\node[above=12pt,text=StAndrewsBlue] at (\x,0) {£5,000};}
+\node[above=12pt,text=StAndrewsBurgundy] at (1,0) {$PV_1=C/r$};
+\draw[->,StAndrewsBurgundy] (1,-.85)--(0,-.85) node[midway,below=5pt] {$\div\,1.12$};
+\end{tikzpicture}

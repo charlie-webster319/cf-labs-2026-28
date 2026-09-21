@@ -1,0 +1,40 @@
+% Coordinate map: TeX pt, origin lower left; fixed canvas x=0..390, y=0..165.
+% Edit nodes/routes here. The build script reads these commands and audit metadata.
+\begin{tikzpicture}[diagram]
+% audit-node {"id":"questions","kind":"box","text":"Financial decisions","parent":null,"padding":4,"outline_width":0.6}
+\node[diagram blue,minimum width=124pt,minimum height=24pt] (questions) at (195,145) {Financial decisions};
+% audit-node {"id":"investment-q","kind":"box","text":"What to do with the money","parent":null,"padding":4,"outline_width":0.6}
+\node[diagram blue,minimum width=116pt,minimum height=34pt] (investment-q) at (64,91) {What to do with\\the money};
+% audit-node {"id":"financing-q","kind":"box","text":"Where to get the money","parent":null,"padding":4,"outline_width":0.6}
+\node[diagram blue,minimum width=116pt,minimum height=34pt] (financing-q) at (195,91) {Where to get\\the money};
+% audit-node {"id":"liquidity-q","kind":"box","text":"How to stay liquid","parent":null,"padding":4,"outline_width":0.6}
+\node[diagram blue,minimum width=116pt,minimum height=34pt] (liquidity-q) at (326,91) {How to stay\\liquid};
+% audit-node {"id":"investment","kind":"box","text":"Investment Capital budgeting","parent":null,"padding":4,"outline_width":0.6}
+\node[diagram box,minimum width=116pt,minimum height=36pt] (investment) at (64,27) {Investment\\Capital budgeting};
+% audit-node {"id":"financing","kind":"box","text":"Financing Capital structure","parent":null,"padding":4,"outline_width":0.6}
+\node[diagram box,minimum width=116pt,minimum height=36pt] (financing) at (195,27) {Financing\\Capital structure};
+% audit-node {"id":"liquidity","kind":"box","text":"Liquidity Working capital","parent":null,"padding":4,"outline_width":0.6}
+\node[diagram box,minimum width=116pt,minimum height=36pt] (liquidity) at (326,27) {Liquidity\\Working capital};
+% audit-route {"id":"q-invest","source":"questions","target":"investment-q","arrow":"target","shared_junctions":[],"outline_width":0.8,"arrow_length":4,"arrow_width":4}
+\draw[diagram forward] (155,130) -- (64,130) -- (64,111);
+% audit-route {"id":"q-finance","source":"questions","target":"financing-q","arrow":"target","shared_junctions":[],"outline_width":0.8,"arrow_length":4,"arrow_width":4}
+\draw[diagram forward] (195,130) -- (195,111);
+% audit-route {"id":"q-liquid","source":"questions","target":"liquidity-q","arrow":"target","shared_junctions":[],"outline_width":0.8,"arrow_length":4,"arrow_width":4}
+\draw[diagram forward] (235,130) -- (326,130) -- (326,111);
+% audit-route {"id":"investment-link","source":"investment-q","target":"investment","arrow":"target","shared_junctions":[],"outline_width":0.8,"arrow_length":4,"arrow_width":4}
+\draw[diagram forward] (64,71) -- (64,48);
+% audit-route {"id":"financing-link","source":"financing-q","target":"financing","arrow":"target","shared_junctions":[],"outline_width":0.8,"arrow_length":4,"arrow_width":4}
+\draw[diagram forward] (195,71) -- (195,48);
+% audit-route {"id":"liquidity-link","source":"liquidity-q","target":"liquidity","arrow":"target","shared_junctions":[],"outline_width":0.8,"arrow_length":4,"arrow_width":4}
+\draw[diagram forward] (326,71) -- (326,48);
+\DiagramMeasure{financial_management_decisions}{questions}{box}
+\DiagramMeasure{financial_management_decisions}{investment-q}{box}
+\DiagramMeasure{financial_management_decisions}{financing-q}{box}
+\DiagramMeasure{financial_management_decisions}{liquidity-q}{box}
+\DiagramMeasure{financial_management_decisions}{investment}{box}
+\DiagramMeasure{financial_management_decisions}{financing}{box}
+\DiagramMeasure{financial_management_decisions}{liquidity}{box}
+\pgfresetboundingbox
+\path[use as bounding box] (0,0) rectangle (390,165);
+\end{tikzpicture}
+

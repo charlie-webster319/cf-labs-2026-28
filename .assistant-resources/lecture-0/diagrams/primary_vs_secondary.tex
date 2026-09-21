@@ -1,0 +1,47 @@
+% Coordinate map: TeX pt, origin lower left; fixed canvas x=0..390, y=0..165.
+% Edit nodes/routes here. The build script reads these commands and audit metadata.
+\begin{tikzpicture}[diagram]
+% audit-node {"id":"primary","kind":"label","text":"Primary market: issuance","parent":null,"padding":0,"outline_width":0}
+\node[diagram label,minimum width=160pt,minimum height=14pt,anchor=center] (primary) at (112,151) {Primary market: issuance};
+% audit-node {"id":"secondary","kind":"label","text":"Secondary market: resale","parent":null,"padding":0,"outline_width":0}
+\node[diagram label,minimum width=180pt,minimum height=14pt,anchor=center] (secondary) at (287,151) {Secondary market: resale};
+% audit-node {"id":"firm","kind":"box","text":"Issuing firm","parent":null,"padding":4,"outline_width":0.6}
+\node[diagram blue,minimum width=64pt,minimum height=46pt] (firm) at (40,88) {Issuing\\firm};
+% audit-node {"id":"investor1","kind":"box","text":"Investor 1","parent":null,"padding":4,"outline_width":0.6}
+\node[diagram blue,minimum width=68pt,minimum height=46pt] (investor1) at (195,88) {Investor 1};
+% audit-node {"id":"investor2","kind":"box","text":"Investor 2","parent":null,"padding":4,"outline_width":0.6}
+\node[diagram burgundy,minimum width=68pt,minimum height=46pt] (investor2) at (351,88) {Investor 2};
+% audit-node {"id":"new-securities","kind":"label","text":"New securities","parent":null,"padding":0,"outline_width":0}
+\node[diagram label,minimum width=82pt,minimum height=13pt,anchor=center] (new-securities) at (116,119) {New securities};
+% audit-node {"id":"resold-securities","kind":"label","text":"Existing securities","parent":null,"padding":0,"outline_width":0}
+\node[diagram label,minimum width=80pt,minimum height=13pt,anchor=center] (resold-securities) at (273,119) {Existing securities};
+% audit-node {"id":"cash-primary","kind":"label","text":"Cash to firm","parent":null,"padding":0,"outline_width":0}
+\node[diagram label,minimum width=70pt,minimum height=13pt,anchor=center] (cash-primary) at (116,58) {Cash to firm};
+% audit-node {"id":"cash-secondary","kind":"label","text":"Cash to seller","parent":null,"padding":0,"outline_width":0}
+\node[diagram label,minimum width=78pt,minimum height=13pt,anchor=center] (cash-secondary) at (273,58) {Cash to seller};
+% audit-node {"id":"primary-note","kind":"label","text":"IPO or seasoned offering Firm raises new funds","parent":null,"padding":0,"outline_width":0}
+\node[diagram label,minimum width=182pt,minimum height=25pt,anchor=center] (primary-note) at (105,25) {IPO or seasoned offering\\Firm raises new funds};
+% audit-node {"id":"secondary-note","kind":"label","text":"Securities change hands Firm receives no new funds","parent":null,"padding":0,"outline_width":0}
+\node[diagram label,minimum width=182pt,minimum height=25pt,anchor=center] (secondary-note) at (290,25) {Securities change hands\\Firm receives no new funds};
+% audit-route {"id":"issue","source":"firm","target":"investor1","arrow":"target","shared_junctions":[],"outline_width":0.8,"arrow_length":4,"arrow_width":4}
+\draw[diagram forward] (75,101) -- (158,101);
+% audit-route {"id":"issue-cash","source":"investor1","target":"firm","arrow":"target","shared_junctions":[],"outline_width":0.8,"arrow_length":4,"arrow_width":4}
+\draw[diagram cash] (158,75) -- (75,75);
+% audit-route {"id":"resale","source":"investor1","target":"investor2","arrow":"target","shared_junctions":[],"outline_width":0.8,"arrow_length":4,"arrow_width":4}
+\draw[diagram forward] (232,101) -- (314,101);
+% audit-route {"id":"resale-cash","source":"investor2","target":"investor1","arrow":"target","shared_junctions":[],"outline_width":0.8,"arrow_length":4,"arrow_width":4}
+\draw[diagram cash] (314,75) -- (232,75);
+\DiagramMeasure{primary_vs_secondary}{primary}{label}
+\DiagramMeasure{primary_vs_secondary}{secondary}{label}
+\DiagramMeasure{primary_vs_secondary}{firm}{box}
+\DiagramMeasure{primary_vs_secondary}{investor1}{box}
+\DiagramMeasure{primary_vs_secondary}{investor2}{box}
+\DiagramMeasure{primary_vs_secondary}{new-securities}{label}
+\DiagramMeasure{primary_vs_secondary}{resold-securities}{label}
+\DiagramMeasure{primary_vs_secondary}{cash-primary}{label}
+\DiagramMeasure{primary_vs_secondary}{cash-secondary}{label}
+\DiagramMeasure{primary_vs_secondary}{primary-note}{label}
+\DiagramMeasure{primary_vs_secondary}{secondary-note}{label}
+\pgfresetboundingbox
+\path[use as bounding box] (0,0) rectangle (390,165);
+\end{tikzpicture}

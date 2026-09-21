@@ -1,0 +1,22 @@
+% The four limit orders placed around today's price: two fire when the price rises, two
+% when it falls. Replaces the six bullets that described the same four orders.
+\begin{tikzpicture}[font=\footnotesize,>=stealth,
+  order/.style={rounded corners=2pt,inner sep=6pt,text width=4.0cm,align=left}]
+\draw[->,black!55,line width=0.8pt] (0,-2.35) -- (0,2.35);
+\node[anchor=south,black!55] at (0,2.45) {Price};
+\node[anchor=south] at (2.5,2.45) {\textbf{Take-profit}};
+\node[anchor=south] at (7.6,2.45) {\textbf{Stop-loss}};
+
+\node[order,fill=StAndrewsMidGreen!12,anchor=west] at (0.5,1.25)
+  {A \textbf{limit-sell} order: selling when prices rise above a stipulated price};
+\node[order,fill=StAndrewsMidGreen!12,anchor=west] at (5.6,1.25)
+  {A \textbf{stop-buy} order: stop buying when prices rise above a limit};
+
+\draw[StAndrewsBlue,line width=1pt,dash pattern=on 3pt off 2pt] (0,0) -- (10.0,0);
+\node[anchor=south east,StAndrewsBlue,inner sep=2pt] at (10.0,0.03) {\textbf{Current price}};
+
+\node[order,fill=StAndrewsRed!10,anchor=west] at (0.5,-1.35)
+  {A \textbf{limit-buy} order: buying shares when prices fall below a stipulated price};
+\node[order,fill=StAndrewsRed!10,anchor=west] at (5.6,-1.35)
+  {A \textbf{stop-loss} order: stop selling when prices fall below a stipulated level};
+\end{tikzpicture}

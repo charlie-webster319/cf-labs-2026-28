@@ -1,0 +1,22 @@
+% Coordinate map: TeX pt, origin lower left; fixed canvas x=0..390, y=0..165.
+% Edit nodes/routes here. The build script reads these commands and audit metadata.
+\begin{tikzpicture}[diagram]
+% audit-node {"id":"budgeting","kind":"box","text":"Capital budgeting Investment choices","parent":null,"padding":4,"outline_width":0.6}
+\node[diagram blue,minimum width=132pt,minimum height=40pt] (budgeting) at (195,132) {Capital budgeting\\Investment choices};
+% audit-node {"id":"structure","kind":"box","text":"Capital structure Funding choices","parent":null,"padding":4,"outline_width":0.6}
+\node[diagram blue,minimum width=136pt,minimum height=40pt] (structure) at (81,35) {Capital structure\\Funding choices};
+% audit-node {"id":"working","kind":"box","text":"Working capital Liquidity choices","parent":null,"padding":4,"outline_width":0.6}
+\node[diagram blue,minimum width=136pt,minimum height=40pt] (working) at (309,35) {Working capital\\Liquidity choices};
+% audit-route {"id":"budget-structure","source":"budgeting","target":"structure","arrow":"both","shared_junctions":[],"outline_width":0.8,"arrow_length":4,"arrow_width":4}
+\draw[diagram both] (160,109) -- (102,58);
+% audit-route {"id":"budget-working","source":"budgeting","target":"working","arrow":"both","shared_junctions":[],"outline_width":0.8,"arrow_length":4,"arrow_width":4}
+\draw[diagram both] (230,109) -- (288,58);
+% audit-route {"id":"structure-working","source":"structure","target":"working","arrow":"both","shared_junctions":[],"outline_width":0.8,"arrow_length":4,"arrow_width":4}
+\draw[diagram both] (152,35) -- (238,35);
+\DiagramMeasure{interlocking_relationship}{budgeting}{box}
+\DiagramMeasure{interlocking_relationship}{structure}{box}
+\DiagramMeasure{interlocking_relationship}{working}{box}
+\pgfresetboundingbox
+\path[use as bounding box] (0,0) rectangle (390,165);
+\end{tikzpicture}
+

@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+\begin{axis}[frontierplot,ymin=11.6]
+\addplot[StAndrewsBlue!35,thick] table[x expr=100*\thisrow{sd},y expr=100*\thisrow{ret}]{generated/corr_minus.dat};
+\addplot[StAndrewsBlue,thick] table[x expr=100*\thisrow{sd},y expr=100*\thisrow{ret}]{generated/corr_mid.dat};
+\addplot[StAndrewsOrange,thick] table[x expr=100*\thisrow{sd},y expr=100*\thisrow{ret}]{generated/two_stock.dat};
+\addplot[StAndrewsRed,thick] table[x expr=100*\thisrow{sd},y expr=100*\thisrow{ret}]{generated/corr_plus.dat};
+\addplot[only marks,mark=*,mark size=2pt,StAndrewsMidGreen] coordinates {(\LSDWmt,\LMeanWmt)};
+\addplot[only marks,mark=*,mark size=2pt,StAndrewsOrange] coordinates {(\LSDHon,\LMeanHon)};
+\node[anchor=south east,font=\small,text=StAndrewsMidGreen,yshift=2pt] at (axis cs:\LSDWmt,\LMeanWmt) {Wal-Mart};
+\node[anchor=north west,font=\small,text=StAndrewsOrange,xshift=2pt] at (axis cs:\LSDHon,\LMeanHon) {Honeywell};
+\node[anchor=north west,font=\footnotesize,align=left,inner sep=1pt] at (axis cs:.8,14.3)
+ {\textcolor{StAndrewsBlue!60}{$\rho=-1$\quad risk removed completely}\\[3pt]
+  \textcolor{StAndrewsBlue}{$\rho=-0.7$}\\[3pt]
+  \textcolor{StAndrewsOrange}{$\rho=\LTwoCorr$\quad (actual)}\\[3pt]
+  \textcolor{StAndrewsRed}{$\rho=+1$\quad no diversification}};
+\end{axis}\end{tikzpicture}

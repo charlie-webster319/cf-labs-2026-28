@@ -1,0 +1,15 @@
+% A five-year and a thirty-year bond, both 10% coupon, priced across the required
+% return. The annotations are the price change over each five-point step.
+\begin{tikzpicture}
+\begin{axis}[sensitivityplot]
+\addplot[StAndrewsMidGreen] table[x=rate,y=price]{generated/rate_thirty_year.dat};
+\addplot[StAndrewsRed]      table[x=rate,y=price]{generated/rate_five_year.dat};
+\node[anchor=west,font=\footnotesize,text=StAndrewsRed]      at (axis cs:25.4,60) {5-year bond};
+\node[anchor=west,font=\footnotesize,text=StAndrewsMidGreen] at (axis cs:25.4,40) {30-year bond};
+\node[draw=StAndrewsRed,line width=0.6pt,anchor=south west,align=left,font=\footnotesize,
+      inner sep=4pt] at (axis cs:0.6,12) {Par: \$100\\Coupon rate: 10\%};
+\node[anchor=north west,align=center,font=\footnotesize,text=StAndrewsMidGreen]
+      at (axis cs:14,198) {\underline{30-year}\\\LThirtyA\%\\\LThirtyB\%\\\LThirtyC\%\\\LThirtyD\%};
+\node[anchor=north west,align=center,font=\footnotesize,text=StAndrewsRed]
+      at (axis cs:21,198) {\underline{5-year}\\\LFiveYrA\%\\\LFiveYrB\%\\\LFiveYrC\%\\\LFiveYrD\%};
+\end{axis}\end{tikzpicture}

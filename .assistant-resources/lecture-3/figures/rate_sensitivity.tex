@@ -1,0 +1,16 @@
+% Two ways a bond price becomes more sensitive to interest rates. The arrows draw the
+% two sentences the slide used to spell out twice in words.
+\begin{tikzpicture}[font=\footnotesize,>=stealth]
+\node[anchor=south,black!55] at (3.2,2.6) {\textbf{less sensitive}};
+\node[anchor=south,black!55] at (9.8,2.6) {\textbf{more sensitive}};
+
+\node[anchor=east] at (2.6,2.0) {\textbf{Maturity}};
+\draw[->,StAndrewsBlue,line width=1.2pt] (2.9,2.0) -- (10.1,2.0);
+\node[anchor=north,inner sep=4pt] at (3.2,1.92) {shorter};
+\node[anchor=north,inner sep=4pt] at (9.8,1.92) {longer};
+
+\node[anchor=east] at (2.6,0.5) {\textbf{Coupon rate}};
+\draw[->,StAndrewsMidGreen,line width=1.2pt] (2.9,0.5) -- (10.1,0.5);
+\node[anchor=north,inner sep=4pt] at (3.2,0.42) {higher};
+\node[anchor=north,inner sep=4pt] at (9.8,0.42) {lower};
+\end{tikzpicture}

@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+\begin{axis}[lectureplot,xmin=5,xmax=30,ymin=-12,ymax=42,
+xtick={5,10,15,20,25,30},ytick={-10,0,10,20,30,40},xlabel={Discount rate (\%)},ylabel={NPV (£000)}]
+\addplot[black!35,thin] coordinates {(5,0)(30,0)};
+\addplot[StAndrewsBlue] table[x=rate,y=self]{generated/maintenance.dat};
+\addplot[StAndrewsBurgundy,dashed] table[x=rate,y=contract]{generated/maintenance.dat};
+\addplot[only marks,mark=*,mark size=2pt,black] coordinates {(12,5)};
+\node[font=\small,anchor=south west,text=StAndrewsBlue] at (axis cs:18,8) {Self-maintenance};
+\node[font=\small,anchor=south west,text=StAndrewsBurgundy] at (axis cs:9,28) {Maintenance contract};
+\end{axis}\end{tikzpicture}

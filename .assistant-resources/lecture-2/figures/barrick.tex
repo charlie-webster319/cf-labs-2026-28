@@ -1,0 +1,21 @@
+\begin{tikzpicture}
+\begin{axis}[lectureplot,width=11cm,height=5.1cm,xmin=.62,xmax=5.5,ymin=-27,ymax=27,
+xtick={1,2,3,4,5},xticklabels={Jan 2015,Feb 2015,Mar 2015,Apr 2015,May 2015},
+ytick={-20,-10,0,10,20},yticklabel={\pgfmathprintnumber{\tick}\%},
+xlabel={Month},ylabel={Monthly return}]
+\addplot[black!35,thin] coordinates {(.62,0)(5.5,0)};
+\addplot[StAndrewsMidGreen,thick] coordinates {(.62,\LBarrickMean)(5.5,\LBarrickMean)};
+\addplot[StAndrewsRed,dashed,thin] coordinates {(1,\LBarrickMean)(1,18.87)};
+\addplot[StAndrewsRed,dashed,thin] coordinates {(3,\LBarrickMean)(3,-15.83)};
+\addplot[StAndrewsBlue,mark=*,mark size=1.7pt,smooth] table[x=t,y=ret]{generated/barrick.dat};
+\node[anchor=south,font=\footnotesize,text=StAndrewsMidGreen,yshift=3pt] at (axis cs:2.8,\LBarrickMean) {Mean $=\LBarrickMean\%$};
+\draw[-{Stealth[length=4pt]},StAndrewsRed] (axis cs:1.32,22.5) -- (axis cs:1.04,12.5);
+\node[anchor=west,font=\footnotesize,text=StAndrewsRed] at (axis cs:1.37,23.5) {Deviation $=0.189-0.031$};
+\draw[-{Stealth[length=4pt]},StAndrewsRed] (axis cs:3.5,-21) -- (axis cs:3.04,-7.5);
+\node[anchor=east,font=\footnotesize,text=StAndrewsRed] at (axis cs:5.45,-23) {Deviation $=-0.158-0.031$};
+\node[anchor=south,font=\footnotesize] at (axis cs:1,19.4) {18.9\%};
+\node[anchor=north east,font=\footnotesize,xshift=-3pt,yshift=-3pt] at (axis cs:2,2.3) {2.3\%};
+\node[anchor=north,font=\footnotesize,yshift=-3pt] at (axis cs:3,-15.83) {$-15.8\%$};
+\node[anchor=south,font=\footnotesize] at (axis cs:4,19.3) {18.8\%};
+\node[anchor=north,font=\footnotesize,yshift=-4pt] at (axis cs:5,-8.53) {$-8.5\%$};
+\end{axis}\end{tikzpicture}

@@ -1,0 +1,9 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\draw[black!40,line width=1pt] (0,0)--(10,0);
+\draw[StAndrewsBlue,line width=2pt] (0,0)--(\InterpRatePosition,0);
+\foreach \x in {0,\InterpRatePosition,10}{\draw[black!65] (\x,-.07)--(\x,.07);}
+\node[below=7pt,anchor=north west] at (0,0) {10\%};
+\node[below=7pt,anchor=north east] at (10,0) {10.5\%};
+\node[above=8pt,anchor=south east,text=StAndrewsBlue] at (\InterpRatePosition,0) {Estimated IRR: \InterpRateFour\%};
+\node[above=8pt,anchor=south west,text=StAndrewsBlue] at (0,0) {\InterpFractionPercent\% of the interval};
+\end{tikzpicture}

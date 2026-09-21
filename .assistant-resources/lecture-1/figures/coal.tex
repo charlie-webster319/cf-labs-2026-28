@@ -1,0 +1,9 @@
+\begin{tikzpicture}
+\begin{axis}[lectureplot,xmin=0,xmax=50,ymin=-45,ymax=15,
+xtick={0,10,20,30,40,50},ytick={-40,-20,0,10},xlabel={Discount rate (\%)},ylabel={NPV (\$ million)}]
+\addplot[black!35,thin] coordinates {(0,0)(50,0)};
+\addplot[StAndrewsBlue] table[x=rate,y=coal]{generated/coal.dat};
+\addplot[only marks,mark=*,mark size=2pt,StAndrewsBurgundy] table[x=rate,y=npv]{generated/coal_point.dat};
+\addplot[only marks,mark=*,mark size=2pt,black] table[x=rate,y=npv]{generated/coal_roots.dat};
+\node[font=\small,anchor=south west,text=StAndrewsBlue] at (axis cs:29,6) {King Coal};
+\end{axis}\end{tikzpicture}

@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+\begin{axis}[lectureplot,width=10.7cm,height=3.7cm,xmin=0,xmax=105,ymin=.6,ymax=4.55,
+xtick={0,25,50,75,100},ytick={1,2,3,4},
+yticklabels={Profitability index,Payback,IRR/hurdle rate,NPV},xlabel={Per cent of firms},
+axis y line=left,y axis line style={draw=none},ytick style={draw=none}]
+\addplot[only marks,mark=*,mark size=2.3pt,StAndrewsBlue] table[x=large,y=y]{generated/survey.dat};
+\addplot[only marks,mark=square*,mark size=2.2pt,StAndrewsBurgundy] table[x=small,y=y]{generated/survey.dat};
+\node[font=\footnotesize,text=StAndrewsBlue,anchor=south] at (axis cs:80,4.35) {Large firms};
+\node[font=\footnotesize,text=StAndrewsBurgundy,anchor=south] at (axis cs:40,4.35) {Small firms};
+\end{axis}\end{tikzpicture}

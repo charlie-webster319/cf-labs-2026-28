@@ -36,6 +36,8 @@ After checking your work has synced, stop the Codespace using **Codespaces: Stop
 
 ## Getting help
 
+The [lecture resources](.assistant-resources/README.md) include PDFs for Lectures 0–3 and the available key concepts and terms decks, alongside their editable sources. Check Moodle for later updates.
+
 Start with the notebook explanations and ask your lecturer when you get stuck. **GitHub Copilot is optional**: if you have access, open its chat and ask for an explanation of a small piece of code or an error message.
 
 Try: “Explain this error and give me one hint. Do not solve the exercise for me.” Predict what the code should do, inspect any suggested change, run it, and explain the result in your own words. You can complete every exercise without Copilot.

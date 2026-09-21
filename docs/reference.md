@@ -63,6 +63,22 @@ Open the assistant in the repository root. Accept its normal project-trust/MCP p
 
 Keep the initial MCP list to this one server. [Context7](https://github.com/upstash/context7) is an optional later addition for library documentation, especially when matching examples to package versions; its anonymous service has rate limits. Filesystem and Git servers add little to these coding assistants' existing tools. GitHub, browser and live market-data servers are unnecessary for the supplied labs and add authentication or extra moving parts.
 
+## Optional teaching skills
+
+All three assistants have the same three repository skills:
+
+| Skill | Use it for |
+| --- | --- |
+| `cf-explain-finance` | An explanation grounded in the lecture slides, with an example when useful |
+| `cf-notebook-help` | Understanding a cell, debugging an error or making a small requested correction |
+| `cf-revision-quiz` | Practice questions and feedback, normally one question at a time |
+
+Ask naturally, such as “Explain why bond prices fall when yields rise” or “Quiz me on discounting”. The assistant can select a relevant skill automatically. To choose explicitly, use `/cf-explain-finance`, `/cf-notebook-help` or `/cf-revision-quiz` in Copilot or Claude Code; in Codex use `$cf-explain-finance`, `$cf-notebook-help` or `$cf-revision-quiz`. Skills guide the assistant; they do not provide an account or replace checking its answers. No AI tool is required for the labs.
+
+Maintainers: edit the originals under `.agents/skills/`, which Codex and Copilot discover. Run `uv run --no-sync python .utilities/sync_skills.py` to update the committed copies under `.claude/skills/` for Claude Code. Commit both sets. The instructor CI checks that the copies match, so students need no skill installation or symlink setup. The helper touches only these three `SKILL.md` files; resources stay in `.assistant-resources/`. There is no need for another copy in `.github/skills/`.
+
+If newly added skills are not listed, start a new assistant session; in VS Code, reload the window if needed. Existing student repositories must receive these files before the skills are available there.
+
 ## Further reading
 
 - [Creating a Codespace — GitHub](https://docs.github.com/en/codespaces/developing-in-a-codespace/creating-a-codespace-for-a-repository)

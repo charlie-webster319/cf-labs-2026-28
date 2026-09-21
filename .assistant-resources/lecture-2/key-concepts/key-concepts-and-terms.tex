@@ -1,0 +1,497 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+\usetheme{StAndrews}
+\metroset{sectionpage=none}
+\coursename{EC3318 / MN3101 Corporate Finance}
+\lectureremail{}
+\title{Lecture 2:\\Key Concepts and Terms}
+\author{Dr Christian Engels}
+\subtitle{Understand the idea. Work through an example.}
+\titlelogo{\includegraphics[height=1.15cm]{logos/01-standard-black-text.png}}
+\hypersetup{pdfsubject={An accessible reference for Lecture 2},pdfpagemode=UseNone}
+\pdfstringdefDisableCommands{\def\translate#1{#1}}
+\setbeamercolor{alerted text}{fg=StAndrewsBurgundy}
+% Market figures come from the lecture's own pipeline, never typed by hand.
+\input{../generated/numbers.tex}
+\newcommand{\idea}[1]{\textbf{The idea:} #1\par\smallskip}
+\newcommand{\inpractice}[1]{\par\smallskip\textbf{What this means:} #1}
+\newcommand{\remember}[1]{\par\smallskip\alert{Remember:} #1}
+\newcommand{\reference}[1]{\par\smallskip{\small\hyperlink{#1}{Formula and notation reference $\rightarrow$}}}
+% Use the text pound glyph in equations as well as ordinary text.
+\renewcommand{\pounds}{\ifmmode\text{\textsterling}\else\textsterling\fi}
+\begin{document}
+\begin{frame}[plain]\titlepage\end{frame}
+
+\begin{frame}{Start with the question, then the calculation}
+\begin{enumerate}
+\item \textbf{Understand the idea.} What is this number trying to measure?
+\item \textbf{Follow the example.} Small numbers, one step at a time, with a calculator.
+\item \textbf{Explain the answer.} What does it tell an investor or a manager?
+\end{enumerate}
+\par\smallskip
+Lecture 2 uses more symbols than Lecture 1. The first part here uses everyday language and small round numbers. The calculation reference at the back translates the symbols into words and repeats each formula with a short example.
+\remember{This is a learning sequence, not a change to assessment requirements. Use the full lecture, the practice questions and the required reading too.}
+\end{frame}
+
+\section{Understanding the Ideas}
+\begin{frame}{A return is a percentage of what you put in}
+\idea{A \textbf{return} states the gain as a share of the amount invested, so investments of different sizes can be compared.}
+\textbf{Example: you pay \pounds100 for a share and later sell it for \pounds110}
+\begin{enumerate}
+\item Money return: $\pounds110-\pounds100=\pounds10$.
+\item Percentage return: $10\div100=0.10$, which is 10\%.
+\end{enumerate}
+\inpractice{A \pounds10 gain on \pounds100 and a \pounds100 gain on \pounds1,000 are the same 10\% return.}
+\remember{Dividends and any other payments received count towards the return, not only the change in price.}
+\reference{returns}
+\end{frame}
+
+\begin{frame}{Returns over different periods need a common yardstick}
+\idea{A six-month return and a one-year return cannot be compared directly. Convert both to an \textbf{annual equivalent rate (AER)}, as for these two investments, each turning \pounds100 into \pounds110.}
+\par\smallskip\begingroup\centering\small
+\begin{tabular}{llll}
+\toprule Investment & Held for & Return over that period & Annual equivalent\\\midrule
+A & 6 months & 10\% & $1.10\times1.10-1=21\%$\\
+B & 1 year & 10\% & 10\%\\\bottomrule
+\end{tabular}
+\par\endgroup\smallskip
+\inpractice{A's six months of growth happens twice in a year, so A wins even though both pay \pounds110.}
+\remember{Convert first, compare second: 300\% over twenty years is only about 7\% a year.}
+\reference{returns}
+\end{frame}
+
+\begin{frame}{Expected return: average the past, or weight the scenarios}
+\idea{The \textbf{expected return} is our single best estimate of next period's return. There are two usual routes to it.}
+\begin{enumerate}
+\item \textbf{From history:} add the returns that actually happened and divide by how many there are. Returns of 10\%, $-6\%$ and 8\% give $(10-6+8)\div3=4\%$.
+\item \textbf{From scenarios:} weight each possible return by its probability. A boom paying 30\% and a slump paying $-10\%$, equally likely, give $0.5\times30+0.5\times(-10)=10\%$.
+\end{enumerate}
+\inpractice{In the lecture, five months of Barrick Gold returns average \LBarrickMean\% a month. Five observations is a very short history to lean on.}
+\remember{The expected return is an average. It need not be a return you can actually receive in any single year: 10\% here is neither 30\% nor $-10\%$.}
+\reference{expected}
+\end{frame}
+
+\begin{frame}{Risk is the spread around the expected return}
+\idea{Two investments can share an expected return and still differ completely in how far the outcome can stray from it.}
+\par\smallskip\begingroup\centering
+\begin{tabular}{lrrr}
+\toprule & Boom (50\%) & Slump (50\%) & Expected return\\\midrule
+Share A & $+30\%$ & $-10\%$ & 10\%\\
+Deposit account & $+10\%$ & $+10\%$ & 10\%\\\bottomrule
+\end{tabular}
+\par\endgroup\smallskip
+\inpractice{Share A strays 20 percentage points either side of its expectation. The deposit account never strays at all. No investor would treat the two as the same.}
+\remember{Risk counts surprises in both directions. A return of $+30\%$ is exactly as far from the expectation as $-10\%$ is.}
+\end{frame}
+
+\begin{frame}{Variance averages the squared distances}
+\idea{\textbf{Variance} measures the spread: take each outcome's distance from the expected return, square it, then average the squares.}
+\textbf{Example: Share A, expected return 10\%}
+\begin{enumerate}
+\item Distances: $30-10=+20$ points and $-10-10=-20$ points.
+\item As decimals, squared: $0.20^2=0.04$ and $(-0.20)^2=0.04$.
+\item Average them: $0.5\times0.04+0.5\times0.04=0.04$.
+\end{enumerate}
+\inpractice{Squaring removes the signs, so surprises in both directions add to the measure, and large surprises count far more than small ones.}
+\remember{Variance is in squared units, which is why it looks so small. The lecture's monthly Barrick Gold variance is \LBarrickVar.}
+\reference{variance}
+\end{frame}
+
+\begin{frame}{Standard deviation puts risk back into percentage points}
+\idea{The \textbf{standard deviation} is the square root of the variance, which returns the measure to the units of the return itself.}
+\textbf{Example: Share A again}
+\begin{enumerate}
+\item Variance: 0.04.
+\item Square root: $\sqrt{0.04}=0.20$, which is 20\%.
+\end{enumerate}
+\inpractice{``An expected return of 10\% with a standard deviation of 20\%'' can be read straight off. A variance of 0.04 cannot.}
+\remember{The lecture's Barrick Gold figures are a variance of \LBarrickVar{} and a standard deviation of \LBarrickSD\% a month. Risk is always quoted as the standard deviation.}
+\reference{variance}
+\end{frame}
+
+\begin{frame}{The bell curve: one and two standard deviations}
+\idea{If returns follow a \textbf{normal distribution}, the expected return and the standard deviation together describe the whole picture.}
+\textbf{Example: an expected return of 10\% with a standard deviation of 20\%}
+\par\smallskip\begingroup\centering
+\begin{tabular}{lll}
+\toprule Range & Calculation & Roughly how often\\\midrule
+One standard deviation & $10\pm20$: $-10\%$ to $+30\%$ & about two years in three\\
+Two standard deviations & $10\pm40$: $-30\%$ to $+50\%$ & about nineteen years in twenty\\\bottomrule
+\end{tabular}
+\par\endgroup\smallskip
+\inpractice{A wider curve means a larger standard deviation. Doubling the standard deviation doubles the width of both ranges.}
+\remember{This is a model of returns, not a law. Real markets produce extreme years rather more often than the bell curve suggests.}
+\end{frame}
+
+\begin{frame}{A portfolio's return is a weighted average}
+\idea{A \textbf{portfolio} is a set of holdings. Its \textbf{weight} $w$ on a share is the fraction of your money invested in it, and the weights add to 1.}
+\textbf{Example: \pounds600 in Share A, \pounds400 in Share B}
+\begin{enumerate}
+\item Weights: $600\div1{,}000=0.6$ and $400\div1{,}000=0.4$.
+\item A is expected to return 10\%, B to return 5\%.
+\item Portfolio: $0.6\times10+0.4\times5=6+2=8\%$.
+\end{enumerate}
+\inpractice{The portfolio's expected return always sits between the two, closer to whichever holds more of your money.}
+\remember{This much is ordinary arithmetic. Combining the two risks is not.}
+\reference{portret}
+\end{frame}
+
+\begin{frame}{A portfolio's risk is not a weighted average}
+\idea{Shares do not all fall on the same day. When one is above its expectation while another is below, the two partly cancel.}
+\par\smallskip\begingroup\centering
+\begin{tabular}{lrrr}
+\toprule & Boom (50\%) & Slump (50\%) & Standard deviation\\\midrule
+Share A & $+30\%$ & $-10\%$ & 20\%\\
+Share B & $-10\%$ & $+30\%$ & 20\%\\
+Half in each & $+10\%$ & $+10\%$ & 0\%\\\bottomrule
+\end{tabular}
+\par\endgroup\smallskip
+\inpractice{Averaging the two risks would give 20\%. The portfolio's actual risk is zero: this is \textbf{diversification}.}
+\remember{Expected returns average. Risks do not: the average leaves out how the two shares move together.}
+\reference{portrisk}
+\end{frame}
+
+\begin{frame}{Covariance: do the two move together?}
+\idea{\textbf{Covariance} multiplies the two shares' distances from their own expected returns, then averages those products. Here are Shares A and B, each expected to return 10\%.}
+\par\smallskip\begingroup\centering\small
+\begin{tabular}{lrrr}
+\toprule & A's distance & B's distance & Product\\\midrule
+Boom & $+0.20$ & $-0.20$ & $-0.04$\\
+Slump & $-0.20$ & $+0.20$ & $-0.04$\\\bottomrule
+\end{tabular}
+\par\endgroup\smallskip
+\inpractice{Both products are negative, because one share is always above its expectation while the other is below. Their average, $-0.04$, is the covariance.}
+\remember{That negative covariance is why the portfolio's risk vanished. A positive one means the two tend to land on the same side of their expectations.}
+\reference{covar}
+\end{frame}
+
+\begin{frame}{Correlation rescales covariance onto a fixed scale}
+\idea{\textbf{Correlation} divides the covariance by the two standard deviations, which puts the answer between $-1$ and $+1$: for A and B, $-0.04\div(0.20\times0.20)=-1$.}
+\par\smallskip\begingroup\centering
+\begin{tabular}{lll}
+\toprule Correlation & What it means & Diversification\\\midrule
+$+1$ & they always move together & none: risk is the weighted average\\
+$0$ & no relationship & useful\\
+$-1$ & they always move opposite & greatest: risk can reach zero\\\bottomrule
+\end{tabular}
+\par\endgroup\smallskip
+\remember{Real shares sit between the extremes. Over \LWindowFrom--\LWindowTo{} Wal-Mart and Honeywell returns correlated \LTwoCorr, so mixing them removes some risk but never all of it.}
+\end{frame}
+
+\begin{frame}{The opportunity set: every mix is a point}
+\idea{Change the weights and you get a different portfolio, with its own risk and its own expected return. Plot risk across and expected return up, and the mixes trace a curve: the \textbf{opportunity set}.}
+\begin{itemize}
+\item Putting all your money in one share puts you at that share's own point.
+\item Every mix in between bulges to the left of the straight line joining the two, because the correlation is below $+1$.
+\item The leftmost point is the \textbf{minimum-variance portfolio}. For the lecture's two shares it is \LTwoMVwmt\% Wal-Mart and \LTwoMVhon\% Honeywell, with a standard deviation of \LSDTwoMV\% and an expected return of \LMeanTwoMV\%.
+\end{itemize}
+\inpractice{You cannot reach a point above the curve. That would need higher returns, lower risks or lower correlations than the shares actually have.}
+\reference{frontier}
+\end{frame}
+
+\begin{frame}{The efficient frontier is the upper edge}
+\idea{Portfolios below the minimum-variance point are never worth holding: directly above each one sits a portfolio with the same risk and a higher expected return. The part of the curve above that point is the \textbf{efficient frontier}.}
+\begin{itemize}
+\item \textbf{Efficient} means the highest expected return available at that level of risk.
+\item Moving further up the frontier always costs more risk. There is no free upgrade.
+\item Where an investor sits on it depends on how much risk they are willing to carry.
+\end{itemize}
+\inpractice{The frontier does not tell you which portfolio to hold. It tells you which ones to rule out.}
+\remember{Efficient is not the same as best. Any point on the frontier can be the right choice for some investor.}
+\reference{frontier}
+\end{frame}
+
+\begin{frame}{Minimum variance and optimal are different portfolios}
+\idea{The \textbf{minimum-variance} portfolio carries the lowest risk available. The \textbf{optimal} portfolio earns the most expected return per unit of risk. They are rarely the same mix.}
+\par\smallskip\begingroup\centering
+\begin{tabular}{lrrr}
+\toprule Wal-Mart and Honeywell & In Wal-Mart & Standard deviation & Expected return\\\midrule
+Minimum variance & \LTwoMVwmt\% & \LSDTwoMV\% & \LMeanTwoMV\%\\
+Optimal & \LTwoOptwmt\% & \LSDTwoOpt\% & \LMeanTwoOpt\%\\\bottomrule
+\end{tabular}
+\par\endgroup\smallskip
+\inpractice{Moving from the first mix to the second raises the expected return from \LMeanTwoMV\% to \LMeanTwoOpt\% for a little more risk. Whether that trade is worth making is a judgement about the investor, not about the shares.}
+\remember{``Lowest risk'' and ``best value for risk'' are two different questions. Read which one you are being asked.}
+\end{frame}
+
+\begin{frame}{A short sale makes a weight negative}
+\idea{To \textbf{short} a share you borrow it, sell it now and buy it back later to return it, so you gain if the price falls. The proceeds go into your other holding, whose weight then passes 100\%.}
+\textbf{Example: the lecture's two shares}
+\begin{enumerate}
+\item Short Honeywell: weight $\LShortHA$\%.
+\item Put everything, including the proceeds, into Wal-Mart: weight \LShortWA\%.
+\item The weights still add to 100\%: expected return \LMeanShortA\%, standard deviation \LSDShortA\%.
+\end{enumerate}
+\inpractice{Short sales extend the curve beyond both end points. They raise expected return and risk together.}
+\remember{Weights may be negative, but they always add to one. A short position can lose without limit, because the buy-back price has no ceiling.}
+\end{frame}
+
+\begin{frame}{More shares push the frontier to the left}
+\idea{Each share added brings its own risk, but also more chances for movements to offset one another. Adding Agnico Eagle, Citigroup and Coca-Cola to the two shares shifts the whole curve left: less risk at the same expected return.}
+\par\smallskip\begingroup\centering
+\begin{tabular}{lrr}
+\toprule Minimum-variance portfolio & Standard deviation & Expected return\\\midrule
+Two shares & \LSDTwoMV\% & \LMeanTwoMV\%\\
+Five shares & \LSDFiveMV\% & \LMeanFiveMV\%\\\bottomrule
+\end{tabular}
+\par\endgroup\smallskip
+\inpractice{Three more shares cut the lowest achievable risk by over three percentage points, and the expected return does not fall to pay for it.}
+\remember{The gain is largest for the first few shares added, and it does not continue without limit.}
+\end{frame}
+
+\begin{frame}{The floor: market risk cannot be diversified away}
+\idea{Total risk $=$ firm-specific risk $+$ market risk. Diversification removes the first, because the risks specific to one firm average away, but not the second.}
+\begin{itemize}
+\item \textbf{Firm-specific risk:} a failed product, a fire, a lawsuit. This averages away across many holdings.
+\item \textbf{Market risk:} interest rates, inflation, recession. This hits the whole portfolio together.
+\end{itemize}
+\inpractice{Among the lecture's five shares the average variance of one share is \LDivVar, the average covariance between two \LDivFloor. Portfolio variance falls towards that covariance and stops.}
+\remember{This floor is why the second half of the lecture pays investors for market risk alone.}
+\reference{decomp}
+\end{frame}
+
+\begin{frame}{Adding a risk-free asset makes the line straight}
+\idea{A \textbf{risk-free asset} pays a known return with no variation; a short government bill is the usual stand-in. Because it never moves, it has no covariance with anything.}
+\textbf{Example: a risk-free rate of \LRiskFreePercent\%, and a risky portfolio at 12\% with a 20\% standard deviation}
+\begin{enumerate}
+\item Half in each: expected return $0.5\times\LRiskFreePercent+0.5\times12=8\%$.
+\item Risk: $0.5\times20=10\%$. Only the risky half contributes any.
+\end{enumerate}
+\inpractice{Mixing with the risk-free asset scales risk and the extra return by the same fraction, so every mix lies on a straight line from the risk-free point to the risky one.}
+\remember{Putting more than 100\% into the risky portfolio means borrowing at the risk-free rate, which extends the same straight line further out.}
+\reference{cal}
+\end{frame}
+
+\begin{frame}{The tangent portfolio gives the steepest line}
+\idea{Every risky portfolio offers a straight line out of the risk-free point. The steepest line is the best, because it pays the most extra return for each unit of risk taken. That slope is the \textbf{Sharpe ratio}.}
+\par\smallskip\begingroup\centering\small
+\begin{tabular}{lrrr}
+\toprule Five shares, $r_f=\LRiskFreePercent\%$ & Expected return & Standard deviation & Sharpe ratio\\\midrule
+Tangent portfolio & \LMeanTan\% & \LSDTan\% & $(\LMeanTan-\LRiskFreePercent)/\LSDTan=0.75$\\
+Below the frontier & \LMeanPortB\% & \LSDPortB\% & $(\LMeanPortB-\LRiskFreePercent)/\LSDPortB=0.47$\\\bottomrule
+\end{tabular}
+\par\endgroup\smallskip
+\inpractice{The second portfolio lies below the minimum-variance point, so its line out of the risk-free point is flatter: less reward for each unit of risk.}
+\remember{No risky portfolio has a higher Sharpe ratio than the tangent one. When it is the whole market, this line is the \textbf{capital market line}.}
+\end{frame}
+
+\begin{frame}{Beta measures how a share moves with the market}
+\idea{\textbf{Beta} ($\beta$) measures a share's sensitivity to the market: how far it typically moves when the market moves 1\%.}
+\par\smallskip\begingroup\centering\small
+\begin{tabular}{lrl}
+\toprule Share & $\beta$ & If the market rises 1\%\\\midrule
+Agnico Eagle & \LBetaAem & it rises about \LBetaAem\%\\
+Coca-Cola & \LBetaKo & it rises about \LBetaKo\%\\
+Wal-Mart & \LBetaWmt & it rises about \LBetaWmt\%\\
+Honeywell & \LBetaHon & it rises about \LBetaHon\%\\
+Citigroup & \LBetaC & it rises about \LBetaC\%\\
+The market itself & \LBetaSP & it rises 1\%, by definition\\\bottomrule
+\end{tabular}
+\par\endgroup\smallskip
+\remember{Beta is estimated over a chosen window and can move: Agnico Eagle's was $\LAgnicoOldBeta$ over \LAgnicoOldFrom--\LAgnicoOldTo{} and \LAgnicoNewBeta{} over \LAgnicoNewFrom--\LAgnicoNewTo.}
+\reference{beta}
+\end{frame}
+
+\begin{frame}{The CAPM turns beta into a required return}
+\idea{The \textbf{capital asset pricing model (CAPM)} pays investors only for the risk they cannot diversify away: the required return is the risk-free rate plus beta times the market's risk premium.}
+\begin{enumerate}
+\item A share with $\beta=1.5$ carries 1.5 times the market's risk, so with a market risk premium of 6\% it earns $1.5\times6=9\%$.
+\item Add the risk-free rate of \LRiskFreePercent\%: $\LRiskFreePercent+9=13\%$ is the required return.
+\end{enumerate}
+\inpractice{Plotting required return against beta gives the \textbf{security market line}, from the risk-free rate at $\beta=0$ through the market at $\beta=1$.}
+\remember{That required return is what a project of this risk must earn to satisfy shareholders: the \textbf{cost of equity}.}
+\reference{capm}
+\end{frame}
+
+\begin{frame}{Alpha is the distance from the line}
+\idea{\textbf{Alpha} ($\alpha$) is the part of a return the CAPM does not account for: the gap between what a share actually returns and what its beta says it should.}
+\textbf{Example: the share above, whose required return is 13\%}
+\begin{itemize}
+\item Expected to return 15\%: alpha is $15-13=+2$ percentage points, and it plots above the line.
+\item Expected to return 11\%: alpha is $-2$ points, and it plots below.
+\end{itemize}
+\inpractice{If everyone agreed on the model and the numbers, investors would buy the first share until its price rose far enough to pull the expected return back down to the line. Under the CAPM's assumptions every alpha is zero.}
+\remember{An alpha estimated from past data is not a promise of future returns. It may simply reflect risk that a single beta does not capture.}
+\end{frame}
+
+\begin{frame}{What the CAPM is for, and what is said against it}
+\idea{The CAPM's job in this module is to supply a discount rate: the return investors require for the market risk a project carries.}
+\begin{itemize}
+\item \textbf{Roll (1977):} the true market portfolio holds every asset, so it cannot be observed and the model cannot be tested.
+\item \textbf{Unstable betas:} estimates depend on the window, as Agnico Eagle's change of sign shows.
+\item \textbf{Mixed evidence:} Fama and MacBeth (1973) found beta mattered; Fama and French (2006) found the relation unreliable.
+\end{itemize}
+\inpractice{Surveyed firms still use the CAPM for the cost of equity more than any other method.}
+\remember{Use it, state its assumptions, and remember that the cash-flow forecasts usually matter more than the discount rate.}
+\end{frame}
+
+\begin{frame}{Keep these questions attached to the terms}
+\par\smallskip\begingroup\centering
+\begin{tabular}{lp{0.66\textwidth}}
+\toprule Term & The question it answers\\\midrule
+Expected return & What return should I expect on average?\\[0.2em]
+Variance & How far do outcomes stray from that, in squared units?\\[0.2em]
+Standard deviation & How far do they stray, in percentage points?\\[0.2em]
+Covariance & Do these two tend to move in the same direction?\\[0.2em]
+Correlation & How strongly, on a scale from $-1$ to $+1$?\\[0.2em]
+Efficient frontier & Which portfolios give the most return for their risk?\\[0.2em]
+Sharpe ratio & How much return above the risk-free rate, per unit of risk?\\[0.2em]
+Beta & How much market risk does this share carry?\\[0.2em]
+CAPM & What return do investors require for that market risk?\\[0.2em]
+Alpha & How far is the actual return from the required one?\\\bottomrule
+\end{tabular}
+\par\endgroup\smallskip
+\end{frame}
+
+\begin{frame}{Check your understanding before using the formulas}
+\begin{enumerate}
+\item Why can a portfolio of two risky shares be less risky than either share alone?
+\item What does a correlation of $-1$ allow that a correlation of $+1$ does not?
+\item Why is nothing below the minimum-variance portfolio worth holding?
+\item Why does adding a risk-free asset turn the curve into a straight line?
+\item Why does the CAPM reward beta rather than standard deviation?
+\end{enumerate}
+\par\smallskip
+Answer in words first. Then support each answer with one small example.
+\remember{If an answer reaches for a formula before it reaches for a sentence, go back to the idea.}
+\end{frame}
+
+\section{Calculation Reference}
+\begin{frame}[label=returns]{Reference: returns and annual equivalents}
+\textbf{In words:} a return is the gain divided by the amount invested. To compare holding periods, ask what annual rate would compound to the same total.
+\[
+r=\frac{P_1-P_0+D_1}{P_0}\qquad AER=(1+r)^{1/n}-1
+\]
+$P_0$: price paid; $P_1$: price received; $D_1$: income received meanwhile; $r$: return over the holding period; $n$: length of that period in years.
+
+\par\smallskip
+\textbf{Example:} \pounds100 grows to \pounds110 in six months, so $r=0.10$ and $AER=(1.10)^{2}-1=0.21$, or 21\%.
+\remember{Every rate belongs to a period. Keep rate and period consistent, as in Lecture 1.}
+\end{frame}
+
+\begin{frame}[label=expected]{Reference: expected return}
+\textbf{In words:} average the past returns, or weight each possible return by its probability.
+\[
+\bar{r}=\frac{1}{T}\sum_{t=1}^{T}r_t\qquad E[r]=\sum_{s=1}^{S}p_s\,r_s
+\]
+$r_t$: the return realised in period $t$; $T$: number of periods; $p_s$: probability of scenario $s$; $r_s$: the return in that scenario. The probabilities add to 1.
+\par\smallskip
+\textbf{The large sigma means ``add these up'':} run the index from the first value to the last, and total the terms.
+\par\smallskip
+\textbf{Example:} returns of 10\%, $-6\%$ and 8\% give $\bar{r}=(10-6+8)/3=4\%$. Two equally likely scenarios of 30\% and $-10\%$ give $E[r]=0.5(30)+0.5(-10)=10\%$.
+\remember{A bar over a letter means an average. $E[\ ]$ means an expected value.}
+\end{frame}
+
+\begin{frame}[label=variance]{Reference: variance and standard deviation}
+\textbf{In words:} average the squared distances from the expected return, then take the square root.
+\[
+\sigma^2=\frac{1}{T-1}\sum_{t=1}^{T}(r_t-\bar{r})^2\qquad
+\sigma^2=\sum_{s=1}^{S}p_s(r_s-E[r])^2\qquad\sigma=\sqrt{\sigma^2}
+\]
+$\sigma$ (``sigma''): standard deviation; $\sigma^2$: variance. The first formula uses history, the second uses scenarios.
+\par\smallskip
+\textbf{Why $T-1$:} with historical data the mean is itself estimated from the same returns, so one observation is used up. Scenario probabilities need no such correction.
+\par\smallskip
+\textbf{Example:} scenarios of 30\% and $-10\%$, each with probability 0.5 and an expected return of 10\%, give $\sigma^2=0.5(0.20)^2+0.5(-0.20)^2=0.04$ and $\sigma=0.20$, or 20\%.
+\end{frame}
+
+\begin{frame}[label=portret]{Reference: portfolio expected return}
+\textbf{In words:} multiply each holding's expected return by its share of the money, then add.
+\[
+\bar{r}_p=\sum_{i=1}^{N}w_i\bar{r}_i\qquad\text{with}\qquad\sum_{i=1}^{N}w_i=1
+\]
+$w_i$: the fraction of the portfolio held in security $i$; $\bar{r}_i$: that security's expected return; $N$: how many securities there are. A negative weight is a short position.
+\par\smallskip
+\textbf{Example:} $w_1=0.6$ with $\bar{r}_1=10\%$, and $w_2=0.4$ with $\bar{r}_2=5\%$, give $\bar{r}_p=0.6(10)+0.4(5)=8\%$.
+\remember{This one really is a weighted average. Portfolio risk is not, which is why it needs its own page.}
+\end{frame}
+
+\begin{frame}[label=covar]{Reference: covariance and correlation}
+\textbf{In words:} covariance averages the product of the two distances from their own means. Correlation divides that by both standard deviations, which puts it on a fixed scale.
+\[
+\sigma_{ij}=\frac{1}{T-1}\sum_{t=1}^{T}(r_{t,i}-\bar{r}_i)(r_{t,j}-\bar{r}_j)\qquad
+\rho_{ij}=\frac{\sigma_{ij}}{\sigma_i\sigma_j}
+\]
+$\sigma_{ij}$: covariance between securities $i$ and $j$; $\rho_{ij}$ (``rho''): their correlation, always between $-1$ and $+1$.
+\par\smallskip
+\textbf{Example:} two equally likely scenarios with distances $(+0.20,-0.20)$ and $(-0.20,+0.20)$ give $\sigma_{ij}=-0.04$; with $\sigma_i=\sigma_j=0.20$, $\rho_{ij}=-0.04/(0.20\times0.20)=-1$.
+\remember{Rearranged, $\sigma_{ij}=\rho_{ij}\sigma_i\sigma_j$. That is how correlation gets into the portfolio-risk formula.}
+\end{frame}
+
+\begin{frame}[label=portrisk]{Reference: portfolio risk with two assets}
+\textbf{In words:} add each holding's own contribution, then twice the cross term that carries the covariance.
+\[
+\sigma_p^2=w_1^2\sigma_1^2+w_2^2\sigma_2^2+2w_1w_2\rho_{12}\sigma_1\sigma_2
+\]
+\textbf{Example:} $w_1=w_2=0.5$ and $\sigma_1=\sigma_2=0.20$. The first two terms give $0.01+0.01=0.02$ whatever the correlation; only the cross term changes.
+\par\smallskip\begingroup\centering
+\begin{tabular}{lrr}
+\toprule $\rho_{12}$ & Cross term & $\sigma_p$\\\midrule
+$+1$ & $+0.02$ & 20\%\\
+$0$ & $0$ & 14.1\%\\
+$-1$ & $-0.02$ & 0\%\\\bottomrule
+\end{tabular}
+\par\endgroup\smallskip
+\remember{Only at $\rho_{12}=+1$ is portfolio risk the weighted average of the two risks. Below that it is always less.}
+\end{frame}
+
+\begin{frame}[label=frontier]{Reference: the frontier and the minimum-variance mix}
+\textbf{In words:} with many assets, sum the covariance term over every pair, including each asset with itself. The frontier traces the lowest risk available at each expected return.
+\[
+\sigma_p=\sqrt{\sum_{i=1}^{N}\sum_{j=1}^{N}w_iw_j\sigma_{ij}}\qquad
+w_1^{\min}=\frac{\sigma_2^2-\sigma_{12}}{\sigma_1^2+\sigma_2^2-2\sigma_{12}}
+\]
+The double sum runs over all $N\times N$ pairs; where $i=j$ the covariance $\sigma_{ii}$ is just the variance $\sigma_i^2$.
+\par\smallskip
+\textbf{Example:} $\sigma_1=20\%$, $\sigma_2=10\%$ and $\sigma_{12}=0$ give $w_1^{\min}=0.01/(0.04+0.01)=0.20$: holding 20\% in the riskier share leaves a standard deviation of 8.9\%, below either share alone.
+\remember{The minimum-variance portfolio is the left-hand tip; the efficient frontier is everything above it.}
+\end{frame}
+
+\begin{frame}[label=cal]{Reference: the risk-free asset and the Sharpe ratio}
+\textbf{In words:} mixing with a risk-free asset scales risk and extra return by the same fraction, so the combinations lie on a straight line whose slope is the Sharpe ratio.
+\[
+\bar{r}_p=r_f+\frac{\bar{r}_2-r_f}{\sigma_2}\,\sigma_p\qquad
+\text{Sharpe ratio}=\frac{\bar{r}-r_f}{\sigma}
+\]
+$r_f$: the risk-free rate; $\bar{r}_2$ and $\sigma_2$: the risky portfolio's expected return and risk. Here $\sigma_p=w_2\sigma_2$, because the risk-free asset has no variance and no covariance.
+\par\smallskip
+\textbf{Example:} $r_f=\LRiskFreePercent\%$ with a risky portfolio at 12\% and $\sigma_2=20\%$. Its Sharpe ratio is $(12-\LRiskFreePercent)/20=0.40$. Half in each gives $\sigma_p=10\%$ and $\bar{r}_p=\LRiskFreePercent+0.40(10)=8\%$.
+\remember{This line is the capital allocation line, and the capital market line when the risky portfolio is the whole market.}
+\end{frame}
+
+\begin{frame}[label=beta]{Reference: beta}
+\textbf{In words:} beta is a share's covariance with the market divided by the market's variance, which is also the slope of a regression of the share's excess return on the market's.
+\[
+\beta_i=\frac{\sigma_{im}}{\sigma_m^2}=\rho_{im}\frac{\sigma_i}{\sigma_m}\qquad
+(r_i-r_f)=\alpha_i+\beta_i(r_m-r_f)+\varepsilon_i
+\]
+$\sigma_{im}$: covariance with the market; $\sigma_m$: the market's standard deviation; $\varepsilon_i$ (``epsilon''): the part of the return the market does not explain, whose expected value is zero.
+\par\smallskip
+\textbf{Example:} $\sigma_i=30\%$, $\sigma_m=15\%$ and $\rho_{im}=0.5$ give $\beta_i=0.5\times30/15=1.0$. A share can be twice as volatile as the market and still carry only average market risk.
+\remember{Only the market-related part of a share's movement counts here. The rest diversifies away.}
+\end{frame}
+
+\begin{frame}[label=capm]{Reference: the CAPM and the security market line}
+\textbf{In words:} the required return is the risk-free rate plus beta multiplied by the market's risk premium.
+\[
+\bar{r}_i=r_f+\beta_i(\bar{r}_m-r_f)\qquad
+\alpha_i=\bar{r}_i^{\text{actual}}-\left[r_f+\beta_i(\bar{r}_m-r_f)\right]
+\]
+$\bar{r}_m-r_f$: the market risk premium, the extra return expected from the market over the risk-free rate. For a portfolio, $\beta_p=\sum_i w_i\beta_i$.
+\par\smallskip
+\textbf{Example:} $r_f=\LRiskFreePercent\%$, a market premium of 6\% and $\beta_i=1.5$ give $\bar{r}_i=\LRiskFreePercent+1.5(6)=13\%$. At $\beta=0$ the answer is \LRiskFreePercent\%; at $\beta=1$ it is the market's own expected return.
+\remember{The security market line is this equation drawn out: beta across, required return up. Alpha is vertical distance from it.}
+\end{frame}
+
+\begin{frame}[label=decomp]{Reference: splitting total risk}
+\textbf{In words:} a share's variance divides into a market part and a part belonging to the firm alone.
+\[
+\sigma_i^2=\beta_i^2\sigma_m^2+\sigma_{\varepsilon_i}^2
+\]
+$\beta_i\sigma_m$: the market part, as a standard deviation; $\sigma_{\varepsilon_i}$: the firm-specific part, which diversification removes.
+\par\smallskip
+\textbf{Example:} $\beta_i=1.5$ with $\sigma_m=20\%$ gives a market part of $1.5\times20=30\%$. If the total standard deviation is 50\%, the firm-specific part is $\sqrt{0.50^2-0.30^2}=0.40$, or 40\%.
+\par\smallskip
+\textbf{In the lecture:} Coca-Cola's total standard deviation is \LSDKo\% a year, of which $\beta_i\sigma_m=\LSDKOMkt\%$ is market risk. The rest is firm-specific.
+\remember{The two parts add as variances, not as standard deviations, which is why the square root appears.}
+\end{frame}
+\end{document}

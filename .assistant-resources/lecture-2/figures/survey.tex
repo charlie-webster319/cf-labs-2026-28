@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+\begin{axis}[lectureplot,width=8.2cm,height=5.1cm,xmin=0,xmax=88,ymin=.4,ymax=6.6,
+xtick={0,20,40,60,80},ytick={1,2,3,4,5,6},
+yticklabels={Regulatory decisions,Investor expectations,Dividend discount model,
+             Multifactor CAPM,Arithmetic average historical return,CAPM},
+xlabel={Per cent of CFOs who always or almost always use the method},
+axis y line=left,y axis line style={draw=none},ytick style={draw=none},
+xbar,bar width=7pt,
+nodes near coords,nodes near coords style={font=\footnotesize,anchor=west,
+ /pgf/number format/fixed,/pgf/number format/precision=2}]
+\addplot[fill=StAndrewsBurgundy,draw=none] table[x=percent,y=y]{generated/survey.dat};
+\end{axis}\end{tikzpicture}

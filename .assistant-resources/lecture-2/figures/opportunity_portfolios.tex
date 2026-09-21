@@ -1,0 +1,14 @@
+\begin{tikzpicture}
+\begin{axis}[frontierplot]
+\addplot[StAndrewsOrange,thick] table[x expr=100*\thisrow{sd},y expr=100*\thisrow{ret}]{generated/two_stock.dat};
+\addplot[only marks,mark=*,mark size=2pt,StAndrewsMidGreen] coordinates {(\LSDWmt,\LMeanWmt)};
+\addplot[only marks,mark=*,mark size=2pt,StAndrewsOrange] coordinates {(\LSDHon,\LMeanHon)};
+\addplot[only marks,mark=*,mark size=2pt,StAndrewsRed] coordinates {(\LSDTwoOpt,\LMeanTwoOpt)};
+\addplot[only marks,mark=*,mark size=2pt,StAndrewsBlue] coordinates {(\LSDTwoMV,\LMeanTwoMV)};
+\node[anchor=south east,font=\small,text=StAndrewsMidGreen,yshift=2pt] at (axis cs:\LSDWmt,\LMeanWmt) {Wal-Mart (100\%; 0\%)};
+\node[anchor=north east,font=\small,text=StAndrewsOrange,yshift=-2pt] at (axis cs:\LSDHon,\LMeanHon) {Honeywell (0\%; 100\%)};
+\node[anchor=south east,font=\footnotesize,text=StAndrewsRed,xshift=-4pt,yshift=2pt] at (axis cs:\LSDTwoOpt,\LMeanTwoOpt) {Optimal (\LTwoOptwmt\%; \LTwoOpthon\%)};
+\node[anchor=north east,font=\footnotesize,text=StAndrewsBlue,xshift=-4pt,yshift=-2pt] at (axis cs:\LSDTwoMV,\LMeanTwoMV) {Minimum variance (\LTwoMVwmt\%; \LTwoMVhon\%)};
+\node[anchor=west,font=\small,text=StAndrewsBurgundy,align=left] at (axis cs:.8,14.6)
+ {Two-stock frontier\\[3pt] Correlation $=\LTwoCorr$};
+\end{axis}\end{tikzpicture}

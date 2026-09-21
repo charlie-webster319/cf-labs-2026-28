@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+\begin{axis}[frontierplot]
+\addplot[StAndrewsBlue,thick] table[x expr=100*\thisrow{sd},y expr=100*\thisrow{ret}]{generated/five_stock.dat};
+\addplot[only marks,mark=*,mark size=1.6pt,black] table[x expr=100*\thisrow{sd},y expr=100*\thisrow{ret}]{generated/five_inframe.dat};
+\addplot[only marks,mark=*,mark size=2pt,StAndrewsRed] coordinates {(\LSDFiveOpt,\LMeanFiveOpt)};
+\node[anchor=west,font=\small,xshift=3pt] at (axis cs:\LSDWmt,\LMeanWmt) {Wal-Mart};
+\node[anchor=west,font=\small,xshift=3pt] at (axis cs:\LSDKo,\LMeanKo) {Coca-Cola};
+\node[anchor=west,font=\small,xshift=3pt] at (axis cs:\LSDHon,\LMeanHon) {Honeywell};
+\node[anchor=south east,font=\footnotesize,text=StAndrewsRed,xshift=-4pt,yshift=3pt] at (axis cs:\LSDFiveOpt,\LMeanFiveOpt) {Optimal};
+\node[anchor=north east,font=\footnotesize,text=StAndrewsBlue,xshift=-4pt,yshift=-3pt] at (axis cs:\LSDFiveMV,\LMeanFiveMV) {Minimum variance};
+\node[anchor=north west,font=\small,text=StAndrewsBurgundy,align=left] at (axis cs:.8,15.0)
+ {Five-stock frontier:\\[2pt] Agnico Eagle, Citigroup,\\[2pt] Coca-Cola, Honeywell, Wal-Mart};
+\end{axis}\end{tikzpicture}

@@ -1,0 +1,34 @@
+% Shared styles; the lecture already loads fontspec and TikZ.
+\providecolor{StAndrewsBlue}{HTML}{00539B}
+\providecolor{StAndrewsBurgundy}{HTML}{C60C46}
+\providecolor{DiagramInk}{HTML}{231F20}
+\providecolor{DiagramPaper}{HTML}{FAFAFA}
+\newfontfamily\DiagramFira{Fira Sans}
+\tikzset{
+ diagram/.style={x=1pt,y=1pt,font=\DiagramFira\linespread{1}\fontsize{9}{11}\selectfont,text=DiagramInk},
+ diagram box/.style={rectangle,draw=StAndrewsBlue,line width=.6pt,fill=DiagramPaper,inner sep=4pt,outer sep=0pt,align=center},
+ diagram blue/.style={diagram box,fill=StAndrewsBlue,text=white},
+ diagram burgundy/.style={diagram box,draw=StAndrewsBurgundy,text=StAndrewsBurgundy},
+ diagram label/.style={rectangle,inner sep=0pt,outer sep=0pt,align=center},
+ diagram edge/.style={draw=StAndrewsBlue,line width=.8pt,line cap=butt,line join=miter},
+ diagram forward/.style={diagram edge,-{Triangle[length=4pt,width=4pt]}},
+ diagram both/.style={diagram edge,{Triangle[length=4pt,width=4pt]}-{Triangle[length=4pt,width=4pt]}},
+ diagram cash/.style={diagram forward,draw=StAndrewsBurgundy}
+}
+\newif\ifDiagramAudit
+\newif\ifDiagramDebug
+\newwrite\DiagramCSV
+\makeatletter
+\newcommand{\DiagramMeasure}[3]{%
+ \ifDiagramAudit
+  \pgfextractx{\dimen0}{\pgfpointanchor{#2}{south west}}%
+  \pgfextracty{\dimen2}{\pgfpointanchor{#2}{south west}}%
+  \pgfextractx{\dimen4}{\pgfpointanchor{#2}{north east}}%
+  \pgfextracty{\dimen6}{\pgfpointanchor{#2}{north east}}%
+  \immediate\write\DiagramCSV{#1,#2,#3,\strip@pt\dimen0,\strip@pt\dimen2,\strip@pt\dimen4,\strip@pt\dimen6}%
+ \fi
+ \ifDiagramDebug
+  \draw[red,line width=.2pt] (#2.south west) rectangle (#2.north east);
+ \fi
+}
+\makeatother

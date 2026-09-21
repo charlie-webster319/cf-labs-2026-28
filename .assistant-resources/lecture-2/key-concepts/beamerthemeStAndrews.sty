@@ -1,0 +1,238 @@
+% beamerthemeStAndrews.sty — University of St Andrews Beamer theme
+% FI5614 Behavioural Finance
+%
+% Usage:
+%   \documentclass[9pt,aspectratio=169]{beamer}
+%   \usetheme{StAndrews}
+
+\ProvidesPackage{beamerthemeStAndrews}[2025/01/01 St Andrews Beamer Theme]
+
+% ============================================================================
+% PACKAGES
+% ============================================================================
+\RequirePackage{tabu, booktabs, multirow}
+\RequirePackage{tabularx}
+\RequirePackage{multicol}
+\RequirePackage{setspace}
+\RequirePackage[official]{eurosym}
+\RequirePackage{graphicx}
+\RequirePackage{bigstrut}
+\RequirePackage{array}
+\RequirePackage{amssymb,amsmath}
+\RequirePackage{enumerate}
+\RequirePackage{pdfpages}
+
+% ============================================================================
+% ST ANDREWS COLOR PALETTE
+% ============================================================================
+
+% Blues
+\definecolor{StAndrewsLightBlue}{RGB}{0,174,239}
+\definecolor{StAndrewsMidBlue}{RGB}{0,125,197}
+\definecolor{StAndrewsBlue}{RGB}{0,83,155}
+
+% Reds
+\definecolor{StAndrewsBurgundy}{RGB}{198,12,70}
+\definecolor{StAndrewsRed}{RGB}{238,49,42}
+
+% Purple
+\definecolor{StAndrewsPurple}{RGB}{123,67,154}
+
+% Orange
+\definecolor{StAndrewsOrange}{RGB}{245,132,43}
+
+% Greens
+\definecolor{StAndrewsGreen}{RGB}{84,185,72}
+\definecolor{StAndrewsMidGreen}{RGB}{0,133,63}
+\definecolor{StAndrewsDarkGreen}{RGB}{0,89,83}
+
+% Yellow
+\definecolor{StAndrewsYellow}{RGB}{255,223,0}
+
+% Black
+\definecolor{StAndrewsBlack}{RGB}{35,31,32}
+
+% ============================================================================
+% BEAMER COLOR & FONT SETTINGS (before loading metropolis)
+% ============================================================================
+\setbeamercolor*{structure}{fg=StAndrewsBlack}
+\setbeamercolor{title}{fg=StAndrewsBlack}
+\setbeamercolor{title separator}{fg=StAndrewsBlue}
+\setbeamercolor{frametitle}{bg=StAndrewsBlue, fg=white}
+
+% Title page font sizes
+\setbeamerfont{title}{size=\LARGE,series=\normalfont}
+\setbeamerfont{subtitle}{size=\large}
+\setbeamerfont{author}{size=\normalsize}
+\setbeamerfont{institute}{size=\small}
+\setbeamerfont{date}{size=\small}
+
+% ============================================================================
+% METROPOLIS THEME
+% ============================================================================
+\usetheme{metropolis}
+
+% ============================================================================
+% TIKZ
+% ============================================================================
+\RequirePackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric, shadows}
+
+% ============================================================================
+% REMAINING PACKAGES
+% ============================================================================
+\RequirePackage[export]{adjustbox}
+
+% ============================================================================
+% HYPERREF (single load, with St Andrews colors)
+% ============================================================================
+\RequirePackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=StAndrewsBlue,
+  urlcolor=StAndrewsBlue,
+  citecolor=StAndrewsBlue,
+  pdfpagemode=FullScreen,
+}
+\urlstyle{same}
+
+% ============================================================================
+% FRAMETITLE TEMPLATE (full-width blue header)
+% ============================================================================
+\setbeamercolor{frametitle}{bg=StAndrewsBlue, fg=white}
+\setbeamercolor{framesubtitle}{fg=white}
+\setbeamerfont{frametitle}{size=\Large,series=\mdseries}
+\setbeamerfont{framesubtitle}{size=\small}
+
+\makeatletter
+\setbeamertemplate{frametitle}{
+  \nointerlineskip
+  \begin{beamercolorbox}[wd=\paperwidth,sep=0.8ex,leftskip=1.2em,rightskip=1.2em]{frametitle}
+    \usebeamerfont{frametitle}\strut\insertframetitle\par
+    \ifx\insertframesubtitle\@empty\else
+      \vspace{0.25ex}
+      {\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle\par}
+    \fi
+  \end{beamercolorbox}
+}
+\makeatother
+
+% ============================================================================
+% CUSTOMISABLE TITLE PAGE FIELDS
+% ============================================================================
+% Set any of these in your .tex file before \begin{document}.
+% All have sensible defaults; only \title, \graphicspath, and
+% \hypersetup{pdftitle} are required per-lecture.
+%
+% Example:
+%   \lecturername{Prof Jane Smith}
+%   \lectureremail{js42@st-andrews.ac.uk}
+%   \coursename{FI5614 Behavioural Finance}
+%
+\makeatletter
+\newcommand{\sta@lecturername}{Dr Christian Engels}
+\newcommand{\sta@lectureremail}{ce50@st-andrews.ac.uk}
+\newcommand{\sta@coursename}{FI5614 Behavioural Finance}
+\newcommand{\sta@department}{Department of Finance}
+\newcommand{\sta@school}{University of St Andrews Business School}
+\newcommand{\sta@titlelogo}{\includegraphics[scale=0.08]{logos/01-standard-black-text.png}}
+
+\newcommand{\lecturername}[1]{\renewcommand{\sta@lecturername}{#1}}
+\newcommand{\lectureremail}[1]{\renewcommand{\sta@lectureremail}{#1}}
+\newcommand{\coursename}[1]{\renewcommand{\sta@coursename}{#1}}
+\newcommand{\department}[1]{\renewcommand{\sta@department}{#1}}
+\newcommand{\school}[1]{\renewcommand{\sta@school}{#1}}
+\newcommand{\titlelogo}[1]{\renewcommand{\sta@titlelogo}{#1}}
+\makeatother
+
+% ============================================================================
+% TITLE PAGE TEMPLATE (centered layout)
+% ============================================================================
+\makeatletter
+% Override metropolis title graphic (which uses \vbox to 0pt and overflows)
+\setbeamertemplate{title graphic}{
+  \inserttitlegraphic\par
+}
+
+\setbeamertemplate{title page}{
+  \vfill
+  \begin{minipage}{\textwidth}
+    \centering
+    \ifx\inserttitle\@empty\else
+      {\usebeamerfont{title}\linespread{1.0}\textnormal{\inserttitle}\par\vspace*{0.5em}}%
+    \fi
+    \ifx\insertsubtitle\@empty\else
+      {\usebeamerfont{subtitle}\insertsubtitle\par\vspace*{0.5em}}%
+    \fi
+    \usebeamertemplate*{title separator}
+    \vspace{1em}
+    % Local change: an empty \lectureremail{} must not leave a blank line.
+    {\usebeamerfont{author}\RBox{\sta@lecturername\ifx\sta@lectureremail\@empty\else \\ \textit{\sta@lectureremail}\fi}}
+    \par\vspace*{0.5em}
+    {\usebeamerfont{institute}\sta@coursename \\[1mm] \sta@department}
+    \par
+    {\usebeamerfont{date}\sta@school}
+    \par
+    \sta@titlelogo
+  \end{minipage}
+  \vfill
+}
+\makeatother
+
+% Set beamer metadata for PDF properties
+\makeatletter
+\AtBeginDocument{%
+  \institute{\sta@coursename{} -- \sta@department}%
+  \date{\sta@school}%
+}
+\makeatother
+
+% ============================================================================
+% CUSTOM COMMANDS
+% ============================================================================
+\newcommand{\be}{\begin{enumerate}[<+->]}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\bq}{\begin{quote}}
+\newcommand{\eq}{\end{quote}}
+\newcommand{\bd}{\begin{description}[<+->]}
+\newcommand{\ed}{\end{description}}
+\newcommand{\bi}{\begin{itemize}[<+->]}
+\newcommand{\ei}{\end{itemize}}
+
+\newcommand\RBox[1]{%
+  \tikz\node[draw=none,rounded corners,align=center,] {#1};%
+}
+
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\newcommand{\placeholderbox}[1]{%
+  \begin{center}
+    \fbox{\parbox[c][0.5\textheight][c]{0.9\linewidth}{\centering \textit{#1}}}
+  \end{center}
+}
+
+% ============================================================================
+% CUSTOM ENVIRONMENTS
+% ============================================================================
+\newtheorem{Hypothesis}{Hypothesis}
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+
+% ============================================================================
+% ITEM TEMPLATE
+% ============================================================================
+\setbeamertemplate{items}[circle]
+
+% titlegraphic is set for beamer internals (used by title graphic template)
+\titlegraphic{}
+
+% ============================================================================
+% FOOTER LOGO
+% ============================================================================
+\addtobeamertemplate{footline}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=south west, inner sep=0pt] at ([xshift=0.5cm, yshift=0.25cm]current page.south west) {
+      \includegraphics[height=0.5cm]{logos/st-andrews-icon.png}
+    };
+  \end{tikzpicture}%
+}{}

@@ -1,0 +1,20 @@
+\begin{tikzpicture}
+\begin{axis}[lectureplot,width=10.9cm,height=5cm,xmin=0,xmax=35,ymin=3,ymax=24,
+xtick={0,5,10,15,20,25,30,35},ytick={4,9,14,19,24},
+xticklabel={\pgfmathprintnumber{\tick}\%},yticklabel={\pgfmathprintnumber{\tick}\%},
+xlabel={Standard deviation},ylabel={Portfolio return}]
+\addplot[StAndrewsOrange,dashed] table[x expr=100*\thisrow{sd},y expr=100*\thisrow{ret}]{generated/cal_b.dat};
+\addplot[StAndrewsMidGreen,thick] table[x expr=100*\thisrow{sd},y expr=100*\thisrow{ret}]{generated/five_efficient.dat};
+\addplot[StAndrewsBlue,thick] table[x expr=100*\thisrow{sd},y expr=100*\thisrow{ret}]{generated/five_lower.dat};
+\addplot[only marks,mark=*,mark size=2pt,StAndrewsOrange] coordinates {(0,\LRiskFreePercent)};
+\addplot[only marks,mark=*,mark size=2pt,StAndrewsBlue] coordinates {(\LSDPortB,\LMeanPortB)};
+\node[anchor=north west,font=\small,text=StAndrewsBlue,xshift=2pt] at (axis cs:\LSDPortB,\LMeanPortB) {B};
+\draw[-{Stealth[length=5pt]},StAndrewsOrange] (axis cs:19.6,5.4) -- (axis cs:.6,4.15);
+\node[anchor=west,font=\footnotesize,text=StAndrewsOrange] at (axis cs:19.9,5.4) {100\% risk-free investment (\LRiskFreePercent\%)};
+\draw[-{Stealth[length=5pt]},black!70] (axis cs:9.8,18.4) -- (axis cs:16.3,16.9);
+\node[anchor=west,font=\footnotesize,align=left] at (axis cs:3.5,20.9)
+ {Efficient frontier\\ \textit{without} a risk-free asset};
+\draw[-{Stealth[length=5pt]},black!70] (axis cs:29.2,12.4) -- (axis cs:25.2,15.5);
+\node[anchor=north east,font=\footnotesize,align=right] at (axis cs:34.6,12.2)
+ {Combinations of B\\ with the risk-free asset};
+\end{axis}\end{tikzpicture}

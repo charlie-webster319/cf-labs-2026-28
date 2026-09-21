@@ -1,0 +1,18 @@
+% A linear illustration, not a new set of office-project cash flows.
+\begin{tikzpicture}[x=1cm,y=1cm]
+\foreach \y in {0,1.45}{
+  \draw[black!40,line width=1pt] (0,\y)--(10,\y);
+  \draw[StAndrewsBlue,line width=2pt] (0,\y)--(\InterpToyPosition,\y);
+  \foreach \x in {0,\InterpToyPosition,10}{\draw[black!65] (\x,\y-.07)--(\x,\y+.07);}
+}
+\node[anchor=east] at (-.4,1.45) {NPV};
+\node[anchor=east] at (-.4,0) {Rate};
+\node[below=6pt,anchor=north west] at (0,1.45) {+£300};
+\node[below=6pt,anchor=north east] at (10,1.45) {−£100};
+\node[above=7pt,text=StAndrewsBlue] at (\InterpToyPosition,1.45) {£0};
+\node[below=6pt,anchor=north west] at (0,0) {10\%};
+\node[below=6pt,anchor=north east] at (10,0) {10.5\%};
+\node[above=7pt,text=StAndrewsBlue] at (\InterpToyPosition,0) {10.375\%};
+\node[above=7pt,text=StAndrewsBlue] at (3,1.45) {Three-quarters of the fall};
+\node[above=7pt,text=StAndrewsBlue] at (3,0) {Three-quarters of the rate gap};
+\end{tikzpicture}

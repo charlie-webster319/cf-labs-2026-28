@@ -1,0 +1,22 @@
+\begin{tikzpicture}
+\begin{axis}[lectureplot,width=10.9cm,height=5cm,xmin=-1,xmax=2,ymin=-1.2,ymax=1.65,
+xtick={-1,-0.5,0,0.5,1,1.5,2},ytick={-0.5,0,0.5,1,1.5},
+yticklabel={\pgfmathprintnumber[fixed,precision=1]{\tick}\%},
+xlabel={Beta},ylabel={Mean monthly return}]
+\addplot[black!30,thin] coordinates {(-1,0)(2,0)};
+\addplot[StAndrewsRed,thick] table[x=beta,y=ret]{generated/sml_line.dat};
+\addplot[StAndrewsBlue,dashed,thin,mark=none] table[x=beta,y=ret]{generated/sml_alpha_ko.dat};
+\addplot[StAndrewsBurgundy,dashed,thin,mark=none] table[x=beta,y=ret]{generated/sml_alpha_aem.dat};
+\addplot[only marks,mark=*,mark size=1.8pt,black] table[x=beta,y=ret]{generated/sml_points.dat};
+\addplot[only marks,mark=*,mark size=1.8pt,StAndrewsOrange] table[x=beta,y=ret]{generated/sml_rf.dat};
+\node[anchor=north,font=\footnotesize,yshift=-3pt] at (axis cs:\LBetaC,\LMeanMonthlyC) {Citigroup};
+\node[anchor=south east,font=\footnotesize,xshift=-2pt] at (axis cs:\LBetaKo,\LMeanMonthlyKo) {Coca-Cola};
+\node[anchor=south west,font=\footnotesize,xshift=-6pt,yshift=3pt] at (axis cs:\LBetaHon,\LMeanMonthlyHon) {Honeywell};
+\node[anchor=south west,font=\footnotesize,xshift=2pt] at (axis cs:\LBetaWmt,\LMeanMonthlyWmt) {Wal-Mart};
+\node[anchor=north west,font=\footnotesize,xshift=3pt] at (axis cs:1,\LMeanMonthlySP) {S\&P 500};
+\node[anchor=north,font=\footnotesize,yshift=-6pt] at (axis cs:\LAgnicoOldBeta,\LAgnicoOldMean) {Agnico Eagle};
+\draw[-{Stealth[length=4pt]},StAndrewsOrange] (axis cs:-0.35,0.95) -- (axis cs:-0.06,0.44);
+\node[anchor=west,font=\footnotesize,text=StAndrewsOrange] at (axis cs:-0.97,1.15) {Risk-free investment};
+\node[anchor=east,font=\footnotesize,text=StAndrewsBlue,xshift=-7pt] at (axis cs:\LBetaKo,1.0) {$(+)\ \alpha_{KO}$};
+\node[anchor=west,font=\footnotesize,text=StAndrewsBurgundy,xshift=4pt] at (axis cs:\LAgnicoOldBeta,-0.35) {$(-)\ \alpha_{AEM}$};
+\end{axis}\end{tikzpicture}

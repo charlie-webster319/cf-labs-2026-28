@@ -1,0 +1,19 @@
+% The summary quote a student would read off a stock listing. Figures come from
+% data/hon_quote.csv, so the panel is typeset rather than screenshotted.
+\begin{minipage}{0.86\textwidth}
+{\large\textbf{Honeywell International Inc. (HON)}~{\color{black!55}NYSE}}\par
+\vspace{2pt}
+{\Large\textbf{\LHonPrice}}~{\color{StAndrewsMidGreen}\textbf{\LHonChange\ (\LHonChangePct\%)}}\par
+\vspace{4pt}
+{\color{black!55}\rule{\linewidth}{0.4pt}}\par
+\vspace{4pt}
+\footnotesize
+\begin{tabular}{@{}l r@{\hspace{2.2em}}l r@{}}
+Prev close       & \LHonPrevClose  & Day's range   & \LHonDayLow--\LHonDayHigh \\
+Open             & \LHonOpen       & 52wk range    & \LHonYearLow--\LHonYearHigh \\
+Volume           & \LHonVolume     & Market cap    & \LHonMarketCap bn \\
+Avg vol (3m)     & \LHonAvgVolume  & P/E (ttm)     & \LHonPE \\
+Beta             & \LHonBeta       & EPS (ttm)     & \LHonEPS \\
+                 &                 & Div \& yield  & \LHonDividend\ (\LHonDividendYield\%) \\
+\end{tabular}
+\end{minipage}

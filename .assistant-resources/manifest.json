@@ -1,0 +1,900 @@
+{
+  "source_repository": "corporate-finance-slides",
+  "copied_on": "2026-09-21",
+  "files": [
+    {
+      "source": "lecture-0/Lecture 0_Orientation Week.tex",
+      "file": "lecture-0/lecture-slides.tex",
+      "sha256": "96927c7af39c384f6f26d46b1deee926d35c5b4b1e34fd36ecb39e56cb28f75f",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-0/Lecture 0_Orientation Week.pdf",
+      "file": "lecture-0/lecture-slides.pdf",
+      "sha256": "dbdada75e8ef824d44191f336b4106429aa0f2cbf994039c4b18d00a845b9884",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-0/figures/cfo_practice.pdf",
+      "file": "lecture-0/figures/cfo_practice.pdf",
+      "sha256": "2a886f90dc2191174dc0a10ebd7a838428f83d0be614b14291fc57ca41b36830",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-0/figures/meta_control.pdf",
+      "file": "lecture-0/figures/meta_control.pdf",
+      "sha256": "0cd7562e4c9a7260136a608c06d20cb766899f060f3ed78881fcb4364615506e",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-0/figures/northern_rock_funding.pdf",
+      "file": "lecture-0/figures/northern_rock_funding.pdf",
+      "sha256": "d6941f4d3bee559e6e9829519e31cb6adddbfdeba148d12a97373ca7208f804a",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-0/figures/uk_business_forms.pdf",
+      "file": "lecture-0/figures/uk_business_forms.pdf",
+      "sha256": "cac89ae0fd90b91f2dcecccfcfb445b1fd248acd2c0f64e3ff7e4e84a6f996fb",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-0/diagrams/financial_management_decisions.tex",
+      "file": "lecture-0/diagrams/financial_management_decisions.tex",
+      "sha256": "122178fec100c1b6a5d9d9ddb73336ff1b9451bb349daf20a35bd4be81b167bc",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-0/diagrams/financial_system.tex",
+      "file": "lecture-0/diagrams/financial_system.tex",
+      "sha256": "bd5e8393d853693093ad89d1a8b836bb42f7fa23e6dd407eca18b26a1758bd91",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-0/diagrams/interlocking_relationship.tex",
+      "file": "lecture-0/diagrams/interlocking_relationship.tex",
+      "sha256": "c254c79f27112156a0e9e504aae45e8dc2b50d80eb8eb141c4f438c1d5166a58",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-0/diagrams/primary_vs_secondary.tex",
+      "file": "lecture-0/diagrams/primary_vs_secondary.tex",
+      "sha256": "73b07b3eed8fed4f98f9a27aca23481a0741fa1f66261104d0bb625b1fe82324",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-0/diagrams/styles.tex",
+      "file": "lecture-0/diagrams/styles.tex",
+      "sha256": "44a6505fe5dcccd9ed9e08ce2051fd96aeafb81bcee35aee6e0874c5cd1007d6",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-0/logos/01-standard-black-text.png",
+      "file": "lecture-0/logos/01-standard-black-text.png",
+      "sha256": "dbab4f0c8a34cbd0103dfe266f62a740551861127c36cfdebe6ce9b62db8c156",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-0/logos/st-andrews-icon.png",
+      "file": "lecture-0/logos/st-andrews-icon.png",
+      "sha256": "37a8c15477de0f7c7a4fb293b05f4a6e064374d237592c4f5c2bd64fdf59089a",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-0/pix_l0/pwc.png",
+      "file": "lecture-0/pix_l0/pwc.png",
+      "sha256": "ce98019ca84295ea794ee9dc7c546b5a173f3673f935048ed47d73e430ebf772",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-0/pix_l0/george_soros.png",
+      "file": "lecture-0/pix_l0/george_soros.png",
+      "sha256": "bcbc6822612dcc630daf2dc75a3d7883aac2688e8ee7409dc9c1d9fc234e6929",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-0/pix_l0/northern_rock.png",
+      "file": "lecture-0/pix_l0/northern_rock.png",
+      "sha256": "0d59a82c5ceb169d168d19ab8e02907dca28509d57b3f1306cca949171d2e447",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "Lecture 1_Discounting, Compounding, Investments.tex",
+      "file": "lecture-1/lecture-slides.tex",
+      "sha256": "b8815ac2ebed1977a1efb4aa3e6a1d4b25a5a51aaa7c3f62651e4d6d4562b55e",
+      "change": "Removed lecture-1/ prefixes from asset paths."
+    },
+    {
+      "source": "lecture-1/L1 Compounding, Discounting, Investments.pdf",
+      "file": "lecture-1/lecture-slides.pdf",
+      "sha256": "51dfc659b81ae482df32fb33d4769794ed403d07576ab2fb07f35c5467f67fd1",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/generated/aar.tex",
+      "file": "lecture-1/generated/aar.tex",
+      "sha256": "1b18b8cf18043503baacdd7c535338d6d7fff32dba04ab5b663d50a8ba96dfd3",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/generated/coal.dat",
+      "file": "lecture-1/generated/coal.dat",
+      "sha256": "6912b6095d1603a6f024406a5f51b965c6eeaf09035e992cf272f5b6c89cc99c",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/generated/coal_point.dat",
+      "file": "lecture-1/generated/coal_point.dat",
+      "sha256": "33fb7f6f5c38e770580a4a183c38e32c9700b13bdc9fcd56d4ffa6209173592a",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/generated/coal_roots.dat",
+      "file": "lecture-1/generated/coal_roots.dat",
+      "sha256": "1515c49ed50ef7953d1a9a2505da69d759911fb3f7581f769cab8cb5c9ff3b6d",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/generated/ecb.dat",
+      "file": "lecture-1/generated/ecb.dat",
+      "sha256": "02f99d97ed3b9696e27f9517f38ea212a20ce73a18c59df61c01620cdec963f4",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/generated/interp_segment.dat",
+      "file": "lecture-1/generated/interp_segment.dat",
+      "sha256": "c7f1980aba1dfd76d8116d62ea2597e059489e2b34651326539f9a020db78716",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/generated/interpolation.dat",
+      "file": "lecture-1/generated/interpolation.dat",
+      "sha256": "b86af08ff528b51900527b124fb92684f7194f3acf872832d224c52a94f6c2ab",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/generated/maintenance.dat",
+      "file": "lecture-1/generated/maintenance.dat",
+      "sha256": "8d03df943018121a338c7d44a98674807331b667b180b72b356ae3e169dc11bb",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/generated/numbers.tex",
+      "file": "lecture-1/generated/numbers.tex",
+      "sha256": "44c46c4488a7a005453337e48c8b646b5d37031efe62e7e64cd08d8e8983babd",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/generated/office.dat",
+      "file": "lecture-1/generated/office.dat",
+      "sha256": "65b2e401ea41145afa92e41c75aed61eab52bc24e03f3207ffeac8f302cdf8d8",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/generated/office_cashflows.tex",
+      "file": "lecture-1/generated/office_cashflows.tex",
+      "sha256": "8e13acdffd037914da2b02e25021eb5dbee7fca28fc152fcfe565a9a12b385b3",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/generated/office_point.dat",
+      "file": "lecture-1/generated/office_point.dat",
+      "sha256": "a5ff48a1bb59fa1f89dfbfd7211651aac58bab8e7c7ce245416ac49c4d21d1d6",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/generated/office_trials.tex",
+      "file": "lecture-1/generated/office_trials.tex",
+      "sha256": "858a5ab6bbb8ac996f5c0bea26806f08eb7429cf4b72477215ac5cb8e6983c67",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/generated/payback.tex",
+      "file": "lecture-1/generated/payback.tex",
+      "sha256": "fe7babbda53ef4560e7c6d3a1e882d996a51df3e532f965b406aed3430a05e97",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/generated/piazza.tex",
+      "file": "lecture-1/generated/piazza.tex",
+      "sha256": "abbf13f779a951582d836f0b5f02d9d5ba4885a32221bb9ebed4e6ad5bd6ece8",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/generated/ranking.dat",
+      "file": "lecture-1/generated/ranking.dat",
+      "sha256": "fdba9d1add425b1dcce1ad2e3e0d09835de4e7524117a9413e8659d081423361",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/generated/ranking.tex",
+      "file": "lecture-1/generated/ranking.tex",
+      "sha256": "0f289efd8999b8fa2e6a5b436aa5b2beb9938f475953d15738e0579d52e7a8b9",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/generated/ranking_cross.dat",
+      "file": "lecture-1/generated/ranking_cross.dat",
+      "sha256": "1ff54f958668c9746996e4c0f2d84ae818649ca3fa07e2308cd252dd101c9a03",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/generated/rates.tex",
+      "file": "lecture-1/generated/rates.tex",
+      "sha256": "e8fac8106a6a0e6b3d05b83f7ab97ca1ae4ce89af5a3a4bc8da5071b9dbe66f5",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/generated/simple_compound.tex",
+      "file": "lecture-1/generated/simple_compound.tex",
+      "sha256": "917b1632a231ea0b6b5040f702a58f0f4bc8cec3c3a41b3028d4cffaff632662",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/generated/survey.dat",
+      "file": "lecture-1/generated/survey.dat",
+      "sha256": "f60c952a91df4cbc2e7b1fa9625be03749ca6631151b22dca848352908a32018",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/figures/coal.tex",
+      "file": "lecture-1/figures/coal.tex",
+      "sha256": "4cdb06b6a72a5fca946f93e0cb997c1ada26707cdcf95400dd40dcf52114c164",
+      "change": "Removed lecture-1/ prefixes from asset paths."
+    },
+    {
+      "source": "lecture-1/figures/delayed_annuity.tex",
+      "file": "lecture-1/figures/delayed_annuity.tex",
+      "sha256": "4cd8ebe32738eb712092488b0c2b04b5bcb52b488caba23f7d8df4e4ff6fa924",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/figures/delayed_perpetuity.tex",
+      "file": "lecture-1/figures/delayed_perpetuity.tex",
+      "sha256": "90466c2daba0f6d03f81482e8fae0a7989a282b401740bc621e69d31b29ff85f",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/figures/ecb.tex",
+      "file": "lecture-1/figures/ecb.tex",
+      "sha256": "90e4e1fb1341f01a6bcfd265da1b73de0a56affd0d848a51bf3878629ef55360",
+      "change": "Removed lecture-1/ prefixes from asset paths."
+    },
+    {
+      "source": "lecture-1/figures/interpolation.tex",
+      "file": "lecture-1/figures/interpolation.tex",
+      "sha256": "76f956c3ee0c08cc6a4a90b47a3161ce27ce2e7cdc1aa2c681a793d36dd9d045",
+      "change": "Removed lecture-1/ prefixes from asset paths."
+    },
+    {
+      "source": "lecture-1/figures/interpolation_rate.tex",
+      "file": "lecture-1/figures/interpolation_rate.tex",
+      "sha256": "1d45a14c67d7d59273b4b16ee01adae1af57f0d5aeea525d4513f4520efc7173",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/figures/interpolation_simple.tex",
+      "file": "lecture-1/figures/interpolation_simple.tex",
+      "sha256": "e372467223f8f8d684249f6676956950dff9bbeb40fc118dc194d2c7f132fd6b",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/figures/maintenance.tex",
+      "file": "lecture-1/figures/maintenance.tex",
+      "sha256": "0d306f4a1a27e322d243498753dea28243ec0a91abb4b08ec9a92a65d349a927",
+      "change": "Removed lecture-1/ prefixes from asset paths."
+    },
+    {
+      "source": "lecture-1/figures/office.tex",
+      "file": "lecture-1/figures/office.tex",
+      "sha256": "7545a0cdf9e4eadeca9259f3cf9f170dde5ac6237a1820b211f7ce2757229a27",
+      "change": "Removed lecture-1/ prefixes from asset paths."
+    },
+    {
+      "source": "lecture-1/figures/payment_timing.tex",
+      "file": "lecture-1/figures/payment_timing.tex",
+      "sha256": "bf3808e9a7d72c83ae7ce94a96057f59665e289f4c4645926c0865534028d251",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/figures/ranking.tex",
+      "file": "lecture-1/figures/ranking.tex",
+      "sha256": "eed726e28ff1ebf52066b9b3c487d2a82436b06c03366044fb7c16ff1b20a6c1",
+      "change": "Removed lecture-1/ prefixes from asset paths."
+    },
+    {
+      "source": "lecture-1/figures/survey.tex",
+      "file": "lecture-1/figures/survey.tex",
+      "sha256": "fb292bab48b6a3a20a2d8c769040954c9d0ac3469c1ca17f06daf9891e0eb71e",
+      "change": "Removed lecture-1/ prefixes from asset paths."
+    },
+    {
+      "source": "lecture-1/figures/timeline.tex",
+      "file": "lecture-1/figures/timeline.tex",
+      "sha256": "bb3d86faccaf9c5c47d91e2104ce6105c365faa16c78b8d4cf69f17ece201b24",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "logos/01-standard-black-text.png",
+      "file": "lecture-1/logos/01-standard-black-text.png",
+      "sha256": "dbab4f0c8a34cbd0103dfe266f62a740551861127c36cfdebe6ce9b62db8c156",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "logos/st-andrews-icon.png",
+      "file": "lecture-1/logos/st-andrews-icon.png",
+      "sha256": "37a8c15477de0f7c7a4fb293b05f4a6e064374d237592c4f5c2bd64fdf59089a",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "pix_l1/baseball.png",
+      "file": "lecture-1/pix_l1/baseball.png",
+      "sha256": "ef2674dd648c9140106e7ab0d292dfd7fa83d2419a6c18976b762679c921dd5e",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/key-concepts/Lecture 1 Key Concepts and Terms.pdf",
+      "file": "lecture-1/key-concepts/key-concepts-and-terms.pdf",
+      "sha256": "d094334a7dee429bf195327eba2a18b6923ab383cb0aa8eb6af2d8f968f25a28",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/key-concepts/Lecture 1 Key Concepts and Terms.tex",
+      "file": "lecture-1/key-concepts/key-concepts-and-terms.tex",
+      "sha256": "f4823ba20d393f9d03b127ecc479f8d0bb38b0b2008bcae036c134076cfebcab",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/key-concepts/beamerthemeStAndrews.sty",
+      "file": "lecture-1/key-concepts/beamerthemeStAndrews.sty",
+      "sha256": "337abf072b9dced899abe8fdf93b7698dc0b1fd5e621452338927a0a87000d63",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/key-concepts/logos/01-standard-black-text.png",
+      "file": "lecture-1/key-concepts/logos/01-standard-black-text.png",
+      "sha256": "dbab4f0c8a34cbd0103dfe266f62a740551861127c36cfdebe6ce9b62db8c156",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-1/key-concepts/logos/st-andrews-icon.png",
+      "file": "lecture-1/key-concepts/logos/st-andrews-icon.png",
+      "sha256": "37a8c15477de0f7c7a4fb293b05f4a6e064374d237592c4f5c2bd64fdf59089a",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/Lecture 2_Discount Factors and Cost of Capital.tex",
+      "file": "lecture-2/lecture-slides.tex",
+      "sha256": "3ac462a1235a0b9b84bf3bf66253348039024da79632e1449a3595a42d40f3f4",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/L2 Discount factors and cost of capital.pdf",
+      "file": "lecture-2/lecture-slides.pdf",
+      "sha256": "01871c461bd9f47857d21354596cd1a1e4079f54f40accb548e087837491faed",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/barrick.dat",
+      "file": "lecture-2/generated/barrick.dat",
+      "sha256": "dcaff0c67a2a747ee0016b9dedc3bb3bd00cb22a7dec7a9f27b7443233c40819",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/cal_b.dat",
+      "file": "lecture-2/generated/cal_b.dat",
+      "sha256": "1a4d58b8c5c7ccac5c5ad5dbcdb09a12494d1b09856a2c3f7061e29ed937ab2a",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/cml.dat",
+      "file": "lecture-2/generated/cml.dat",
+      "sha256": "3b66d57224d8ac1bb3aafc5ef4ae37f5308d2aadb6741b01d582f1e8d391c43c",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/corr_mid.dat",
+      "file": "lecture-2/generated/corr_mid.dat",
+      "sha256": "fed838123ab59d238b9ea57df6b87e0dcf114640583443d4dccea1076e303578",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/corr_minus.dat",
+      "file": "lecture-2/generated/corr_minus.dat",
+      "sha256": "62e24a011649f07415228ef835d5513a7468f90d73135edcdd0a6a5981eabe4b",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/corr_plus.dat",
+      "file": "lecture-2/generated/corr_plus.dat",
+      "sha256": "67d7f18a2d817d1a52c1c00b58e9f68c403cb07e4fd83fc25b14ed01b0e352ae",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/diversification.dat",
+      "file": "lecture-2/generated/diversification.dat",
+      "sha256": "d7b1173eb807a1b6311db1f00998dacf8f04c2ba4c9fd9c78168e897cfa84ff3",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/diversification_floor.dat",
+      "file": "lecture-2/generated/diversification_floor.dat",
+      "sha256": "b791bfef0aab98aed13e3a69f5bf13d987c808f9d2f2f33633ff5121b05bebe7",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/five_efficient.dat",
+      "file": "lecture-2/generated/five_efficient.dat",
+      "sha256": "2b160834ce2a6e9017cdb8e48f5a5687bfae09dd25acde063c115ee23e96680b",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/five_inframe.dat",
+      "file": "lecture-2/generated/five_inframe.dat",
+      "sha256": "6c26513e1c264d118e5be61661efd694dc93d9d939d572a3114344300194c769",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/five_lower.dat",
+      "file": "lecture-2/generated/five_lower.dat",
+      "sha256": "7b67961ef3f500b40ca5db8e87b010a0286f8253bcedf78ed34e62d17709459e",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/five_mv.dat",
+      "file": "lecture-2/generated/five_mv.dat",
+      "sha256": "d66f5b1879cc7b7dd8b771e18d5248e25df54f45efdef808724d0fccba333300",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/five_opt.dat",
+      "file": "lecture-2/generated/five_opt.dat",
+      "sha256": "95fb81fdaf1c9ebb398a48694637efe4a9ee2586413c84c829b3f47b66073988",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/five_stock.dat",
+      "file": "lecture-2/generated/five_stock.dat",
+      "sha256": "7e88dda2d723f039e87818abd0da0f3be2c1564f18fc12fccbca399bc1becfba",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/ko_market.dat",
+      "file": "lecture-2/generated/ko_market.dat",
+      "sha256": "01d2630e8a9dc56f1e5de26fbe35e5ec580634c266901227dfa83231b027c54d",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/ko_point.dat",
+      "file": "lecture-2/generated/ko_point.dat",
+      "sha256": "2c50c78d0c77cbf234a7df81bf5dbf75359b36ce9ec7dd4f8e2f7fc5dbc2f909",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/normal.dat",
+      "file": "lecture-2/generated/normal.dat",
+      "sha256": "2cb9daa960199c627ca784901fde63d8108acb914fdf269f14b638184358e262",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/numbers.tex",
+      "file": "lecture-2/generated/numbers.tex",
+      "sha256": "65db705e802d039af8bdb62ec1053f145816d48906fb3f3f5365ba2c3602a549",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/portfolio_b.dat",
+      "file": "lecture-2/generated/portfolio_b.dat",
+      "sha256": "18bd5cc039ed8f62f3b5791d8a94cf0d93b6c3e2f020b5d8ef106bebb13d409c",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/risk_free.dat",
+      "file": "lecture-2/generated/risk_free.dat",
+      "sha256": "1db7eda657ef04c54f8feb249e5de9a1d71dbe3d8369c0ca9f792941e24eb32f",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/sml_alpha_aem.dat",
+      "file": "lecture-2/generated/sml_alpha_aem.dat",
+      "sha256": "0c5c646da646800ed715be824f4cf7f75428cd5f6b63a4b9bd5548427407b9e0",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/sml_alpha_ko.dat",
+      "file": "lecture-2/generated/sml_alpha_ko.dat",
+      "sha256": "42842bee8700fefe8cb6f06e18134d5f8b5839f45a527ecc98fb9b783eadf2d8",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/sml_line.dat",
+      "file": "lecture-2/generated/sml_line.dat",
+      "sha256": "20683d13e8e7634e844f4cc0d3d762dcc90b89e6e1e01fbb719fcb41350eb6b8",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/sml_points.dat",
+      "file": "lecture-2/generated/sml_points.dat",
+      "sha256": "40e2f1b737fe5544dd4ac6566672e59786eb8b2188dfa25071f00120338b31ba",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/sml_rf.dat",
+      "file": "lecture-2/generated/sml_rf.dat",
+      "sha256": "e55327b9aed253b671e149d12a36220606ccc325e5a3419d717efd566ba138c3",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/survey.dat",
+      "file": "lecture-2/generated/survey.dat",
+      "sha256": "3bd975b8c69b0e8eae0429bca9831a135f64876ea1cc062d0089931522072dc3",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/tangency.dat",
+      "file": "lecture-2/generated/tangency.dat",
+      "sha256": "93bc4f79be5ce4eab52f13cf7bd724fd489c6d8649217779172346226750118d",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/two_mv.dat",
+      "file": "lecture-2/generated/two_mv.dat",
+      "sha256": "861c3e5b36df4de149dde08c33e34049c25ed4ae3cc2ec2a01156ffa49074187",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/two_opt.dat",
+      "file": "lecture-2/generated/two_opt.dat",
+      "sha256": "979b6293ebb84426700a3dbbb680db232534b5bcc48d9521339a5b401e7e8aad",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/two_short.dat",
+      "file": "lecture-2/generated/two_short.dat",
+      "sha256": "179da74e6bdde45a848f2206c5b571b1b104bdd1f0a6b1db4fc84c67d4f37d8e",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/two_short_marks.dat",
+      "file": "lecture-2/generated/two_short_marks.dat",
+      "sha256": "56ddb2cce0603fee4d428e6d16bb10adf2a62b9ad3d8e7d75b94427e315e7c19",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/generated/two_stock.dat",
+      "file": "lecture-2/generated/two_stock.dat",
+      "sha256": "5821358c16a2c4d96b9e536ae33463f2555ea335e79ab96af11cb008e5035b3f",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/figures/barrick.tex",
+      "file": "lecture-2/figures/barrick.tex",
+      "sha256": "6225889f9d2424f85d3d16812a29d7f2823764b60fcc3abd1753c414e3792992",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/figures/correlation.tex",
+      "file": "lecture-2/figures/correlation.tex",
+      "sha256": "31e7336704c80c71adec77b30606dc94350f80c9be4e54e3429fd0177382da72",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/figures/diversification.tex",
+      "file": "lecture-2/figures/diversification.tex",
+      "sha256": "4fff70bf7434d8ba4596bd60a48fc3fe90aea7898d06bd930ffef0b14134903c",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/figures/five_stock.tex",
+      "file": "lecture-2/figures/five_stock.tex",
+      "sha256": "68561f302d08412887aea52b60298c9a2db29018bfd48bbea2a4596918f514aa",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/figures/normal.tex",
+      "file": "lecture-2/figures/normal.tex",
+      "sha256": "f66fd616f8779f3f425275c9e351b0ba0086d374dd7eac0ac06b062bf0c1dacb",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/figures/opportunity_portfolios.tex",
+      "file": "lecture-2/figures/opportunity_portfolios.tex",
+      "sha256": "e41a0ba83e4d43a844b8e91696e50fecde530e6d61b1bbd5ea9823a005562d29",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/figures/opportunity_short.tex",
+      "file": "lecture-2/figures/opportunity_short.tex",
+      "sha256": "d7d9d1b44c8b6dd5e12cd56978db6e3d99d6f6c5f155cdd138cd92c45e28d8b2",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/figures/opportunity_stocks.tex",
+      "file": "lecture-2/figures/opportunity_stocks.tex",
+      "sha256": "6f6b92c89f86873404d9e72e567f95c85e65226803a3804d2c0046e09c5161e4",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/figures/risk_return.tex",
+      "file": "lecture-2/figures/risk_return.tex",
+      "sha256": "b1b9a8af8b98f78e0c4970b28aec26570bfb1aea8c7ec97ef1294bdcaf4e57ec",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/figures/sml.tex",
+      "file": "lecture-2/figures/sml.tex",
+      "sha256": "7554ccf43744325edf5f39032867a3f43358566dc89b24bebe1bd08c1a1ee8e1",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/figures/survey.tex",
+      "file": "lecture-2/figures/survey.tex",
+      "sha256": "e252a5b519e33d884a4cfc39976f2daf5d495b38cc192b7a2d7aa397fb5b9deb",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/figures/tangent.tex",
+      "file": "lecture-2/figures/tangent.tex",
+      "sha256": "0623773df629a17f51d41d416b73874b326ffd847ec26e27ef1149eaff00f4e1",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/figures/total_vs_market.tex",
+      "file": "lecture-2/figures/total_vs_market.tex",
+      "sha256": "dbefc5c2367fe99eee0702e6c9b3dcd85a5fd4e0d32418c5182b7adf6ba59f5c",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/figures/two_vs_five.tex",
+      "file": "lecture-2/figures/two_vs_five.tex",
+      "sha256": "7324cd018e54e8cd5dd7d382242f9653363fe45d385c30757172f56dd95a3a62",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/logos/01-standard-black-text.png",
+      "file": "lecture-2/logos/01-standard-black-text.png",
+      "sha256": "dbab4f0c8a34cbd0103dfe266f62a740551861127c36cfdebe6ce9b62db8c156",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/logos/st-andrews-icon.png",
+      "file": "lecture-2/logos/st-andrews-icon.png",
+      "sha256": "37a8c15477de0f7c7a4fb293b05f4a6e064374d237592c4f5c2bd64fdf59089a",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/pix_l2/HM.png",
+      "file": "lecture-2/pix_l2/HM.png",
+      "sha256": "98d3eaa6ba031cf6bb122257a714d501f648efc26cfc5a32aadfba46f875143d",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/extra-slides/CLASS REPS LECTURE SLIDE.pdf",
+      "file": "lecture-2/extra-slides/CLASS REPS LECTURE SLIDE.pdf",
+      "sha256": "490602e693b29f3a445bcb21605289840ad54951d56266005e435c49ddc5b988",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/extra-slides/St Andrews Flyer - Houlihan Lokey - Sep-26.pdf",
+      "file": "lecture-2/extra-slides/St Andrews Flyer - Houlihan Lokey - Sep-26.pdf",
+      "sha256": "781e16b3e3d985ac34102b5f103fa02b30d3ad9a858f9daf5d63b4a03e375483",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/extra-slides/calculator tagging.pdf",
+      "file": "lecture-2/extra-slides/calculator tagging.pdf",
+      "sha256": "c13de5ae3280c85d7e5716ddc9c8c0eddcff628e84fb71f5b565db67286ace4b",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/key-concepts/L2 Key concepts and terms.pdf",
+      "file": "lecture-2/key-concepts/key-concepts-and-terms.pdf",
+      "sha256": "54e6a22dde9ae0dda10cb58e056c8eedd3767a9e9f2b0999448f3dce2fa25be5",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/key-concepts/Lecture 2 Key Concepts and Terms.tex",
+      "file": "lecture-2/key-concepts/key-concepts-and-terms.tex",
+      "sha256": "a324f6df1953828f4013f2db62cf2bb5fd1eea8c83b65d2cb3f407e4d05f0408",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/key-concepts/beamerthemeStAndrews.sty",
+      "file": "lecture-2/key-concepts/beamerthemeStAndrews.sty",
+      "sha256": "93c9207281ed6a3e4f7775ff949c221e747d13a0ac4b36b4918033f80ba9553b",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/key-concepts/logos/01-standard-black-text.png",
+      "file": "lecture-2/key-concepts/logos/01-standard-black-text.png",
+      "sha256": "dbab4f0c8a34cbd0103dfe266f62a740551861127c36cfdebe6ce9b62db8c156",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-2/key-concepts/logos/st-andrews-icon.png",
+      "file": "lecture-2/key-concepts/logos/st-andrews-icon.png",
+      "sha256": "37a8c15477de0f7c7a4fb293b05f4a6e064374d237592c4f5c2bd64fdf59089a",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-3/Lecture 3_Stocks and Bonds.tex",
+      "file": "lecture-3/lecture-slides.tex",
+      "sha256": "d51255471983816261e7cef58529ddb738d34dda4f14146890f663779da4e3e9",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-3/L3 Stocks and Bonds.pdf",
+      "file": "lecture-3/lecture-slides.pdf",
+      "sha256": "32e453a50b1af124379043793d65aec6f0b4798dd06c0c23c3d280474889119d",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-3/generated/coupon_one_percent.dat",
+      "file": "lecture-3/generated/coupon_one_percent.dat",
+      "sha256": "9f356ac23959cc627d430b5ad3027f9397c5ea182ab9c07db46d79af168717d8",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-3/generated/coupon_ten_percent.dat",
+      "file": "lecture-3/generated/coupon_ten_percent.dat",
+      "sha256": "b037e3b3c87a9047a050beb5d5bccfce95ec933c020f44c074d7e6a09e51eda8",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-3/generated/numbers.tex",
+      "file": "lecture-3/generated/numbers.tex",
+      "sha256": "09c74c36a99a1a7a5d5ee3da33308ef04464495652ed96afd044beb424eb3b9d",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-3/generated/rate_five_year.dat",
+      "file": "lecture-3/generated/rate_five_year.dat",
+      "sha256": "9c3f620f3f9de1e82d57adf94ef8618fa8412f6dd9c813ebe1c74949c48f920a",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-3/generated/rate_thirty_year.dat",
+      "file": "lecture-3/generated/rate_thirty_year.dat",
+      "sha256": "7b5cc3b60528bf38b5b9a33a155fc12fd4a5007aa6a01eed5d679baf4c944193",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-3/generated/time_five.dat",
+      "file": "lecture-3/generated/time_five.dat",
+      "sha256": "fbfc0929a0a2c519497007340fc12a0cbb0efef782e968805139e698983d1ed4",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-3/generated/time_ten.dat",
+      "file": "lecture-3/generated/time_ten.dat",
+      "sha256": "4ebdcb2f54f217850cae22640ab57482d3bdcaf71b6262c4b2e695260ebbfc6b",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-3/generated/time_two.dat",
+      "file": "lecture-3/generated/time_two.dat",
+      "sha256": "96764f64019943c76705eef769ef0e71a17827126e26bff6f4b71f9ff75f600c",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-3/generated/time_zero.dat",
+      "file": "lecture-3/generated/time_zero.dat",
+      "sha256": "c4d339d77a85e3395c5b22f6071a66d6bc1f051c07a05f24e1ca0e7b935dce8b",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-3/generated/yield_curve.dat",
+      "file": "lecture-3/generated/yield_curve.dat",
+      "sha256": "bf8e86f73b075f9af1693aa5420333fd6b56a19988ba8d6020259ac50f26515b",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-3/figures/bond_coupon.tex",
+      "file": "lecture-3/figures/bond_coupon.tex",
+      "sha256": "c4951638614314402e87258fb2587224cb72cedfa984dd7cfccd69bf345467a4",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-3/figures/bond_maturity.tex",
+      "file": "lecture-3/figures/bond_maturity.tex",
+      "sha256": "c9131dc07401e6622703084a55cd4af570e5fe99c677762ae74d25d7e24c4884",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-3/figures/bond_time.tex",
+      "file": "lecture-3/figures/bond_time.tex",
+      "sha256": "cec101c13305c755829c434c9b542b0a3f5a906ec2b726215b4c44c9c258dc8c",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-3/figures/differential_growth.tex",
+      "file": "lecture-3/figures/differential_growth.tex",
+      "sha256": "9c7c79e9cece0f0993d656f9c93c4da7b1b319b5e90d30d4d280f80aa4594868",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-3/figures/hon_quote.tex",
+      "file": "lecture-3/figures/hon_quote.tex",
+      "sha256": "f2efcd9c46c83266c21357d3f0fe88911986d84037abf68d04496f5b4167304f",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-3/figures/limit_orders.tex",
+      "file": "lecture-3/figures/limit_orders.tex",
+      "sha256": "ef25452fe18757c75d3f0482884a0cf5cb8498b1fa1fe0fa74188df013e7a966",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-3/figures/price_relation.tex",
+      "file": "lecture-3/figures/price_relation.tex",
+      "sha256": "c972d2f6683444b08cb2f6d65a6d0bedb0b85de7b6b738bb496820c39dfe81e1",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-3/figures/rate_sensitivity.tex",
+      "file": "lecture-3/figures/rate_sensitivity.tex",
+      "sha256": "4fd36da161d740ae7291c43d7bc03c4a7f03804758fad791d800b22e03d9e2c0",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-3/figures/yield_curve.tex",
+      "file": "lecture-3/figures/yield_curve.tex",
+      "sha256": "eeeb75d2f9d20e96158c18114b0429eb7f387e4aa0ce064f525dbe9801586a72",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-3/logos/01-standard-black-text.png",
+      "file": "lecture-3/logos/01-standard-black-text.png",
+      "sha256": "dbab4f0c8a34cbd0103dfe266f62a740551861127c36cfdebe6ce9b62db8c156",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-3/logos/st-andrews-icon.png",
+      "file": "lecture-3/logos/st-andrews-icon.png",
+      "sha256": "37a8c15477de0f7c7a4fb293b05f4a6e064374d237592c4f5c2bd64fdf59089a",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-3/pix_l3/Bondex.jpg",
+      "file": "lecture-3/pix_l3/Bondex.jpg",
+      "sha256": "a97d7ac2801960cf700b8d6ee2457fafd9d9123ea1005a4aca6f7904326910aa",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-3/pix_l3/berkshire.jpg",
+      "file": "lecture-3/pix_l3/berkshire.jpg",
+      "sha256": "c43cd038e234f4670d05b36c20c4e6fb7ec9b33aaea0eedb45a4f1aac046b3ed",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-3/key-concepts/L3 Key Concepts and Terms.pdf",
+      "file": "lecture-3/key-concepts/key-concepts-and-terms.pdf",
+      "sha256": "03f0fec5cbe295b14448e9083fcb8b3f57f6d8a5403ae7cdab330f7dd175a540",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-3/key-concepts/Lecture 3 Key Concepts and Terms.tex",
+      "file": "lecture-3/key-concepts/key-concepts-and-terms.tex",
+      "sha256": "6554b6d37d61a9c3ab6739c5fd5126aaa44f782d5126ae05f9695ae8fe1e535f",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-3/key-concepts/beamerthemeStAndrews.sty",
+      "file": "lecture-3/key-concepts/beamerthemeStAndrews.sty",
+      "sha256": "93c9207281ed6a3e4f7775ff949c221e747d13a0ac4b36b4918033f80ba9553b",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-3/key-concepts/logos/01-standard-black-text.png",
+      "file": "lecture-3/key-concepts/logos/01-standard-black-text.png",
+      "sha256": "dbab4f0c8a34cbd0103dfe266f62a740551861127c36cfdebe6ce9b62db8c156",
+      "change": "Byte-for-byte copy."
+    },
+    {
+      "source": "lecture-3/key-concepts/logos/st-andrews-icon.png",
+      "file": "lecture-3/key-concepts/logos/st-andrews-icon.png",
+      "sha256": "37a8c15477de0f7c7a4fb293b05f4a6e064374d237592c4f5c2bd64fdf59089a",
+      "change": "Byte-for-byte copy."
+    }
+  ]
+}

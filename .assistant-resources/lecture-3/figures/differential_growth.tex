@@ -1,0 +1,25 @@
+% Dividends grow at g1 to date N, then at g2 forever. Redrawn from the raster the
+% deck used to carry.
+\begin{tikzpicture}[font=\footnotesize,>=stealth]
+\draw[StAndrewsRed,line width=1pt] (0,0) -- (4.4,0);
+\draw[StAndrewsRed,line width=1pt] (6.2,0) -- (11.6,0);
+\draw[black!55,dashed] (4.5,0) -- (6.1,0);
+\foreach \x/\date/\div in {0/0/{$D_0$}, 1.7/1/{$D_1$}, 3.4/2/{$D_2$},
+                           6.4/N/{$D_N$}, 8.1/{N+1}/{$D_{N+1}$},
+                           9.8/{N+2}/{$D_{N+2}$}, 11.5/{N+3}/{$D_{N+3}$}}
+{
+  \draw[black!70] (\x,0.22) -- (\x,-0.02);
+  \node[anchor=south,inner sep=1.5pt] at (\x,0.22) {\date};
+  \node[anchor=north,inner sep=2.5pt] at (\x,0) {\div};
+}
+\node[anchor=east,inner sep=3pt] at (-0.15,0.32) {Date};
+\node[anchor=west] at (11.75,0) {$\cdots$};
+\node[anchor=north west,align=left,inner sep=0pt] at (0.9,-0.85)
+  {$D_1 = D_0(1+g_1)$\\[6pt]
+   $D_2 = D_1(1+g_1) = D_0(1+g_1)^2$};
+\node[anchor=north west,align=left,inner sep=0pt] at (4.9,-2.5)
+  {$D_N = D_{N-1}(1+g_1) = D_0(1+g_1)^N$\\[6pt]
+   $D_{N+1} = D_N(1+g_2) = D_0(1+g_1)^N(1+g_2)$};
+\node[draw=StAndrewsRed,line width=0.8pt,inner sep=5pt,anchor=north] at (7.6,-0.55)
+  {$P_N = \dfrac{D_{N+1}}{r-g_2}$};
+\end{tikzpicture}

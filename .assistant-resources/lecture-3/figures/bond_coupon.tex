@@ -1,0 +1,16 @@
+% Two fifteen-year bonds, 1% and 10% coupon, priced across the required return.
+\begin{tikzpicture}
+\begin{axis}[sensitivityplot,ymax=160,ytick={0,20,40,60,80,100,120,140,160}]
+\addplot[StAndrewsBlue]   table[x=rate,y=price]{generated/coupon_ten_percent.dat};
+\addplot[StAndrewsOrange] table[x=rate,y=price]{generated/coupon_one_percent.dat};
+\node[anchor=west,font=\footnotesize,text=StAndrewsBlue] at (axis cs:25.4,42)
+      {10-percent coupon rate};
+\node[anchor=west,font=\footnotesize,text=StAndrewsOrange] at (axis cs:25.4,8)
+      {1-percent coupon rate};
+\node[draw=StAndrewsRed,line width=0.6pt,anchor=west,align=left,font=\footnotesize,
+      inner sep=4pt] at (axis cs:1.2,19) {Par: \$100\\Maturity: 15 years};
+\node[anchor=north west,align=center,font=\footnotesize,text=StAndrewsBlue]
+      at (axis cs:18.4,158) {\underline{10-percent}\\\LCouponTenA\%\\\LCouponTenB\%\\\LCouponTenC\%\\\LCouponTenD\%};
+\node[anchor=north west,align=center,font=\footnotesize,text=StAndrewsOrange]
+      at (axis cs:24.4,158) {\underline{1-percent}\\\LCouponOneA\%\\\LCouponOneB\%\\\LCouponOneC\%\\\LCouponOneD\%};
+\end{axis}\end{tikzpicture}

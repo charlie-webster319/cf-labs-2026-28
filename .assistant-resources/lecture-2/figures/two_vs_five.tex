@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+\begin{axis}[frontierplot]
+\addplot[StAndrewsOrange,thick] table[x expr=100*\thisrow{sd},y expr=100*\thisrow{ret}]{generated/two_stock.dat};
+\addplot[StAndrewsBlue,thick] table[x expr=100*\thisrow{sd},y expr=100*\thisrow{ret}]{generated/five_stock.dat};
+\addplot[only marks,mark=*,mark size=1.6pt,black] table[x expr=100*\thisrow{sd},y expr=100*\thisrow{ret}]{generated/five_inframe.dat};
+\addplot[only marks,mark=*,mark size=2pt,StAndrewsRed] coordinates {(\LSDFiveOpt,\LMeanFiveOpt)};
+\node[anchor=west,font=\small,xshift=3pt] at (axis cs:\LSDWmt,\LMeanWmt) {Wal-Mart};
+\node[anchor=west,font=\small,xshift=3pt] at (axis cs:\LSDHon,\LMeanHon) {Honeywell};
+\node[anchor=south east,font=\footnotesize,text=StAndrewsRed,xshift=-4pt,yshift=3pt] at (axis cs:\LSDFiveOpt,\LMeanFiveOpt) {Optimal};
+\node[anchor=north east,font=\footnotesize,text=StAndrewsBlue,xshift=-4pt,yshift=-3pt] at (axis cs:\LSDFiveMV,\LMeanFiveMV) {Minimum variance};
+\node[anchor=north west,font=\small,text=StAndrewsOrange] at (axis cs:.8,16.6) {Two-stock frontier};
+\node[anchor=north west,font=\small,text=StAndrewsBlue] at (axis cs:.8,17.25) {Five-stock frontier};
+\end{axis}\end{tikzpicture}

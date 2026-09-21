@@ -21,6 +21,7 @@ wheels/
 !.codex/config.toml
 .claude/*
 !.claude/settings.json
+!.claude/skills/
 .copilot/
 .statamcp/
 *.pem

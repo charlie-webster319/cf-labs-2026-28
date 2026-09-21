@@ -1,0 +1,494 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+\usetheme{StAndrews}
+\metroset{sectionpage=none}
+\coursename{EC3318 / MN3101 Corporate Finance}
+\title{Lecture 1:\\Key Concepts and Terms}
+\author{Dr Christian Engels}
+\subtitle{Understand the idea. Work through an example.}
+\titlelogo{\includegraphics[height=1.15cm]{logos/01-standard-black-text.png}}
+\hypersetup{pdfsubject={An accessible reference for Lecture 1},pdfpagemode=UseNone}
+\pdfstringdefDisableCommands{\def\translate#1{#1}}
+\setbeamercolor{alerted text}{fg=StAndrewsBurgundy}
+\newcommand{\idea}[1]{\textbf{The idea:} #1\par\smallskip}
+\newcommand{\inpractice}[1]{\par\smallskip\textbf{What this means:} #1}
+\newcommand{\remember}[1]{\par\smallskip\alert{Remember:} #1}
+\newcommand{\reference}[1]{\par\smallskip{\small\hyperlink{#1}{Formula and notation reference $\rightarrow$}}}
+% Use the text pound glyph in equations as well as ordinary text.
+\renewcommand{\pounds}{\ifmmode\text{\textsterling}\else\textsterling\fi}
+\begin{document}
+\begin{frame}[plain]\titlepage\end{frame}
+
+\begin{frame}{Start with the question, then the calculation}
+\begin{enumerate}
+\item \textbf{Understand the idea.} What decision are we trying to make?
+\item \textbf{Follow the example.} Use a calculator and do one step at a time.
+\item \textbf{Explain the answer.} What does the number tell a manager?
+\end{enumerate}
+\par\smallskip
+The first part uses small numbers and everyday language. The calculation reference at the back introduces the symbols and fuller formulas.
+\remember{This is a learning sequence, not a change to assessment requirements. Use the full lecture, practice questions and required reading too.}
+\end{frame}
+
+\section{Understanding the Ideas}
+\begin{frame}{A percentage is an amount out of 100}
+\idea{A 10\% return means earning \pounds10 for every \pounds100 invested.}
+\begin{enumerate}
+\item Write 10\% as a decimal: $10\div100=0.10$.
+\item Find the gain: $\pounds100\times0.10=\pounds10$.
+\item Add it to the starting amount: $\pounds100+\pounds10=\pounds110$.
+\end{enumerate}
+\inpractice{Multiplying by 1.10 keeps the original money \emph{and} adds 10\%. Multiplying by 0.10 finds only the gain.}
+\end{frame}
+
+\begin{frame}{A timeline tells us when money moves}
+\idea{A \textbf{cash flow} is money paid or received. Its date matters.}
+\par\smallskip\begingroup\centering
+\begin{tabular}{lrr}
+\toprule & Today & In one year\\\midrule
+What happens & Pay \pounds100 & Receive \pounds110\\
+On a timeline & $-100$ & $+110$\\
+Date label & 0 & 1\\\bottomrule
+\end{tabular}
+\par\endgroup\smallskip
+\inpractice{A minus sign means money leaves you. A plus sign means money comes to you. Date 0 simply means today.}
+\remember{Compare amounts at the same date. \pounds110 next year is not automatically worth \pounds110 today.}
+\end{frame}
+
+\begin{frame}{Compounding means earning interest on interest}
+\idea{With \textbf{compound interest}, each year's interest joins the money earning interest next year.}
+\textbf{Example: \pounds100 invested at 5\% a year}
+\begin{enumerate}
+\item End of year 1: $100\times1.05=\pounds105$.
+\item End of year 2: $105\times1.05=\pounds110.25$.
+\end{enumerate}
+\inpractice{The extra 25p is interest earned on the first year's \pounds5 interest.}
+\remember{\textbf{Simple interest} pays interest only on the original \pounds100: \pounds5 each year, giving \pounds110 after two years.}
+\reference{single}
+\end{frame}
+
+\begin{frame}{Discounting works backwards from future money}
+\idea{\textbf{Present value (PV)} asks: ``How much would I need today to produce that future payment?''}
+\textbf{Example: \pounds121 due in two years; a 10\% annual rate}
+\begin{enumerate}
+\item Move back one year: $121\div1.10=\pounds110$.
+\item Move back one more year: $110\div1.10=\pounds100$.
+\end{enumerate}
+\inpractice{\pounds100 today can grow into \pounds121 in two years. They have the same value at this rate.}
+\remember{Moving forward: multiply. Moving backward: divide. \textbf{Future value (FV)} is the amount at the future date.}
+\reference{single}
+\end{frame}
+
+\begin{frame}{Several payments? Value each one, then add}
+\idea{Payments arriving on different dates need separate calculations.}
+\textbf{Example: use a 10\% annual discount rate}
+\par\smallskip\begingroup\centering
+\begin{tabular}{lrl}
+\toprule Payment & Calculation & Value today\\\midrule
+\pounds110 in one year & $110\div1.10$ & \pounds100\\
+\pounds121 in two years & $121\div1.10\div1.10$ & \pounds100\\\bottomrule
+\end{tabular}
+\par\endgroup\smallskip
+\inpractice{The payments together are worth \pounds200 today. The later payment needs two steps backwards.}
+\remember{Use a rate with the same period as the payments: annual with years, monthly with months.}
+\reference{sum}
+\end{frame}
+
+\begin{frame}{An annual quote is not always the annual return}
+\idea{The \textbf{effective annual rate} includes interest earned on interest within the year.}
+\textbf{Example: a 12\% annual quote, compounded twice a year}
+\begin{enumerate}
+\item The rate for each half-year is $12\%\div2=6\%$.
+\item After six months: $100\times1.06=\pounds106$.
+\item After one year: $106\times1.06=\pounds112.36$.
+\end{enumerate}
+\inpractice{The effective annual return is 12.36\%, not 12\%.}
+\remember{UK \textbf{APR} concerns borrowing costs, including relevant charges; savings \textbf{AER} concerns the annual equivalent return. Check the quotation convention.}
+\reference{rates}
+\end{frame}
+
+\begin{frame}{Inflation changes what your money can buy}
+\idea{\textbf{Nominal} means money amounts. \textbf{Real} means purchasing power: what the money buys.}
+\textbf{Example: your savings earn 5\%; prices rise 5\%}
+\begin{enumerate}
+\item Your \pounds100 becomes \pounds105.
+\item A basket that cost \pounds100 now costs \pounds105.
+\item You can still buy one basket: your real gain is zero.
+\end{enumerate}
+\inpractice{More pounds do not always mean more purchasing power.}
+\remember{Use nominal cash flows with a nominal rate, or real cash flows with a real rate. Keep the two consistent.}
+\reference{inflation}
+\end{frame}
+
+\begin{frame}{An annuity is a fixed series of equal payments}
+\idea{An \textbf{ordinary annuity} pays the same amount at the end of each period, for a fixed number of periods.}
+\textbf{Example: \pounds100 in one year and \pounds100 in two years; rate 10\%}
+\begin{enumerate}
+\item First payment today: $100\div1.10=\pounds90.91$.
+\item Second payment today: $100\div1.10\div1.10=\pounds82.64$.
+\item Add them: $90.91+82.64=\pounds173.55$.
+\end{enumerate}
+\inpractice{The annuity formula is a shortcut for these separate calculations. You already know the underlying method.}
+\reference{annuity}
+\end{frame}
+
+\begin{frame}{A perpetuity is a payment that continues forever}
+\idea{A \textbf{level perpetuity} pays the same amount every period, with no end date. It is a valuation model.}
+\textbf{Example: \pounds100 a year forever; first payment next year; rate 5\%}
+\begin{enumerate}
+\item A \pounds2,000 fund earns \pounds100 a year at 5\%.
+\item Paying out that interest leaves the \pounds2,000 fund intact.
+\item So the payment stream is worth \pounds2,000 today.
+\end{enumerate}
+\inpractice{The shortcut is ``annual payment divided by the annual rate'': $100\div0.05=2,000$. The rate must be positive.}
+\reference{growing}
+\end{frame}
+
+\begin{frame}{Earlier payments are worth more at a positive rate}
+\idea{An \textbf{annuity due} begins now. A \textbf{delayed stream} begins later. Always locate the first payment.}
+\textbf{Example: two \pounds100 payments; rate 10\%}
+\par\smallskip\begingroup\centering
+\begin{tabular}{lll}
+\toprule Payment dates & Calculation & Value today\\\midrule
+Years 1 and 2 & From previous example & \pounds173.55\\
+Today and year 1 & $100+100\div1.10$ & \pounds190.91\\\bottomrule
+\end{tabular}
+\par\endgroup\smallskip
+\inpractice{Same total received, different timing, different value.}
+\remember{An annuity or perpetuity formula first gives a value \emph{one period before} the first payment. Discount further if needed.}
+\reference{annuity}
+\end{frame}
+
+\begin{frame}{NPV asks how much value a project adds}
+\idea{\textbf{Net present value (NPV)} is the value today of money received, less the value today of money paid.}
+\textbf{Example: pay \pounds100 today; receive \pounds121 next year; rate 10\%}
+\begin{enumerate}
+\item Value the receipt today: $121\div1.10=\pounds110$.
+\item Subtract the cost today: $110-100=\pounds10$.
+\end{enumerate}
+\inpractice{The project adds \pounds10 of value today after allowing for the required return.}
+\remember{Include \textbf{incremental cash flows}: payments that change because you undertake the project, including later costs.}
+\reference{sum}
+\end{frame}
+
+\begin{frame}{The required return is what investors give up elsewhere}
+\idea{The \textbf{opportunity cost of capital} is the return available on an alternative with comparable risk. It sets the required return.}
+\textbf{Example: a comparable investment offers 10\%}
+\begin{enumerate}
+\item Investing \pounds100 must offer \pounds110 after one year just to match it.
+\item A project offering \pounds110 has NPV zero.
+\item One offering \pounds121 has NPV \pounds10 at that same rate.
+\end{enumerate}
+\inpractice{An \textbf{economic rent} is a return above opportunity cost. Ask what advantage could sustain it against competition.}
+\remember{Match the discount rate to the project's risk, currency and inflation assumptions.}
+\end{frame}
+
+\begin{frame}{The NPV decision depends on what you can choose}
+\idea{A positive NPV means estimated value is created. The available choices and constraints still matter.}
+\par\smallskip\begingroup\centering
+\begin{tabular}{lr}
+\toprule Project & NPV\\\midrule
+A & \pounds20\\
+B & \pounds12\\\bottomrule
+\end{tabular}
+\par\endgroup\smallskip
+\begin{itemize}
+\item \textbf{Independent:} you can do both. Accept both if feasible and unconstrained.
+\item \textbf{Mutually exclusive:} you can choose only one. Choose A.
+\item If both NPVs are negative, doing neither gives the better result.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{IRR expresses a project's return as a percentage}
+\idea{The \textbf{internal rate of return (IRR)} is the discount rate at which the project just breaks even: NPV equals zero.}
+\textbf{Example: pay \pounds100 today; receive \pounds121 next year}
+\begin{enumerate}
+\item The gain is $121-100=\pounds21$.
+\item Relative to the \pounds100 invested: $21\div100=21\%$.
+\item At a 21\% discount rate, \pounds121 is worth exactly \pounds100 today.
+\end{enumerate}
+\inpractice{For a standard investment with an initial cost followed by receipts, IRR above the required return means positive NPV.}
+\remember{The one-year calculation is simple. Several years require finding the rate that makes the full NPV zero.}
+\end{frame}
+
+\begin{frame}{A higher percentage need not create more value}
+\idea{NPV measures value in pounds. IRR measures a percentage. They answer different questions.}
+\textbf{Example: two one-year projects, valued at a 10\% required return}
+\par\smallskip\begingroup\centering
+\begin{tabular}{lrrrr}
+\toprule & Cost & Receipt & IRR & NPV\\\midrule
+A & \pounds100 & \pounds130 & 30\% & \pounds18.18\\
+B & \pounds1,000 & \pounds1,200 & 20\% & \pounds90.91\\\bottomrule
+\end{tabular}
+\par\endgroup\smallskip
+\inpractice{If you can choose only one, have enough funding and the risks are comparable, B creates more value despite its lower IRR.}
+\remember{Different payment dates can also change rankings. Later costs can produce more than one IRR. Use NPV at the appropriate rate.}
+\end{frame}
+
+\begin{frame}{Payback asks how soon the outlay is recovered}
+\idea{The \textbf{payback period} is the time it takes receipts to cover the starting cost. Compare it with a chosen cutoff.}
+\textbf{Example: pay \pounds100; receive \pounds60 at each year-end}
+\begin{enumerate}
+\item After year 1, you have received \pounds60: not enough.
+\item After year 2, you have received \pounds120: cost recovered.
+\end{enumerate}
+\inpractice{With year-end receipts, payback occurs at the end of year 2.}
+\remember{\textbf{Discounted payback} values receipts today first. At 10\%, the two receipts are worth \pounds104.13 in total. Both methods ignore payments after recovery.}
+\end{frame}
+
+\begin{frame}{Book value is an accounting number}
+\idea{\textbf{Depreciation} spreads an asset's cost over its useful life. \textbf{Book value (BV)} is the recorded value left after depreciation.}
+\textbf{Example: an asset costs \pounds500 and is depreciated evenly to zero over five years}
+\begin{enumerate}
+\item Annual depreciation: $500\div5=\pounds100$.
+\item Book value after one year: $500-100=\pounds400$.
+\end{enumerate}
+\inpractice{The \pounds100 depreciation is not a new cash payment. The purchase payment has already happened.}
+\remember{Book value need not equal the price someone would pay for the asset today.}
+\end{frame}
+
+\begin{frame}{AAR uses accounting profit, not cash flow}
+\idea{\textbf{Average accounting return (AAR)} compares average annual net income with average book value. Net income is profit after depreciation and tax.}
+\textbf{Example: average annual net income \pounds50; average BV \pounds250}
+\begin{enumerate}
+\item Divide profit by average BV: $50\div250=0.20$.
+\item Express as a percentage: $0.20\times100=20\%$.
+\end{enumerate}
+\inpractice{If the stated AAR target is 15\%, this project passes that accounting test.}
+\remember{This does not prove positive NPV. AAR ignores payment dates and depends on accounting choices. State the denominator consistently.}
+\end{frame}
+
+\begin{frame}{PI expresses value received per pound invested}
+\idea{The \textbf{profitability index (PI)} compares the value today of future receipts with the initial cost.}
+\textbf{Example: spend \pounds100 for receipts worth \pounds110 today}
+\begin{enumerate}
+\item NPV is $110-100=\pounds10$.
+\item PI is $110\div100=1.10$: \pounds1.10 of value per \pounds1 spent.
+\end{enumerate}
+\inpractice{PI above 1 and NPV above zero give the same accept/reject answer here.}
+\remember{Some sources use a \textbf{net index}: $10\div100=0.10$, with a threshold of zero. Ratios can rank projects differently from total value.}
+\end{frame}
+
+\begin{frame}{A positive forecast still needs to be challenged}
+\idea{A calculation is useful only if its assumptions are credible.}
+\begin{itemize}
+\item \textbf{Sensitivity analysis:} change one assumption. If next year's receipt falls from \pounds121 to \pounds110, our \pounds100 project has NPV zero at 10\%.
+\item \textbf{Scenario analysis:} change related assumptions together, such as lower sales and higher costs.
+\item \textbf{Feasibility:} check that the business has the funding and resources to deliver the project.
+\end{itemize}
+\inpractice{Managers need both a value estimate and a credible explanation of how the project will work.}
+\end{frame}
+
+\begin{frame}{Keep these questions attached to the terms}
+\par\smallskip\begingroup\centering
+\begin{tabular}{lp{0.65\textwidth}}
+\toprule Term & The question it answers\\\midrule
+PV & What is that future payment worth today?\\[0.5em]
+FV & What will today's amount grow into?\\[0.5em]
+NPV & How much value does the project add today?\\[0.5em]
+IRR & At what discount rate does it break even?\\[0.5em]
+Payback & How soon is the starting outlay recovered?\\[0.5em]
+AAR & How much accounting profit per pound of average BV?\\[0.5em]
+PI & How much present value per pound initially invested?\\\bottomrule
+\end{tabular}
+\par\endgroup\smallskip
+\end{frame}
+
+\begin{frame}{Check your understanding before using the shortcuts}
+\begin{enumerate}
+\item Why is \pounds110 next year worth \pounds100 today at a 10\% rate?
+\item What does an NPV of \pounds10 tell a manager?
+\item Why might you choose a project with a lower IRR?
+\item Why is depreciation different from a new cash payment?
+\item Why can a quick payback still hide a poor investment?
+\end{enumerate}
+\par\smallskip
+Answer in words first. Then use one small example to support each answer.
+\remember{Draw the dates, do one step at a time, and explain what the answer means.}
+\end{frame}
+
+
+\section{Calculation Reference}
+\begin{frame}{Calculation reference: translate the symbols into words}
+The following pages support the calculations in the full lecture.
+\par\smallskip
+\begin{enumerate}
+\item Identify the payment amounts and dates.
+\item Read what each symbol stands for.
+\item Substitute the numbers before reaching for a calculator.
+\item Check the answer against the intuition from the first part.
+\end{enumerate}
+\remember{You do not need to absorb all the formulas at once. Use the relevant page when working on that type of problem.}
+\end{frame}
+
+\begin{frame}[label=single]{Reference: one amount moving through time}
+\textbf{In words:} multiply by the growth factor once for each period.
+\[
+FV=PV(1+r)^n\qquad PV=\frac{FV}{(1+r)^n}
+\]
+$PV$: value today; $FV$: future value; $r$: rate per period; $n$: number of periods.
+\par\smallskip
+\textbf{Read the power:} $(1.10)^2$ means $1.10\times1.10$.
+\par\smallskip
+\textbf{Example:} $100(1.10)^2=\pounds121$. Reverse it: $121/(1.10)^2=\pounds100$.
+\remember{Rates can be negative. At $-1\%$, \pounds99 next year is worth \pounds100 today. Simple interest instead uses $FV=PV(1+nr)$.}
+\end{frame}
+
+\begin{frame}[label=sum]{Reference: the large sigma means ``add these up''}
+\textbf{In words:} value each receipt or payment today, then add.
+\[
+NPV=CF_0+\sum_{t=1}^{N}\frac{E[CF_t]}{(1+r)^t}
+\]
+$CF_0$: cash flow now; $CF_t$: cash flow at date $t$; $N$: final date; $E[CF_t]$: expected cash flow; $r$: rate per period.
+\par\smallskip
+\textbf{Example:} pay \pounds100 now; receive \pounds60 at each of the next two year-ends; rate 10\%.
+\[
+NPV=-100+\frac{60}{1.10}+\frac{60}{1.10\times1.10}=\pounds4.13
+\]
+\remember{The discount factor $(1+r)^{-t}$ turns a future payment into today's value.}
+\end{frame}
+
+\begin{frame}[label=growing]{Reference: level and growing perpetuities}
+\textbf{In words:} a growing perpetuity pays forever, with each payment changing by the same percentage.
+\[
+PV=\frac{C}{r}\quad\text{(level)}\qquad
+PV=\frac{C_1}{r-g}\quad\text{(growing)}
+\]
+$C$: fixed payment; $C_1$: first payment, one period ahead; $r$: discount rate; $g$: payment growth rate.
+\par\smallskip
+\textbf{Example:} first payment \pounds100; rate 5\%; growth 2\%.
+Payments start 100, 102, 104.04. Value: $100\div(0.05-0.02)=\pounds3,333.33$.
+\remember{The level formula needs $r>0$; the growing formula needs $r>g$ and $r,g>-1$. Negative growth is allowed.}
+\end{frame}
+
+\begin{frame}[label=annuity]{Reference: the annuity shortcut}
+\textbf{In words:} these formulas combine equal payments at dates 1 to $N$.
+\[
+PV=\frac{C}{r}\left[1-(1+r)^{-N}\right]\qquad
+FV_N=\frac{C}{r}\left[(1+r)^N-1\right]
+\]
+$C$: payment; $r$: rate per period; $N$: number of payments. A negative power means divide: $(1+r)^{-N}=1/(1+r)^N$.
+\par\smallskip
+\textbf{Example:} $C=100$, $r=0.10$, $N=2$ gives PV \pounds173.55 and value at date 2 of \pounds210.
+\remember{For an annuity due, multiply ordinary-annuity PV by $(1+r)$. At a zero rate, value is simply $N\times C$. A delayed stream must be discounted further from the formula's valuation date.}
+\end{frame}
+
+\begin{frame}[label=rates]{Reference: convert a quoted annual rate}
+\textbf{In words:} find the rate for one compounding period, then compound for a full year.
+\[
+\text{Periodic rate}=j/m\qquad
+\text{Effective annual rate}=(1+j/m)^m-1
+\]
+$j$: nominal annual quote; $m$: compounding periods per year.
+\par\smallskip
+\textbf{Example:} 12\% quoted annually, compounded monthly.
+\begin{enumerate}
+\item Monthly rate: $0.12\div12=0.01$ (1\%).
+\item Annual growth factor: $1.01^{12}$.
+\item Subtract 1: $1.01^{12}-1=0.1268$, about 12.68\%.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[label=inflation]{Reference: remove inflation from the growth factor}
+\textbf{In words:} divide money growth by price growth. This is the \textbf{Fisher relation}.
+\[
+1+r_{\mathrm{real}}=\frac{1+r_{\mathrm{nominal}}}{1+\pi}
+\]
+$r_{\mathrm{real}}$: purchasing-power return; $r_{\mathrm{nominal}}$: money return; $\pi$ (``pi''): inflation rate.
+\par\smallskip
+\textbf{Example:} nominal return 3\%, inflation 2\%.
+\begin{enumerate}
+\item Divide growth factors: $1.03\div1.02=1.009804$.
+\item Subtract 1: $0.009804$, or about 0.98\% real return.
+\end{enumerate}
+\remember{``Nominal'' here concerns inflation. A nominal annual \emph{quote} on the previous page concerns compounding conventions.}
+\end{frame}
+
+\begin{frame}{Reference: estimate IRR between two trial rates}
+\textbf{Interpolation} means estimating between two known points.
+\par\smallskip
+\textbf{Example:} NPV is $+300$ at 10\% and $-100$ at 10.5\%.
+\begin{enumerate}
+\item The full NPV fall is $300+100=400$.
+\item Zero is $300\div400=75\%$ of the way down.
+\item Move 75\% across the rate gap: $10\%+0.75\times0.5\%=10.375\%$.
+\end{enumerate}
+\[
+\widehat{IRR}=r_L+\frac{NPV_L}{NPV_L-NPV_H}(r_H-r_L)
+\]
+$L$: lower trial rate; $H$: higher trial rate; the hat means an estimate.
+\remember{The rate gap is 0.5 percentage points. NPV is curved, so this straight-line estimate is approximate.}
+\end{frame}
+
+\begin{frame}{Reference: a crossover is a tie between projects}
+\idea{The \textbf{crossover rate} makes two projects' NPVs equal. An \textbf{NPV profile} plots NPV against the discount rate.}
+\textbf{Example: both projects cost \pounds90 today}
+\begin{itemize}
+\item A pays \pounds110 in one year; B pays \pounds121 in two years.
+\item At 10\%, each receipt is worth \pounds100 today: both NPVs are \pounds10.
+\item At 5\%, B wins; at 15\%, A wins.
+\end{itemize}
+\inpractice{Equal NPVs do not have to be zero. To find the tie, subtract the two projects' cash flows at each date and find the IRR of that difference.}
+\remember{Use a common rate only where appropriate for both projects' risk.}
+\end{frame}
+
+\begin{frame}{Reference: later costs can produce more than one IRR}
+\idea{A \textbf{non-conventional} cash-flow pattern can switch from costs to receipts and back to costs, as with a final cleanup bill.}
+\textbf{Example: pay 100 now, receive 230 next year, pay 132 a year later}
+\[
+NPV=-100+\frac{230}{1+r}-\frac{132}{(1+r)^2}
+\]
+Both a 10\% rate and a 20\% rate make NPV zero. There are two IRRs.
+\par\smallskip
+At a required return of 15\%, NPV is approximately $+0.19$.
+\inpractice{Do not select whichever IRR looks attractive. Calculate NPV at the appropriate required return. Multiple sign changes allow, but do not guarantee, multiple IRRs.}
+\end{frame}
+
+\begin{frame}{Reference: MIRR separates the money in and money out}
+\textbf{Modified internal rate of return (MIRR)} makes financing and reinvestment assumptions explicit.
+\begin{enumerate}
+\item Value the outflows today: call the positive cost total $PV_-$.
+\item Grow the inflows to the final date: call that total $FV_+$.
+\item Find the compound rate connecting the two over $N$ periods.
+\end{enumerate}
+\[
+MIRR=\left(\frac{FV_+}{PV_-}\right)^{1/N}-1
+\]
+\textbf{Example:} cash flows $-100,+60,+60$; both rates 10\%. Cost today is 100; final inflows are $60(1.10)+60=126$. MIRR is $\sqrt{1.26}-1=12.25\%$.
+\remember{The subscripts label inflows and outflows. $PV_-$ is entered as a positive cost amount, not a negative number.}
+\end{frame}
+
+\begin{frame}{Reference: modified returns depend on the method}
+\idea{An \textbf{adjusted-cash-flow IRR} and terminal-value \textbf{MIRR} reshape the payments differently.}
+\begin{itemize}
+\item The lecture's adjusted-IRR method moves later costs backwards and combines cash flows until the adjusted stream has one sign change.
+\item Terminal-value MIRR values costs today and receipts at the final date.
+\end{itemize}
+\textbf{Lecture example:} King Coal, using 20\% in both constructions, gives adjusted IRR 22.05\% and five-year terminal MIRR 20.38\%.
+\inpractice{Both can be calculated correctly. Always state the rates, horizon and method; NPV still measures value created.}
+\end{frame}
+
+\begin{frame}{Reference: borrowing reverses the usual IRR intuition}
+\idea{If you receive money now and pay later, IRR describes a financing cost. A higher percentage is not automatically better.}
+\textbf{Example: receive \pounds100 now; repay \pounds120 next year}
+\begin{itemize}
+\item IRR is 20\%: the one-year borrowing cost.
+\item At a 10\% opportunity cost, NPV is $100-120\div1.10=-\pounds9.09$. Reject.
+\end{itemize}
+\remember{Some streams have \textbf{no IRR}. With only positive receipts and no outflows, NPV stays positive at every finite rate above $-100\%$. There is no zero to find.}
+\end{frame}
+
+\begin{frame}{Reference: a limited budget may require combinations}
+\idea{\textbf{Capital rationing} means funds are limited. If projects cannot be split, the highest PI need not identify the best set.}
+\textbf{Example: budget \pounds10; independent projects}
+\par\smallskip\begingroup\centering
+\begin{tabular}{lrrr}
+\toprule Project & Cost & NPV & PI\\\midrule
+A & \pounds6 & \pounds4.20 & 1.70\\
+B & \pounds5 & \pounds3.00 & 1.60\\
+C & \pounds5 & \pounds3.00 & 1.60\\\bottomrule
+\end{tabular}
+\par\endgroup\smallskip
+\inpractice{A leaves \pounds4, too little for either other project. B and C together fit the budget and create \pounds6: more than A's \pounds4.20.}
+\remember{PI can help with divisible, independent projects and one initial budget. If later costs occur, state the denominator convention.}
+\end{frame}
+\end{document}

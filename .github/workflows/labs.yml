@@ -43,6 +43,8 @@ jobs:
         run: .tools/uv/uv sync --locked --group dev --group notebook-mcp
       - name: Setup and sync regression tests
         run: .tools/uv/uv run --no-sync python -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Check shared teaching skills
+        run: .tools/uv/uv run --no-sync python .utilities/sync_skills.py --check
       - name: Execute both notebooks and export plots
         run: .tools/uv/uv run --no-sync python tests/execute_notebooks.py
       - name: Independently check financial calculations

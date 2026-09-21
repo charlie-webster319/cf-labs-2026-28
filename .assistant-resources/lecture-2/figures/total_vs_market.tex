@@ -1,0 +1,25 @@
+\begin{tikzpicture}
+\begin{axis}[lectureplot,width=10.9cm,height=5cm,xmin=0,xmax=30,ymin=-4,ymax=24,
+xtick={0,5,10,15,20,25,30},ytick={0,5,10,15,20},
+xticklabel={\pgfmathprintnumber{\tick}\%},yticklabel={\pgfmathprintnumber{\tick}\%},
+xlabel={Standard deviation},ylabel={Portfolio return}]
+\addplot[StAndrewsRed,thick] table[x expr=100*\thisrow{sd},y expr=100*\thisrow{ret}]{generated/cml.dat};
+\addplot[StAndrewsMidGreen,thick] table[x expr=100*\thisrow{sd},y expr=100*\thisrow{ret}]{generated/five_efficient.dat};
+\addplot[StAndrewsBlue,thick] table[x expr=100*\thisrow{sd},y expr=100*\thisrow{ret}]{generated/five_lower.dat};
+\addplot[black!50,dashed,thin] coordinates {(0,\LMeanKo)(\LSDKo,\LMeanKo)};
+\addplot[black!50,dashed,thin] coordinates {(\LSDKo,4)(\LSDKo,\LMeanKo)};
+\addplot[black!50,dashed,thin] coordinates {(\LSDKOMkt,4)(\LSDKOMkt,\LMeanKo)};
+\addplot[only marks,mark=*,mark size=2pt,StAndrewsRed] coordinates {(\LSDTan,\LMeanTan)};
+\addplot[only marks,mark=*,mark size=2pt,black] coordinates {(\LSDKo,\LMeanKo)};
+\draw[{Stealth[length=4pt]}-{Stealth[length=4pt]},StAndrewsMidGreen] (axis cs:0,4) -- (axis cs:\LSDKOMkt,4);
+\draw[{Stealth[length=4pt]}-{Stealth[length=4pt]},StAndrewsOrange] (axis cs:\LSDKOMkt,4) -- (axis cs:\LSDKo,4);
+\node[anchor=south east,font=\small,text=StAndrewsRed,xshift=-4pt,yshift=3pt] at (axis cs:\LSDTan,\LMeanTan) {B: tangent portfolio};
+\node[anchor=south west,font=\small,xshift=4pt] at (axis cs:\LSDKo,\LMeanKo) {Coca-Cola};
+\node[anchor=north west,font=\footnotesize,text=StAndrewsBurgundy,xshift=3pt,yshift=-2pt] at (axis cs:0,\LMeanKo) {$\bar{r}_{KO}$};
+\node[anchor=north,font=\footnotesize,text=StAndrewsMidGreen,yshift=-6pt] at (axis cs:4.78,4)
+ {Market risk $\sigma_{KO}\,\rho_{KO,m}$};
+\node[anchor=north,font=\footnotesize,text=StAndrewsOrange,yshift=-6pt] at (axis cs:14.73,4)
+ {Firm-specific risk $\sigma_{\varepsilon_{KO}}$};
+\node[anchor=west,font=\footnotesize,xshift=4pt] at (axis cs:\LSDKo,4) {$\sigma_{KO}$};
+\node[anchor=east,font=\small,text=StAndrewsRed,xshift=-3pt] at (axis cs:22,22.6) {CML};
+\end{axis}\end{tikzpicture}

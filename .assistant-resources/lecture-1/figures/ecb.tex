@@ -1,0 +1,9 @@
+\begin{tikzpicture}
+\begin{axis}[lectureplot,width=11.8cm,height=4.2cm,xmin=2014,xmax=2025,ymin=-.8,ymax=4.5,
+xtick={2014,2016,2018,2020,2022,2024},xticklabel style={/pgf/number format/1000 sep={}},
+ytick={0,2,4},ylabel={Per cent per year}]
+\addplot[black!30,thin] coordinates {(2014,0)(2025,0)};
+\addplot[const plot,StAndrewsBlue] table[x=year,y=rate]{generated/ecb.dat};
+\node[anchor=south,font=\small,text=StAndrewsBlue] at (axis cs:2018,1.05) {Deposit facility rate};
+\node[anchor=south,font=\footnotesize] at (axis cs:2020.3,-.35) {$-0.50\%$};
+\end{axis}\end{tikzpicture}

@@ -1,0 +1,523 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+\usetheme{StAndrews}
+\metroset{sectionpage=none}
+\coursename{EC3318 / MN3101 Corporate Finance}
+\lectureremail{}
+\title{Lecture 3:\\Key Concepts and Terms}
+\author{Dr Christian Engels}
+\subtitle{Understand the idea. Work through an example.}
+\titlelogo{\includegraphics[height=1.15cm]{logos/01-standard-black-text.png}}
+\hypersetup{pdfsubject={An accessible reference for Lecture 3},pdfpagemode=UseNone}
+\pdfstringdefDisableCommands{\def\translate#1{#1}}
+\setbeamercolor{alerted text}{fg=StAndrewsBurgundy}
+% Market figures come from the lecture's own pipeline, never typed by hand.
+\input{../generated/numbers.tex}
+\newcommand{\idea}[1]{\textbf{The idea:} #1\par\smallskip}
+\newcommand{\inpractice}[1]{\par\smallskip\textbf{What this means:} #1}
+\newcommand{\remember}[1]{\par\smallskip\alert{Remember:} #1}
+\newcommand{\reference}[1]{\par\smallskip{\small\hyperlink{#1}{Formula and notation reference $\rightarrow$}}}
+% Use the text pound glyph in equations as well as ordinary text.
+\renewcommand{\pounds}{\ifmmode\text{\textsterling}\else\textsterling\fi}
+\begin{document}
+\begin{frame}[plain]\titlepage\end{frame}
+
+\begin{frame}{Two securities, one question}
+\begin{enumerate}
+\item \textbf{Understand the idea.} What does this price say about the future?
+\item \textbf{Follow the example.} Small numbers, one step at a time, with a calculator.
+\item \textbf{Explain the answer.} What would make you pay more, or less?
+\end{enumerate}
+\par\smallskip
+Lecture 3 values two things. A bond promises a known stream of cash and the only question is what discount rate to use. A share promises nothing in particular, so the cash flows have to be forecast as well. Every valuation in the lecture is the same sentence: \textbf{a security is worth the present value of what it pays you}.
+\remember{This is a learning sequence, not a change to assessment requirements. Use the full lecture, the practice questions and the required reading too.}
+\end{frame}
+
+\section{Understanding the Ideas}
+
+\begin{frame}{A bond is a loan with the terms printed on it}
+\idea{A \textbf{bond} is a promise to pay fixed amounts on fixed dates. Four terms fix the promise, and none of them is the discount rate.}
+\begin{itemize}
+\item \textbf{Face value} (par): the final payment, and the base for the interest calculation.
+\item \textbf{Coupon rate}: an annual percentage of face value, set by the issuer at issue.
+\item \textbf{Coupon payment}: the cash that rate produces. A \$1,000 bond with a 10\% coupon paid twice a year pays $1{,}000\times10\%\div2=\$50$ every six months.
+\item \textbf{Maturity}: the date the face value comes back.
+\end{itemize}
+\remember{The coupon rate is fixed for life. The market's required return moves every day. Confusing the two is the single most common mistake in this lecture.}
+\reference{bondterms}
+\end{frame}
+
+\begin{frame}{A bond's price is the present value of its cash flows}
+\idea{List the payments, discount each one at the return investors require, and add them up. Nothing else happens.}
+\textbf{Example: three years, \$1,000 face, 7.25\% annual coupon, required return 0.35\%}
+\begin{enumerate}
+\item The cash flows are \$72.50, \$72.50 and \$1,072.50.
+\item Discounting each at 0.35\% and adding gives \$\LExOnePrice.
+\end{enumerate}
+\inpractice{The price is above face value because the coupon rate, 7.25\%, is far above the 0.35\% investors are willing to accept.}
+\remember{Paying twice a year does not change the method, only the bookkeeping: halve the coupon, halve the rate, double the number of periods. The same bond then prices at \$\LExOnePriceSemi.}
+\reference{bondprice}
+\end{frame}
+
+\begin{frame}{Yield to maturity is the price read as a rate}
+\idea{The \textbf{yield to maturity} is the discount rate that makes a bond's calculated price equal its market price.}
+\textbf{Example: a five-year \$1,000 bond, 5\% coupon paid semi-annually, trading at \$\LExTwoPrice}
+\begin{itemize}
+\item At 2.5\% per half-year it prices at \$\LExTwoAtCoupon, at par; at 3.5\% it prices at \$\LExTwoAtHigh, below the market price. The answer lies between.
+\item Solving exactly gives \LExTwoSemi\% per half-year, an APR of \LExTwoAPR\%.
+\end{itemize}
+\inpractice{Price and yield carry the same information. Traders quote the yield because it compares across bonds; the price does not.}
+\remember{Interpolating gives \LExTwoYTM\%, slightly high: the price curve bends.}
+\reference{ytm}
+\end{frame}
+
+\begin{frame}{Price and yield move in opposite directions}
+\idea{The cash flows are fixed, so the only way a bond can offer a higher return is to cost less today.}
+\par\smallskip\begingroup\centering\small
+\begin{tabular}{lll}
+\toprule Relationship & Price against face value & Name\\\midrule
+Yield $=$ coupon rate & Price $=$ face value & trades at par\\
+Yield $>$ coupon rate & Price $<$ face value & trades at a discount\\
+Yield $<$ coupon rate & Price $>$ face value & trades at a premium\\\bottomrule
+\end{tabular}
+\par\endgroup\smallskip
+\inpractice{A zero-coupon bond always trades at a discount: it pays nothing along the way, so the only compensation is buying below face value.}
+\remember{You never need to memorise this table. Ask instead: is this bond paying more or less than the market demands? Anything paying more is worth more.}
+\reference{ytm}
+\end{frame}
+
+\begin{frame}{Time pulls every bond towards its face value}
+\idea{Hold the yield still and let the calendar run. As maturity approaches, the price converges on face value, because that is all that is left to pay.}
+\textbf{Example: a 30-year zero-coupon bond, \$100 face, 5\% yield}
+\begin{itemize}
+\item Today it is worth \$\LZeroInitial.
+\item Five years later, with the yield unchanged, it is worth \$\LZeroLater.
+\end{itemize}
+\inpractice{The gain has nothing to do with a fall in yields. It is simply that the \$100 is five years nearer.}
+\remember{A premium bond drifts \emph{down} to face value and a discount bond drifts \emph{up} to it. Both end in the same place.}
+\reference{timeeffect}
+\end{frame}
+
+\begin{frame}{A coupon bond drops by the coupon on the day it pays}
+\idea{Between coupon dates the price rises as the next payment gets closer. On the payment date it falls by the amount paid, because the new buyer will not receive it.}
+\textbf{Example: 30 years, \$100 face, 10\% annual coupon, 5\% yield}
+\begin{itemize}
+\item Initial price: \$\LExThreeInitial.
+\item The instant before the first coupon: \$\LExThreeBefore.
+\item The instant after: \$\LExThreeAfter, which is exactly \$10 lower.
+\end{itemize}
+\inpractice{This is the sawtooth on the lecture's chart. It is bookkeeping, not a change in the bond's value to anyone.}
+\remember{The price after the first coupon is below the initial price: one payment has gone and is never coming back.}
+\reference{timeeffect}
+\end{frame}
+
+\begin{frame}{Long bonds and low coupons are the sensitive ones}
+\idea{A change in the required return moves distant cash flows more than near ones, so the bonds whose money arrives late move most.}
+\par\smallskip\begingroup\centering\small
+\begin{tabular}{lll}
+\toprule Compare & Less sensitive & More sensitive\\\midrule
+Maturity & short bond & long bond\\
+Coupon rate & high coupon & low coupon\\\bottomrule
+\end{tabular}
+\par\endgroup\smallskip
+\inpractice{Both rules are the same rule. A short bond returns your money soon; so does a high coupon. Either way, less of the value sits far in the future where discounting bites hardest.}
+\remember{A rise from 5\% to 10\% costs the 30-year bond \LThirtyA\% and the five-year bond \LFiveYrA\%. At 15 years, the 1\% coupon bond loses \LCouponOneA\% against the 10\% coupon's \LCouponTenA\%.}
+\reference{sensitivity}
+\end{frame}
+
+\begin{frame}{Example 4: the two effects on one page}
+\idea{Take a 15-year zero and a 30-year 10\% coupon bond, both \$100 face, and raise the yield from 5\% to 6\%.}
+\par\smallskip\begingroup\centering\small
+\begin{tabular}{llll}
+\toprule Bond & At 5\% & At 6\% & Change\\\midrule
+15-year zero & \$\LExFourZeroFive & \$\LExFourZeroSix & \LExFourZeroChange\%\\
+30-year, 10\% coupon & \$\LExFourCouponFive & \$\LExFourCouponSix & \LExFourCouponChange\%\\\bottomrule
+\end{tabular}
+\par\endgroup\smallskip
+\inpractice{The zero is half the maturity and still loses more. Its coupon rate is zero, so every penny arrives in year 15 and takes the full force of the discounting.}
+\remember{Maturity alone does not rank sensitivity. What matters is when the money actually arrives, which the coupon decides as much as the maturity does.}
+\reference{sensitivity}
+\end{frame}
+
+\begin{frame}{The yield curve plots yield against maturity}
+\idea{Bonds of the same credit quality but different maturities trade at different yields. Plotting them gives the \textbf{yield curve}, also called the term structure of interest rates.}
+\textbf{The lecture's curve: UK government, \LCurveDate}
+\begin{itemize}
+\item \LCurveShort\% at six months.
+\item Rising to about \LCurvePeak\% around \LCurvePeakMaturity{} years.
+\item Easing back to \LCurveLong\% at forty years.
+\end{itemize}
+\inpractice{An upward slope means investors want more per year to lend for longer. A humped or inverted curve usually means they expect short rates to fall.}
+\remember{The curve is the market's price list for time, and the reason a single ``interest rate'' is a simplification.}
+\reference{yieldcurve}
+\end{frame}
+
+\begin{frame}{The promised yield is not the expected yield}
+\idea{A corporate bond's quoted yield assumes it pays in full. If default is possible, the return you should expect is lower.}
+\textbf{Example 5: a one-year zero, \$1,000 face, bought at \$920}
+\begin{itemize}
+\item A 50\% chance of \$1,000 and a 50\% chance of \$900 gives an expected payoff of \$\LExFivePayoff.
+\item Promised yield: $1{,}000\div920-1=\LExFivePromised\%$. Expected yield: $\LExFivePayoff\div920-1=\LExFiveExpected\%$.
+\item Against a \LExFiveDefault\% loss if it defaults, the average is exactly the \LExFiveExpected\% expected yield.
+\end{itemize}
+\inpractice{With a risk-free rate of 2\%, the \textbf{default risk premium} is $\LExFiveExpected-2=\LExFivePremium$ percentage points.}
+\remember{The promised yield is the best case, not the expectation. Screens quote the promised yield, which is why risky bonds look more attractive than they are.}
+\reference{credit}
+\end{frame}
+
+\begin{frame}{Ratings are a shorthand for default risk}
+\idea{Moody's, Standard \& Poor's and Fitch grade bonds by how likely they are to pay. The grade is a summary of the same credit risk the yield already prices.}
+\begin{itemize}
+\item Highest quality: Aaa (Moody's) or AAA (S\&P and Fitch).
+\item \textbf{Investment grade}: Baa or BBB and above.
+\item \textbf{Speculative}, junk or high yield: anything below.
+\end{itemize}
+\inpractice{Lenders also protect themselves directly: seniority in a wind-up, security over assets, and covenants that cap further borrowing.}
+\remember{A rating is an opinion about default, not about price. A downgraded bond can still be a good buy if the price has already fallen far enough.}
+\reference{credit}
+\end{frame}
+
+\begin{frame}{A share is a claim on cash with no maturity date}
+\idea{A share pays a \textbf{dividend} while you hold it and a \textbf{capital gain} or loss when you sell. Nothing about either is promised.}
+\par\smallskip
+Three things make a share harder to value than a bond:
+\begin{enumerate}
+\item The cash flows are unknown in advance.
+\item There is no maturity, so the stream never ends.
+\item The required return is not observable anywhere.
+\end{enumerate}
+\inpractice{The method does not change. It is still the present value of what the security pays; the inputs are just estimates rather than promises.}
+\remember{Multiple share classes usually exist to separate cash from control: Berkshire's B shares carry $1/10{,}000$th of an A share's votes, and Alphabet's C shares carry none.}
+\reference{stockbasics}
+\end{frame}
+
+\begin{frame}{One year ahead: dividend plus resale price}
+\idea{If you buy today and sell in a year, the price you should pay is the present value of the dividend and the sale price together.}
+\[
+P_0=\frac{D_1+P_1}{1+r_e}
+\qquad\text{rearranged}\qquad
+r_e=\underbrace{\frac{D_1}{P_0}}_{\text{dividend yield}}+\underbrace{\frac{P_1-P_0}{P_0}}_{\text{capital gain rate}}
+\]
+\inpractice{The two terms are the only two ways a share pays. Their sum is the total return.}
+\remember{If a share offered more than other investments of the same risk, buyers would bid its price up until it no longer did. That is what pins $P_0$ down.}
+\reference{oneperiod}
+\end{frame}
+
+\begin{frame}{The dividend discount model: it is dividends all the way down}
+\idea{Replace next year's price with what the next buyer would pay, then repeat. The resale price disappears and only dividends remain.}
+\[
+P_0=\frac{D_1}{1+r_e}+\frac{D_2}{(1+r_e)^2}+\cdots=\sum_{n=1}^{\infty}\frac{D_n}{(1+r_e)^n}
+\]
+\inpractice{A share held forever pays nothing but dividends, so that is what it must be worth --- however long you personally intend to hold it.}
+\remember{This is not a claim that only dividend-paying shares have value. It is a claim that value must eventually be paid out to be worth anything.}
+\reference{ddm}
+\end{frame}
+
+\begin{frame}{Two special cases make the sum finite}
+\idea{An infinite sum is unusable until the dividends follow a rule. Two rules cover most of the lecture.}
+\par\smallskip\begingroup\centering\small
+\begin{tabular}{lll}
+\toprule Case & Assumption & Price\\\midrule
+Zero growth & $D_1=D_2=\cdots=D$ & $P_0=D/r$\\
+Constant growth & $D_t=D_{t-1}(1+g)$ & $P_0=D_1/(r-g)$\\\bottomrule
+\end{tabular}
+\par\endgroup\smallskip
+\textbf{Example:} Edison pays \pounds2.30 next year, $r=7\%$, $g=2\%$, so the share is worth $2.30\div0.05=\pounds\LEdisonPrice$.
+\inpractice{Watch which dividend goes on top. Given the dividend just \emph{paid}, grow it first: Blue Skies paid \pounds0.50, so $D_1=0.50\times1.02$ and the price is \pounds\LBlueSkiesPrice.}
+\remember{The formula needs $r>g$.}
+\reference{gordon}
+\end{frame}
+
+\begin{frame}{Under constant growth, the price grows at $g$ too}
+\idea{If dividends grow at a constant rate forever, so does the price. The share is the same claim, one year later.}
+\textbf{Example: Gordon pays \pounds4 next year, $r=16\%$, $g=6\%$}
+\begin{itemize}
+\item Today: $4\div(0.16-0.06)=\pounds\LGordonPrice$.
+\item In four years, by growing the dividend: $4(1.06)^4\div0.10=\pounds\LGordonPriceFour$.
+\item In four years, by growing the price: $\LGordonPrice\times(1.06)^4=\pounds\LGordonPriceFour$.
+\end{itemize}
+\inpractice{The two routes agree because they are the same calculation. Use whichever the question makes easier.}
+\remember{In this model the capital gain rate \emph{is} $g$, and the dividend yield is $r-g$. They add to $r$, as they must.}
+\reference{gordon}
+\end{frame}
+
+\begin{frame}{Growth has to be paid for out of dividends}
+\idea{A firm can only invest what it does not pay out. Retaining more raises growth and lowers this year's dividend at the same time.}
+\[
+g=\text{retention rate}\times\text{return on new investment}
+\qquad
+D_t=\text{EPS}_t\times\text{payout rate}
+\]
+\inpractice{Both levers in $P_0=D_1/(r-g)$ move together, and in opposite directions. Raising $g$ by cutting the payout is not free.}
+\remember{This is why ``we are investing for growth'' is not by itself an argument. The question is what the investment earns.}
+\reference{growth}
+\end{frame}
+
+\begin{frame}{Cutting the dividend helps only if the money earns more than $r$}
+\idea{Compare the return on the new investment with the return shareholders require. That comparison decides everything.}
+\textbf{Example: Sports Wear, EPS of \euro7, currently paying it all out, share price \euro55}
+\begin{itemize}
+\item No growth, so $r_e=7\div55=\LSportsRequired\%$.
+\item Cut the payout to 70\%: $D_1=\euro\LSportsDividend$ and $g=0.30\times\text{return on investment}$.
+\item New stores earning 15\%: $g=\LSportsGrowth\%$ and the price rises to \euro\LSportsPrice.
+\item New stores earning 10\%: $g=\LSportsGrowthBad\%$ and the price falls to \euro\LSportsPriceBad.
+\end{itemize}
+\inpractice{Both cuts produce growth; only one produces value, because only one beats the \LSportsRequired\% shareholders could earn elsewhere.}
+\remember{Investing at exactly $r$ grows earnings and adds nothing.}
+\reference{growth}
+\end{frame}
+
+\begin{frame}{Differential growth: a fast phase, then a steady one}
+\idea{Young firms grow faster than they can forever. Value the fast years one at a time, then use the constant-growth formula for everything after.}
+\textbf{Example 6: $D_0=\pounds3$, 7\% for three years then 5\% forever, $r=11\%$}
+\begin{enumerate}
+\item The three fast-growing dividends, discounted: \pounds\LDiffGrowthStage.
+\item The price at the end of year 3, discounted back: \pounds\LDiffTerminal.
+\item Total: \pounds\LDiffTotal.
+\end{enumerate}
+\inpractice{Step 2 is a \textbf{terminal value}: the constant-growth formula applied at year 3, then brought back three years.}
+\remember{Discount the terminal value from the date it is calculated at, not from today. Here $P_3$ needs dividing by $(1.11)^3$, and forgetting that is the classic error.}
+\reference{differential}
+\end{frame}
+
+\begin{frame}{Buybacks break the per-share model}
+\idea{When a firm repurchases shares, the dividend per share and the share count both move. Valuing the whole equity sidesteps the problem.}
+\par\smallskip
+The \textbf{total payout model} discounts dividends \emph{plus} repurchases, grows them at the rate total earnings grow, and divides by today's share count.
+\textbf{Example 7:} Alpha expects \$430m of earnings, pays out 55\%, grows at 7\%, requires 12\% and has 108.5m shares.
+\[
+\frac{0.55\times430}{0.12-0.07}=\$\LPayoutValue\text{bn}
+\qquad
+\frac{\LPayoutValue\text{bn}}{108.5\text{m}}=\$\LPayoutPrice
+\]
+\remember{Borrowing and buyback decisions sit with management, which makes them hard to forecast. That is the practical case for this model.}
+\reference{payout}
+\end{frame}
+
+\begin{frame}{Multiples: price this firm like the others}
+\idea{A \textbf{multiple} values a firm by comparison instead of by forecast. Take a ratio from similar firms and apply it here.}
+\textbf{Example 8:} Miller has EPS of \$1.5 and comparable furniture firms trade at a P/E of 21, so $P_0=1.5\times21=\$\LMultiplePrice$.
+\inpractice{Other common multiples are market-to-book and price-to-sales. All of them are shortcuts around the same discounting.}
+\remember{The method assumes the comparison firms share this firm's growth, risk \emph{and} payout policy. When they do not, the multiple is wrong in a way the number itself never reveals.}
+\reference{multiples}
+\end{frame}
+
+\begin{frame}{What the models cannot do}
+\idea{Both halves of the lecture rest on forecasts, and the share half rests on them heavily.}
+\begin{itemize}
+\item Small changes in $g$ move the price a great deal: with $r=11\%$, moving $g$ from 5\% to 6\% raises $D_1/(r-g)$ by a sixth.
+\item Forecasting dividends means forecasting earnings, the payout rate and the share count, each of which management can change.
+\item The required return $r_e$ is never observed. Lecture 2's CAPM is one way to estimate it.
+\end{itemize}
+\remember{A valuation is an argument about the future written in numbers. Say which assumption is doing the work, and what would change your answer.}
+\end{frame}
+
+\begin{frame}{Keep these questions attached to the terms}
+\begin{enumerate}
+\item Why can a bond's coupon rate never tell you what the bond is worth?
+\item A bond trades at a premium. Is its yield above or below its coupon rate, and why?
+\item Two bonds have the same maturity. Which is more interest-rate sensitive, and what single idea explains it?
+\item Why is a corporate bond's quoted yield higher than the return you should expect from it?
+\item In $P_0=D_1/(r-g)$, what goes wrong as $g$ approaches $r$, and what is the model telling you?
+\item A firm cuts its dividend to invest. What is the one number that decides whether the share price rises?
+\item Why does a share repurchase make the dividend discount model awkward?
+\end{enumerate}
+\remember{If an answer reaches for a formula before it reaches for a sentence, go back to the idea.}
+\end{frame}
+
+\begin{frame}{Check your understanding before using the formulas}
+\begin{enumerate}
+\item A \$1,000 bond with a 6\% annual coupon matures in two years. Yields are 6\%. What is the price, without calculating?
+\item The same bond, but yields rise to 8\%. Does the price go above or below \$1,000?
+\item A zero-coupon bond and a coupon bond both mature in ten years. Which loses more when yields rise?
+\item A share pays \pounds2 next year, grows at 3\% and investors require 8\%. What is it worth?
+\item The same share, but investors decide it is riskier and require 10\%. What happens to the price?
+\item A firm retains 40\% of earnings and earns 12\% on what it invests. What is $g$?
+\end{enumerate}
+\remember{Answers: \pounds1,000 --- below --- the zero --- \pounds40 --- it falls to about \pounds28.60 --- 4.8\%.}
+\end{frame}
+
+\section{Calculation Reference}
+
+\begin{frame}[label=bondterms]{Reference: bond terminology}
+\textbf{In words:} the coupon payment is the coupon rate applied to face value, split across the year's payment dates.
+\[
+CPN=\frac{\text{Face value}\times\text{Coupon rate}}{\text{Payments per year}}
+\]
+Face value (par, principal): the amount repaid at maturity. Coupon rate: an annual percentage, fixed at issue. Maturity: the repayment date.
+\par\smallskip
+\textbf{Example:} a \$1,000 bond with a 10\% coupon rate paying semi-annually pays $1{,}000\times0.10\div2=\$50$ every six months.
+\remember{The coupon rate is quoted as an APR. It tells you the cash and nothing else.}
+\end{frame}
+
+\begin{frame}[label=bondprice]{Reference: pricing a bond}
+\textbf{In words:} discount every coupon and the face value at the required return, then add.
+\[
+P_B=\sum_{t=1}^{N}\frac{CPN}{(1+r)^t}+\frac{PAR}{(1+r)^N}
+=\frac{CPN}{r}\left[1-\frac{1}{(1+r)^N}\right]+\frac{PAR}{(1+r)^N}
+\]
+$CPN$: the coupon payment; $PAR$: face value; $r$: the required return per period; $N$: the number of periods.
+\par\smallskip
+\textbf{The two forms are one calculation}, the right collecting the coupons into an annuity.
+\par\smallskip
+\textbf{Example:} \$1,000 face, 7.25\% coupon, three years at $r=0.35\%$ gives \$\LExOnePrice. Semi-annually --- coupon \$\LExOneCouponSemi, rate 0.175\%, six periods --- \$\LExOnePriceSemi.
+\remember{Halve the coupon, halve the rate, double the periods. Changing only one of the three is the usual slip.}
+\end{frame}
+
+\begin{frame}[label=ytm]{Reference: yield to maturity}
+\textbf{In words:} the yield to maturity is the discount rate that makes the calculated price equal the market price. There is no formula for it; you solve for it.
+\[
+P_{\text{market}}=\frac{CPN}{y}\left[1-\frac{1}{(1+y)^N}\right]+\frac{PAR}{(1+y)^N}
+\]
+$y$: the yield per period. In a spreadsheet, \texttt{RATE(nper, pmt, pv, fv)} does it; by hand, try two rates and interpolate.
+\par\smallskip
+\textbf{Example:} a five-year, \$1,000, 5\% semi-annual bond at \$\LExTwoPrice{} prices at \$\LExTwoAtCoupon{} when $y=2.5\%$ and \$\LExTwoAtHigh{} when $y=3.5\%$. The answer is \LExTwoSemi\% per half-year, an APR of \LExTwoAPR\%.
+\remember{Interpolation gives \LExTwoYTM\%, a little high. The price function is convex, so a straight line between two of its points lies above it.}
+\end{frame}
+
+\begin{frame}[label=timeeffect]{Reference: the effect of time}
+\textbf{In words:} hold the yield fixed and shorten the maturity. The price walks towards face value.
+\[
+P_{\text{after}}=\frac{CPN}{r}\left[1-\frac{1}{(1+r)^{N-1}}\right]+\frac{PAR}{(1+r)^{N-1}}
+\qquad
+P_{\text{before}}=P_{\text{after}}+CPN
+\]
+\textbf{Example:} 30 years, \$100 face, 10\% annual coupon, 5\% yield. Initial \$\LExThreeInitial; immediately before the first coupon \$\LExThreeBefore; immediately after \$\LExThreeAfter.
+\par\smallskip
+\textbf{Zero-coupon case:} $P=PAR/(1+r)^N$. Thirty years at 5\% gives \$\LZeroInitial; twenty-five years gives \$\LZeroLater.
+\remember{The drop on a coupon date is exactly the coupon. It is a transfer to the holder, not a loss of value.}
+\end{frame}
+
+\begin{frame}[label=sensitivity]{Reference: interest rate sensitivity}
+\textbf{In words:} reprice the bond at the new yield and take the percentage change. Longer maturities and lower coupons move more.
+\[
+\%\Delta P=\frac{P(r_{\text{new}})-P(r_{\text{old}})}{P(r_{\text{old}})}
+\]
+\textbf{Example:} raising the yield from 5\% to 10\% on \$100-face 10\% coupon bonds costs the 30-year bond \LThirtyA\% and the five-year bond \LFiveYrA\%. At 15 years' maturity the same move costs the 1\% coupon bond \LCouponOneA\% and the 10\% coupon bond \LCouponTenA\%.
+\par\smallskip
+\textbf{Example 4:} a 15-year zero falls \LExFourZeroChange\% when the yield goes from 5\% to 6\%; a 30-year 10\% coupon bond falls \LExFourCouponChange\%.
+\remember{Ask when the money arrives, not how long the bond runs. Maturity and coupon are two ways of answering the same question.}
+\end{frame}
+
+\begin{frame}[label=yieldcurve]{Reference: the yield curve}
+\textbf{In words:} plot yield to maturity against time to maturity for bonds of one credit quality. The shape is the term structure of interest rates.
+\par\smallskip
+\textbf{Upward sloping:} longer lending earns more per year, the usual shape. \textbf{Flat:} maturity makes little difference. \textbf{Inverted or humped:} long yields below short ones, often read as an expectation that short rates will fall.
+\par\smallskip
+\textbf{Example:} the UK government curve on \LCurveDate{} runs from \LCurveShort\% at six months to a peak near \LCurvePeak\% at about \LCurvePeakMaturity{} years, then eases to \LCurveLong\% at forty years.
+\remember{Each point is a different bond, not the same bond over time. The curve is a snapshot of prices today.}
+\end{frame}
+
+\begin{frame}[label=credit]{Reference: default risk and the risk premium}
+\textbf{In words:} the promised yield assumes full payment. Weight each outcome by its probability to get the expected yield; the gap over the risk-free rate is the premium.
+\[
+y_{\text{promised}}=\frac{\text{Face}}{P}-1
+\qquad
+E[y]=\frac{\sum_s p_s\,\text{Payoff}_s}{P}-1
+\qquad
+\text{Premium}=E[y]-r_f
+\]
+\textbf{Example 5:} \$1,000 face bought at \$920, half a chance of \$1,000 and half of \$900. Promised \LExFivePromised\%; expected \LExFiveExpected\%; with $r_f=2\%$, a premium of \LExFivePremium{} percentage points.
+\par\smallskip
+\textbf{Check:} the expected yield is the probability-weighted average of the two outcomes, $0.5(\LExFivePromised)+0.5(-\LExFiveDefault)=\LExFiveExpected$.
+\remember{Investment grade is Baa or BBB and above; anything below is speculative, junk or high yield.}
+\end{frame}
+
+\begin{frame}[label=stockbasics]{Reference: what a share pays}
+\textbf{In words:} a share pays dividends while held and a capital gain or loss on sale. Neither is promised.
+\par\smallskip
+\textbf{Dividend}: a cash distribution, declared at the board's discretion. \textbf{Capital gain}: the change in price between purchase and sale. \textbf{Share classes}: usually a device to separate cash rights from voting rights.
+\par\smallskip
+\textbf{Why shares are harder than bonds:} the cash flows are forecasts rather than promises, there is no maturity to anchor the stream, and the required return cannot be looked up.
+\remember{Nothing about the method changes. The present value of what it pays you is still the whole of it.}
+\end{frame}
+
+\begin{frame}[label=oneperiod]{Reference: the one-period share price}
+\textbf{In words:} the price is the present value of next year's dividend and next year's price. Rearranged, the required return splits into two familiar pieces.
+\[
+P_0=\frac{D_1+P_1}{1+r_e}
+\qquad
+r_e=\frac{D_1}{P_0}+\frac{P_1-P_0}{P_0}
+\]
+$D_1$: next year's dividend; $P_1$: next year's price; $r_e$: the return shareholders require.
+\par\smallskip
+\textbf{Example:} $P_0=\pounds50$, $D_1=\pounds2$ and $P_1=\pounds53$ give a dividend yield of 4\%, a capital gain rate of 6\% and a total return of 10\%.
+\remember{Dividend yield plus capital gain rate is the whole return. There is no third source.}
+\end{frame}
+
+\begin{frame}[label=ddm]{Reference: the dividend discount model}
+\textbf{In words:} substitute the next buyer's price for $P_1$, over and over. The prices cancel and only dividends are left.
+\[
+P_0=\sum_{n=1}^{\infty}\frac{D_n}{(1+r_e)^n}
+\]
+$D_n$: the dividend in year $n$; $r_e$: the required return on equity.
+\par\smallskip
+\textbf{Why the resale price vanishes:} each buyer's price is itself the present value of the dividends after that date. Chain the substitutions and every price term moves further into the future until it discounts to nothing.
+\remember{This holds whatever your own holding period. It is a statement about the security, not about you.}
+\end{frame}
+
+\begin{frame}[label=gordon]{Reference: zero and constant growth}
+\textbf{In words:} a constant dividend is a perpetuity. A dividend growing at a constant rate is a growing perpetuity.
+\[
+P_0=\frac{D}{r}
+\qquad
+P_0=\frac{D_1}{r-g}=\frac{D_0(1+g)}{r-g}
+\qquad (r>g)
+\]
+$D_0$: the dividend just paid; $D_1$: the dividend due next; $g$: the constant growth rate.
+\par\smallskip
+\textbf{Example:} $D_1=\pounds2.30$, $r=7\%$, $g=2\%$ gives \pounds\LEdisonPrice. With $D_0=\pounds0.50$ instead, $D_1=0.50(1.02)$ and the price is \pounds\LBlueSkiesPrice.
+\par\smallskip
+\textbf{Also true:} under constant growth the price grows at $g$ as well, so $P_N=P_0(1+g)^N$.
+\remember{Check which dividend you were given before dividing. Half the errors in this section are $D_0$ used where $D_1$ belongs.}
+\end{frame}
+
+\begin{frame}[label=growth]{Reference: growth, payout and profitable investment}
+\textbf{In words:} growth comes from retained earnings put to work, so it trades off against the dividend.
+\[
+g=\text{Retention rate}\times\text{Return on investment}
+\qquad
+D_t=\text{EPS}_t\times\text{Payout rate}
+\]
+Retention rate $=1-$ payout rate. Both feed $P_0=D_1/(r-g)$ from opposite directions.
+\par\smallskip
+\textbf{Example:} Sports Wear, EPS \euro7, paying out everything at \euro55, so $r_e=\LSportsRequired\%$. Cutting to a 70\% payout gives $D_1=\euro\LSportsDividend$; at a 15\% return $g=\LSportsGrowth\%$ and the price is \euro\LSportsPrice; at 10\% $g=\LSportsGrowthBad\%$ and it is \euro\LSportsPriceBad.
+\remember{Cutting the dividend raises the price if and only if the new investment beats $r$. Growth alone proves nothing.}
+\end{frame}
+
+\begin{frame}[label=differential]{Reference: differential growth}
+\textbf{In words:} value the fast-growing dividends directly, value everything afterwards with the constant-growth formula, and discount that terminal value back.
+\[
+P_0=\frac{D_1}{r-g_1}\left[1-\frac{(1+g_1)^N}{(1+r)^N}\right]+\frac{1}{(1+r)^N}\cdot\frac{D_{N+1}}{r-g_2}
+\]
+$g_1$: growth for the first $N$ years; $g_2$: growth thereafter; $D_{N+1}=D_0(1+g_1)^N(1+g_2)$. The second term is the \textbf{terminal value} $P_N$, discounted.
+\par\smallskip
+\textbf{Example 6:} $D_0=\pounds3$, $g_1=7\%$ for three years, $g_2=5\%$, $r=11\%$. The fast phase is worth \pounds\LDiffGrowthStage{} and the discounted terminal value \pounds\LDiffTerminal, for \pounds\LDiffTotal{} in total.
+\remember{$P_N$ is a price at date $N$, so it needs discounting by $(1+r)^N$. Leaving that out is the standard mistake.}
+\end{frame}
+
+\begin{frame}[label=payout]{Reference: the total payout model}
+\textbf{In words:} value all of the equity from dividends plus repurchases, then divide by the shares outstanding today.
+\[
+\text{Equity value}=\frac{\text{Total payout}_1}{r_e-g_{\text{earnings}}}
+\qquad
+P_0=\frac{\text{Equity value}}{\text{Shares outstanding}}
+\]
+Total payout: dividends plus share repurchases. $g_{\text{earnings}}$: the growth rate of \emph{total} earnings, not earnings per share.
+\par\smallskip
+\textbf{Example 7:} \$430m of earnings, 55\% paid out, $g=7\%$, $r_e=12\%$, 108.5m shares. Payout \$\LPayoutTotal m, equity \$\LPayoutValue bn, price \$\LPayoutPrice.
+\remember{Use total earnings growth here. Per-share growth already includes the effect of the buyback and would count it twice.}
+\end{frame}
+
+\begin{frame}[label=multiples]{Reference: valuation by comparable firms}
+\textbf{In words:} take a ratio observed on similar firms and apply it to this firm's own figure.
+\[
+P_0=\text{EPS}\times\left(\frac{P}{E}\right)_{\text{comparable}}
+\]
+Also common: market-to-book and price-to-sales, used the same way.
+\par\smallskip
+\textbf{Example 8:} EPS of \$1.5 against a comparable P/E of 21 gives \$\LMultiplePrice.
+\par\smallskip
+\textbf{What it assumes:} that the comparison firms share this firm's growth rate, risk and payout policy. Those are exactly the things $P_0=D_1/(r-g)$ asks about, which is why a multiple is a shortcut rather than an alternative.
+\remember{A multiple imports someone else's assumptions without telling you what they were. Say which firms you used and why they are comparable.}
+\end{frame}
+\end{document}

@@ -1,0 +1,16 @@
+% Where a coupon bond trades relative to par, and the YTM-against-coupon-rate condition
+% that puts it there. Replaces the three bullets that stated the same three cases.
+\begin{tikzpicture}[font=\footnotesize,>=stealth,
+  band/.style={rounded corners=2pt,inner sep=5pt,text width=3.0cm,align=center},
+  cond/.style={anchor=north,align=center,text width=3.4cm}]
+\draw[<->,black!55,line width=0.8pt] (-0.2,0) -- (11.2,0);
+\draw[black!70,line width=0.9pt] (5.5,0.3) -- (5.5,-0.3);
+
+\node[band,fill=StAndrewsRed!12,anchor=south] at (1.7,0.35) {\textbf{Discount}};
+\node[band,fill=StAndrewsBlue!12,anchor=south] at (5.5,0.35) {\textbf{Par}};
+\node[band,fill=StAndrewsMidGreen!14,anchor=south] at (9.3,0.35) {\textbf{Premium}};
+
+\node[cond] at (1.7,-0.72) {price $<$ face value\\ YTM $>$ coupon rate};
+\node[cond] at (5.5,-0.72) {price $=$ face value\\ YTM $=$ coupon rate};
+\node[cond] at (9.3,-0.72) {price $>$ face value\\ YTM $<$ coupon rate};
+\end{tikzpicture}

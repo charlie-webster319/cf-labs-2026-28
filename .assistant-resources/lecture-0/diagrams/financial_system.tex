@@ -1,0 +1,61 @@
+% Coordinate map: TeX pt, origin lower left; fixed canvas x=0..390, y=0..165.
+% Edit nodes/routes here. The build script reads these commands and audit metadata.
+\begin{tikzpicture}[diagram]
+% audit-node {"id":"markets","kind":"box","text":"Financial markets","parent":null,"padding":4,"outline_width":0.6}
+\node[diagram blue,minimum width=80pt,minimum height=50pt] (markets) at (45,122) {Financial\\markets};
+% audit-node {"id":"claims","kind":"box","text":"Firm: financial claims","parent":null,"padding":4,"outline_width":0.6}
+\node[diagram blue,minimum width=82pt,minimum height=50pt] (claims) at (210,122) {Firm:\\financial claims};
+% audit-node {"id":"assets","kind":"box","text":"Firm: real assets","parent":null,"padding":4,"outline_width":0.6}
+\node[diagram blue,minimum width=72pt,minimum height=50pt] (assets) at (349,122) {Firm:\\real assets};
+% audit-node {"id":"households","kind":"box","text":"Households","parent":null,"padding":4,"outline_width":0.6}
+\node[diagram box,minimum width=76pt,minimum height=24pt] (households) at (260,52) {Households};
+% audit-node {"id":"intermediaries","kind":"box","text":"Financial intermediaries","parent":null,"padding":4,"outline_width":0.6}
+\node[diagram box,minimum width=104pt,minimum height=32pt] (intermediaries) at (100,19) {Financial\\intermediaries};
+% audit-node {"id":"returns","kind":"label","text":"Returns","parent":null,"padding":0,"outline_width":0}
+\node[diagram label,minimum width=64pt,minimum height=12pt,anchor=center] (returns) at (127,145) {Returns};
+% audit-node {"id":"financing","kind":"label","text":"Financing","parent":null,"padding":0,"outline_width":0}
+\node[diagram label,minimum width=64pt,minimum height=12pt,anchor=center] (financing) at (127,95) {Financing};
+% audit-node {"id":"cash","kind":"label","text":"Operating cash","parent":null,"padding":0,"outline_width":0}
+\node[diagram label,minimum width=54pt,minimum height=24pt,anchor=center] (cash) at (282,151) {Operating\\cash};
+% audit-node {"id":"investing","kind":"label","text":"Investing","parent":null,"padding":0,"outline_width":0}
+\node[diagram label,minimum width=52pt,minimum height=12pt,anchor=center] (investing) at (282,95) {Investing};
+% audit-node {"id":"investments","kind":"label","text":"Investments","parent":null,"padding":0,"outline_width":0}
+\node[diagram label,minimum width=80pt,minimum height=12pt,anchor=center] (investments) at (129,76) {Investments};
+% audit-node {"id":"spending","kind":"label","text":"Spending","parent":null,"padding":0,"outline_width":0}
+\node[diagram label,minimum width=66pt,minimum height=12pt,anchor=center] (spending) at (348,40) {Spending};
+% audit-node {"id":"savings","kind":"label","text":"Savings","parent":null,"padding":0,"outline_width":0}
+\node[diagram label,minimum width=56pt,minimum height=12pt,anchor=center] (savings) at (202,29) {Savings};
+% audit-node {"id":"indirect-investments","kind":"label","text":"Investments","parent":null,"padding":0,"outline_width":0}
+\node[diagram label,minimum width=82pt,minimum height=12pt,anchor=center] (indirect-investments) at (64,44) {Investments};
+% audit-route {"id":"market-funds","source":"markets","target":"claims","arrow":"target","shared_junctions":[],"outline_width":0.8,"arrow_length":4,"arrow_width":4}
+\draw[diagram forward] (88,109) -- (166,109);
+% audit-route {"id":"market-returns","source":"claims","target":"markets","arrow":"target","shared_junctions":[],"outline_width":0.8,"arrow_length":4,"arrow_width":4}
+\draw[diagram cash] (166,131) -- (88,131);
+% audit-route {"id":"firm-investing","source":"claims","target":"assets","arrow":"target","shared_junctions":[],"outline_width":0.8,"arrow_length":4,"arrow_width":4}
+\draw[diagram forward] (254,109) -- (310,109);
+% audit-route {"id":"operating-cash","source":"assets","target":"claims","arrow":"target","shared_junctions":[],"outline_width":0.8,"arrow_length":4,"arrow_width":4}
+\draw[diagram cash] (310,131) -- (254,131);
+% audit-route {"id":"direct-investing","source":"households","target":"markets","arrow":"target","shared_junctions":[],"outline_width":0.8,"arrow_length":4,"arrow_width":4}
+\draw[diagram forward] (219,62) -- (45,62) -- (45,94);
+% audit-route {"id":"household-spending","source":"households","target":"assets","arrow":"target","shared_junctions":[],"outline_width":0.8,"arrow_length":4,"arrow_width":4}
+\draw[diagram cash] (301,52) -- (349,52) -- (349,94);
+% audit-route {"id":"household-savings","source":"households","target":"intermediaries","arrow":"target","shared_junctions":[],"outline_width":0.8,"arrow_length":4,"arrow_width":4}
+\draw[diagram forward] (245,37) -- (245,15) -- (155,15);
+% audit-route {"id":"indirect-investing","source":"intermediaries","target":"markets","arrow":"target","shared_junctions":[],"outline_width":0.8,"arrow_length":4,"arrow_width":4}
+\draw[diagram forward] (45,15) -- (15,15) -- (15,94);
+\DiagramMeasure{financial_system}{markets}{box}
+\DiagramMeasure{financial_system}{claims}{box}
+\DiagramMeasure{financial_system}{assets}{box}
+\DiagramMeasure{financial_system}{households}{box}
+\DiagramMeasure{financial_system}{intermediaries}{box}
+\DiagramMeasure{financial_system}{returns}{label}
+\DiagramMeasure{financial_system}{financing}{label}
+\DiagramMeasure{financial_system}{cash}{label}
+\DiagramMeasure{financial_system}{investing}{label}
+\DiagramMeasure{financial_system}{investments}{label}
+\DiagramMeasure{financial_system}{spending}{label}
+\DiagramMeasure{financial_system}{savings}{label}
+\DiagramMeasure{financial_system}{indirect-investments}{label}
+\pgfresetboundingbox
+\path[use as bounding box] (0,0) rectangle (390,165);
+\end{tikzpicture}

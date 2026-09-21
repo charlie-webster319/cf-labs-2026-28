@@ -1,0 +1,19 @@
+% Four 30-year bonds at a 5% YTM. Between coupons the price grows at the yield and
+% on a coupon date it drops by the coupon, which is what makes the sawtooth.
+\begin{tikzpicture}
+\begin{axis}[lectureplot,width=10.4cm,height=5.4cm,xmin=0,xmax=35,ymin=0,ymax=232,
+xtick={0,5,10,15,20,25,30,35},ytick={0,20,40,60,80,100,120,140,160,180,200},
+xlabel={Year},ylabel={Bond price (\$)},
+every axis plot/.append style={line width=0.7pt,no marks}]
+\addplot[StAndrewsMidBlue] table[x=year,y=price]{generated/time_ten.dat};
+\addplot[StAndrewsRed]     table[x=year,y=price]{generated/time_five.dat};
+\addplot[StAndrewsGreen]   table[x=year,y=price]{generated/time_two.dat};
+\addplot[StAndrewsPurple]  table[x=year,y=price]{generated/time_zero.dat};
+\node[anchor=west,font=\footnotesize,text=StAndrewsMidBlue] at (axis cs:2.5,158) {10\% coupon rate};
+\node[anchor=west,font=\footnotesize,text=StAndrewsRed]     at (axis cs:2.5,88)  {5\% coupon rate};
+\node[anchor=west,font=\footnotesize,text=StAndrewsGreen]   at (axis cs:2.5,44)  {2\% coupon rate};
+\node[anchor=west,font=\footnotesize,text=StAndrewsPurple]  at (axis cs:2.5,14)  {0\% coupon rate};
+\node[draw=StAndrewsRed,line width=0.6pt,anchor=north east,align=left,font=\footnotesize,
+      inner sep=4pt] at (axis cs:35,230)
+      {YTM: 5\%\\Maturity: 30 years\\Par: \$100};
+\end{axis}\end{tikzpicture}
