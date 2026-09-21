@@ -47,6 +47,12 @@ Each container start (including first creation) installs or updates the Codex an
 
 Installation does not sign you in. Choose whether to use a tool and handle its sign-in separately. Account entitlements can differ; none is a prerequisite for completing either lab.
 
+## Chat panels and editor recovery
+
+The course settings keep the file explorer on the left and the secondary sidebar visible on the right. Current Codex and Copilot versions use the secondary sidebar by default; Claude Code is configured to open there too. Your saved VS Code layout can override a view's initial location. If an assistant is on the left, right-click its icon and choose **Move To → Secondary Side Bar** once. VS Code remembers that placement.
+
+If interface labels display `null`, save your work, then use **F1 → Developer: Reload Window**. A browser reload is another recovery step if the editor is unresponsive. This does not require reinstalling Python. When asked to trust the workspace, check that it is your course repository; do not disable Workspace Trust globally. The assistant's own sign-in remains separate from workspace trust.
+
 ## Optional notebook tools for Codex and Claude Code
 
 The repository includes `.codex/config.toml` for Codex and `.mcp.json` for Claude Code, both defining the same local `jupyter` MCP server ([The Notebook MCP](https://github.com/svallory/the-notebook-mcp)). It can read and edit saved cells and inspect saved outputs. Dependencies are pinned in the optional `notebook-mcp` group and the lockfile, using the same `.venv`; the nine core teaching packages are unchanged. No extra account, token or public server is needed.

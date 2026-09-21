@@ -14,5 +14,8 @@
         "autoShowOutputPanel": "error"
       }
     ]
-  }
+  },
+  "workbench.sideBar.location": "left",
+  "workbench.secondarySideBar.defaultVisibility": "visible",
+  "claudeCode.preferredLocation": "sidebar"
 }

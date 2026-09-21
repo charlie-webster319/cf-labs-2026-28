@@ -1,5 +1,11 @@
 # Implementation and verification — 17 September 2026
 
+## Editor recovery and sidebar defaults — 21 September 2026
+
+In the instructor's existing `expert-space-bassoon` Codespace, reloading the browser editor cleared the literal `null` labels from Copilot Chat. The workspace path was `/workspaces/cf-labs-2026-27`; accepting its normal trust prompt removed Restricted Mode. This is a verified recovery, not a diagnosis or upstream fix for the initial loading fault. Browser logs also contained extension compatibility errors, but their relationship to the labels was not established.
+
+Workspace and devcontainer defaults now keep the primary sidebar on the left, the secondary sidebar visible, and `claudeCode.preferredLocation` set to `sidebar`. The installed Codex and Claude extension manifests provide secondary-sidebar views on supported VS Code versions. Existing per-user view placements are not overwritten; the reference documents the one-time Move To action. JSON parsing and whitespace validation passed. No Python, notebook, dependency or trust-policy settings were changed.
+
 ## Notebook MCP — 20 September 2026
 
 Added project MCP configuration for Claude Code (`.mcp.json`) and Codex (`.codex/config.toml`), a Claude startup timeout, shared teaching instructions, and optional locked notebook-tool dependencies. The `.gitignore` exceptions allow only the shared settings; credentials and local assistant state remain ignored. All previously locked package versions are unchanged; 92 additional packages are confined to the optional group and its dependency graph. Container startup preloads that group without making an optional failure fail startup.

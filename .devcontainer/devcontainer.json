@@ -13,7 +13,10 @@
         "extensions.autoUpdate": "on",
         "extensions.autoCheckUpdates": true,
         "extensions.autoUpdateDelay": 0,
-        "python.useEnvironmentsExtension": false
+        "python.useEnvironmentsExtension": false,
+        "workbench.sideBar.location": "left",
+        "workbench.secondarySideBar.defaultVisibility": "visible",
+        "claudeCode.preferredLocation": "sidebar"
       },
       "extensions": [
         "ms-python.python",
