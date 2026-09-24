@@ -23,7 +23,6 @@
         "ms-toolsai.jupyter",
         "GitHub.copilot-chat",
         "emeraldwalk.runonsave",
-        "OpenAI.chatgpt",
         "Anthropic.claude-code"
       ]
     }
